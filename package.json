@@ -7,7 +7,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "aws s3 sync --delete build/ 's3://${AWS_S3_BUCKET}/' --cache-control max-age=600 && aws cloudfront create-invalidation --distribution-id ${AWS_INVALIDATE_DISTRIBUTION_ID} --paths '/*'",
+    "deploy": "aws s3 sync --delete build/ \"s3://${AWS_S3_BUCKET}/\" --cache-control max-age=600 && aws cloudfront create-invalidation --distribution-id \"${AWS_INVALIDATE_DISTRIBUTION_ID}\" --paths '/*'",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
