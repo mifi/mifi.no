@@ -2,6 +2,8 @@
 
 To replace blog.mifi.no and possibly mifi.no. Built using [Docusaurus 2](https://docusaurus.io/).
 
+Old site can be found at https://github.com/mifi/mifi.no-old
+
 ### Installation
 
 ```

@@ -3,7 +3,7 @@ import { FaGithubAlt, FaHeart } from 'react-icons/fa';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
-import Confetti from './confetti.min.js'
+import Confetti from '../../confetti.min.js'
 
 const wrapperStyle = {
   display: 'flex',
