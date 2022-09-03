@@ -1,0 +1,58 @@
+.nicelink {
+  color: #0085d8;
+  text-decoration: none !important;
+}
+.appStore {
+  overflow: hidden;
+}
+.appStore img {
+  display: block;
+}
+.app {
+  padding: 10px 13px;
+  margin: 3px;
+  border-radius: 10px;
+  -box-shadow: rgba(0,0,0,0.03) 0px 0px 10px 4px;
+  background: black;
+  color: white;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+.app:hover {
+  background: #EB1D36;
+  color: white;
+}
+.appIcon {
+  vertical-align: middle;
+  font-size: 1.3em;
+  background-color: white;
+  border-radius: 1em;
+  padding: .2em .25em;
+  margin-right: .2em;
+}
+.appStore {
+  overflow: hidden;
+}
+.appStore img {
+  display: block;
+}
+.vidBlock {
+  display: block;
+  width: 310px;
+}
+.instafeed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.instafeed > a {
+  margin: 5px;
+}
+h1.heading {
+  margin-top: 3em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: .5em;
+  text-align: center;
+}

@@ -2,12 +2,6 @@
 
 To replace blog.mifi.no and possibly mifi.no. Built using [Docusaurus 2](https://docusaurus.io/).
 
-
-## TODO
-
-- blog.mifi.no redirect (route 53)
-- Links from old individual articles blog.mifi.no
-
 ### Installation
 
 ```

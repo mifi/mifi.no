@@ -10,9 +10,10 @@ const config = {
   tagline: 'Mikael Finstad',
   url: 'https://mifi.no',
   baseUrl: '/',
+  trailingSlash: true, // Using trailing slash in S3/CloudFront
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -37,8 +38,8 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/mifi/mifi.no/tree/master/',
+          editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
+          blogSidebarCount: 50,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -54,10 +55,24 @@ const config = {
         title: 'mifi.no',
         logo: {
           alt: 'Logo',
-          src: 'img/logo.svg',
+          src: 'logo.svg',
         },
         items: [
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left',
+          },
+          {
+            to: '/thanks',
+            label: 'Thanks',
+            position: 'left',
+          },
+          {
+            href: 'https://mifi.no/losslesscut/',
+            label: 'LosslessCut',
+            position: 'left',
+          },
           {
             href: 'https://github.com/mifi',
             label: 'GitHub',
@@ -67,9 +82,13 @@ const config = {
       },
       footer: {
         style: 'dark',
+        logo: {
+          src: 'logo.svg',
+          width: 30,
+        },
         links: [
           {
-            title: 'Community',
+            title: 'Follow',
             items: [
               {
                 label: 'Twitter',
@@ -78,6 +97,10 @@ const config = {
               {
                 label: 'YouTube',
                 href: 'https://www.youtube.com/c/mikaelfinstad',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/mifi',
               },
               {
                 label: 'Instagram',
@@ -97,14 +120,19 @@ const config = {
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/mifi',
+                label: 'Free wallpapers',
+                to: 'https://static.mifi.no/wp',
               },
+              {
+                label: 'Mail me',
+                to: 'mailto:mikael@yankee.no',
+              }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Mikael Finstad ❤️ Docusaurus`,
+        copyright: `© ${new Date().getFullYear()} Mikael Finstad ❤️ Docusaurus`,
       },
+      image: 'https://static.mifi.no/og-image.jpg',
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
