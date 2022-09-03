@@ -1,6 +1,6 @@
-# Website
+# mifi.no
 
-To replace blog.mifi.no and possibly mifi.no. Built using [Docusaurus 2](https://docusaurus.io/).
+Replaced blog.mifi.no and mifi.no. Built using [Docusaurus 2](https://docusaurus.io/).
 
 Old site can be found at https://github.com/mifi/mifi.no-old
 
@@ -28,4 +28,4 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-TODO
+Push master branch.

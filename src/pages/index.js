@@ -70,7 +70,7 @@ export default function Home() {
             {[
               'reactive-video', 'build-electron', 'instauto', 'react-lottie-player', 'telldus-api', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'form-encode-object', 'error-handler-json'
             ].map((project) => (
-              <Link to={`https://github.com/mifi/${project}`} style={{ padding: '6px 4px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} /> {project}</Link>
+              <Link to={`https://github.com/mifi/${project}`} style={{ padding: '8px 12px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} /> {project}</Link>
             ))}
           </div>
         </div>
