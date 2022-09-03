@@ -13,7 +13,10 @@ tags:
   - continuous delivery
   - release
 ---
+
 I [just released LosslessCut](https://blog.mifi.no/2020/04/01/losslesscut-now-on-the-mac-app-store-and-microsoft-store/) to stores on three different platforms Windows, Mac and Linux: Mac App Store, Microsoft Store, Snapcraft. I want to share the process and the hurdles I went through in this article.
+
+<!--truncate-->
 
 I think the key to any well-maintained project is to have an automated release pipeline, or else it will be a hassle every time one wants to do bug fixes and improvements. I have now taken some time to set up automated build and signing for Mac OS (notarization) as well as release to the Mac App Store, Microsoft Store and Snapcraft. I have used many CI systems but I find that the new Github Actions are very fast and feature rich, and with its reusable action ecosystem it is quite easy to use. And all the setup and configuration is of course available open source for anyone to see [here](https://github.com/mifi/lossless-cut/blob/master/.github/workflows/build.yml). See the actions in action(heh) [here](https://github.com/mifi/lossless-cut/actions), as a free reference for anyone else needing to set up an automated build and release process of their Electron app.
 

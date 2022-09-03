@@ -14,6 +14,8 @@ tags:
 
 If you need to scroll to a specific View in a ScrollView, specified by a prop `scrollToId` to that page, do something like this:
 
+<!--truncate-->
+
 ```javascript
 const Component = ({ entities, scrollToId }) => {
   const viewsRef = useRef({});

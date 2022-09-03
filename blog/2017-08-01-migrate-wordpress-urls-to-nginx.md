@@ -9,6 +9,8 @@ tags:
 I have migrated my blog from [WordPress](https://wordpress.org/) to [hexo](https://hexo.io/), but the old URLs need to be permanently redirected.
 I'm using NGINX as my web server, so I set up some rules for redirecting the old posts to the new URLs. It's a bit tricky because WordPress used query string param for identifying the page, but it can be sorted out using `if` and the NGINX `$arg_` variable. In order to generate these rules, I wrote a simple node script that runs through the exported Markdown files from WordPress. Markdown files were exported using [Jekyll Exporter](https://nb.wordpress.org/plugins/jekyll-exporter/) plugin.)
 
+<!--truncate-->
+
 `index.js`:
 ```javascript
 const fm = require('front-matter');

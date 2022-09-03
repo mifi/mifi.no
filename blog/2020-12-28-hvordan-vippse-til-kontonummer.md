@@ -6,7 +6,9 @@ tags: []
 ---
 Hvordan Vippse penger til et kontonummer i stedet for et telefonnummer:
 
-How to send money using the Vipps apps to an arbitrary bank account number instead of a phone number:
+This article shows how to send money using the Vipps apps to an arbitrary bank account number instead of a phone number.
+
+<!--truncate-->
 
 1 - Tap **Scan**
 

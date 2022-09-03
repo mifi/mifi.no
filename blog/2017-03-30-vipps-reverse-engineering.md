@@ -4,11 +4,15 @@ title: Reverse engineering DNB VIPPS API by injecting Charles cert as pinned SSL
 authors: mifi
 tags: []
 ---
-![charles](https://static.mifi.no/uploads/2017/03/Screen-Shot-2017-03-05-at-22.33.17.png)
 
 **UPDATE:** Outdated - [See new article](https://blog.mifi.no/2020/12/25/sniffing-ssl-traffic-on-android-vipps-payment-app/)
 
 The VIPPS app is using API SSL certificate pinning to prevent MITM attacks, and the pinned certificate(s) is stored in the APK itself, so it can easily be replaced by our own generated Charles certificate. This allows sniffing the data going from the app to VIPPS servers.
+
+<!--truncate-->
+
+![charles](https://static.mifi.no/uploads/2017/03/Screen-Shot-2017-03-05-at-22.33.17.png)
+
 # Instructions
 First download the APK from somewhere (google it)
 

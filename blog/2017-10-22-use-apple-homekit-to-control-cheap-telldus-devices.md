@@ -7,9 +7,11 @@ tags:
   - apple
 ---
 
-![](https://static.mifi.no/uploads/IMG_2777-1024.jpg)
-
 [homebridge-telldus](https://github.com/jchnlemon/homebridge-telldus) is a plugin for [homebridge](https://github.com/nfarina/homebridge) which allows you to control cheap 433MHz devices like wireless light switches and dimmers from Apple's Home integration. This is done through [Telldus Live](https://live.telldus.com/), which provides a free service and API integration for people who bought their devices like TellStick Net and TellStick ZNet Lite. It provides a very cheap way to control your house with Siri and Apple Home.
+
+<!--truncate-->
+
+![](https://static.mifi.no/uploads/IMG_2777-1024.jpg)
 
 See compatible hardware here:
 https://old.telldus.com/products/compability

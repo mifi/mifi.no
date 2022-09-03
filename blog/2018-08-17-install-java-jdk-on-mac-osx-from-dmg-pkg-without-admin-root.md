@@ -7,6 +7,8 @@ tags: [java]
 
 Oracle no longer provides compressed versions of JDK 😡 and require root to install (probably they also install an auto updater nagging you all the time)
 
+<!--truncate-->
+
 Download .dmg from Oracle and put in a directory
 
 `cd directory-with-dmg`

@@ -9,6 +9,8 @@ I made an example GitHub Action workflow that will automatically push all files 
 
 [Check it out!](https://github.com/mifi/github-action-push-static)
 
+<!--truncate-->
+
 ## Use cases
 
 - Publish static (gatsby, jekyll etc.) site to separate GitHub repository

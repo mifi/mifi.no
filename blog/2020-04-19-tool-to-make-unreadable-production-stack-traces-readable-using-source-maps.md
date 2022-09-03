@@ -24,6 +24,8 @@ TypeError h is not a function. (In 'h()', 'h' is undefined)
     [native code] value
 ```
 
+<!--truncate-->
+
 ...perhaps from production from a minified web JS bundle or a React Native error report in a tool like Bugsnag, Sentry or Crashlytics
 
 No source map yet uploaded to bugsnag? 😰

@@ -9,6 +9,8 @@ Editly is a tool and framework for declarative NLE (non-linear video editing) us
 
 There is a simple command line for quickly assembling a video from a set of clips or images, or you can use it from Javascript!
 
+<!--truncate-->
+
 [![demo](https://github.com/mifi/gifs/raw/master/commonFeatures.gif)](https://youtu.be/LNeclLkxUEY)
 
 This GIF/youtube was created with this command: "editly [commonFeatures.json5](https://github.com/mifi/editly/blob/master/examples/commonFeatures.json5)"

@@ -7,6 +7,8 @@ tags: []
 
 I [previously attempted to do the same](https://blog.mifi.no/2017/03/30/vipps-reverse-engineering/) with an early version of the Vipps (Norwegian easy payment app), but the app has changed a lot since then. I decided to try again with the current version, and I learned that it has implemented quite a few new countermeasures preventing the old method from working.
 
+<!--truncate-->
+
 ## The process
 
 First download Vipps app on an Android phone, then connect it and copy the app over USB:
