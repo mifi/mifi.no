@@ -78,9 +78,9 @@ export default function Home() {
 
       <div style={{ backgroundColor: 'black', padding: 6, marginTop: 40 }}>
         <div className={styles.instafeed}>
-          <Link to="https://www.youtube.com/watch?v=Zv5RvLhCz4M" style={{ display: 'block' }}><video className={styles.vidBlock} src="https://static.mifi.no/Zv5RvLhCz4M-small.mp4" playsinline preload="none" autoplay="autoplay" loop muted></video></Link>
-          <Link to="https://www.youtube.com/watch?v=uQIv8Vo9_Jc" style={{ display: 'block' }}><video className={styles.vidBlock} src="https://static.mifi.no/uQIv8Vo9_Jc-small.mp4" playsinline preload="none" autoplay="autoplay" loop muted></video></Link>
-          <Link to="https://www.youtube.com/watch?v=qnDpUbggHHQ" style={{ display: 'block' }}><video className={styles.vidBlock} src="https://static.mifi.no/qnDpUbggHHQ-small.mp4" playsinline preload="none" autoplay="autoplay" loop muted></video></Link>
+          <Link to="https://www.youtube.com/watch?v=Zv5RvLhCz4M" style={{ display: 'block' }}><video className={styles.vidBlock} src="https://static.mifi.no/Zv5RvLhCz4M-small.mp4" playsInline preload="none" autoPlay loop muted></video></Link>
+          <Link to="https://www.youtube.com/watch?v=uQIv8Vo9_Jc" style={{ display: 'block' }}><video className={styles.vidBlock} src="https://static.mifi.no/uQIv8Vo9_Jc-small.mp4" playsInline preload="none" autoPlay loop muted></video></Link>
+          <Link to="https://www.youtube.com/watch?v=qnDpUbggHHQ" style={{ display: 'block' }}><video className={styles.vidBlock} src="https://static.mifi.no/qnDpUbggHHQ-small.mp4" playsInline preload="none" autoPlay loop muted></video></Link>
         </div>
       </div>
       </>
