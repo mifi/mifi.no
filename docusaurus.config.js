@@ -107,6 +107,10 @@ const config = {
                 href: 'https://www.instagram.com/mifi.no/',
               },
               {
+                label: 'Product Hunt',
+                href: 'https://www.producthunt.com/@mifi',
+              },
+              {
                 label: 'Stack Overflow',
                 href: 'https://stackoverflow.com/users/6519037/mikael-finstad',
               },
