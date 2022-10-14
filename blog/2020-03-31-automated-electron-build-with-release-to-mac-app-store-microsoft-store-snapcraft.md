@@ -142,17 +142,30 @@ Create the following certs:
 - Mac App Distribution
 - Mac Development
 
-Then dowload them and drag drop into Keychain access
+Then dowload them and drag drop into Keychain access. You may safely delete the downloaded `.cer` files.
 
-Important: Now need to regenerate provisioning profile(s) after creating new certificates, and add the new profiles into the project (overwrite existing)
+**Important:** Now we need to regenerate provisioning profile(s) after creating new certificates, and add the new profiles into the project (overwrite existing).
 
-Then from Keychain access, select and export the following certificates to p12, and set MAC_CERTS and MAC_CERTS_PASSWORD in github secrets for the project:
+For each of the "App Store" and "Developement" Provisioning Profiles:
+- Go to Edit
+- For the Development profile, check all Certificates and Devices
+- For the App Store profile, check the newly generated "Mac App Distribution" certificate's radio box
+- then Save and Download
+
+Then from Keychain access, select and export the following certificates to `.p12` with a strong random password:
 - Developer ID Installer
 - Developer ID Application
-- Mac Installer Distribution
-- Mac App Distribution
+- 3rd Party Mac Developer Installer
+- 3rd Party Mac Developer Application
 
-See https://github.com/samuelmeuli/action-electron-builder#code-signing
+Make sure they are from the ones you just created, downloaded an imported to Keychain. (check date)
+
+In the GitHub project, set `MAC_CERTS_PASSWORD` to the generated password and set `MAC_CERTS` to the output of this command:
+```
+base64 -i Certificates.p12 -o -
+```
+
+See also https://github.com/samuelmeuli/action-electron-builder#code-signing
 
 Mas build can no longer be run locally on a dev Mac. For running mas app locally, we need to create a separate provisioning profile for development, with the Developer Mac's UUID and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
 
