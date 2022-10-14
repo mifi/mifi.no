@@ -81,7 +81,6 @@ export default function Thanks() {
 
       <div style={{ margin: '0 auto', fontSize: 28, display: 'flex', flexWrap: 'wrap', maxWidth: 1000 }}>
         <Supporter link="https://github.com/thomasbachem" icon={<FaGithubAlt />} name="thomasbachem" />
-        <Supporter link="https://github.com/OasisDigital" icon={<FaGithubAlt />} name="OasisDigital" />
         <Supporter link="https://github.com/msarahan" icon={<FaGithubAlt />} name="msarahan" />
         <Supporter link="https://github.com/terasaka2k" icon={<FaGithubAlt />} name="terasaka2k" />
         <Supporter link="https://github.com/peterhighgrove" icon={<FaGithubAlt />} name="peterhighgrove" />
@@ -93,8 +92,8 @@ export default function Thanks() {
         <Supporter link="https://www.patreon.com/cj_and_aya" icon={<span>🎉</span>} name="Nick T." />
         <Supporter icon={<span>🎉</span>} name="RB Evans" />
         <Supporter link="https://www.patreon.com/user?u=10565003" icon={<span>🎉</span>} name="BraveFart" />
-        <Supporter link="https://github.com/luqmannn" icon={<FaGithubAlt />} name="luqmannn" />
         <Supporter link="https://opencollective.com/jimmy-gee" icon={<CgOpenCollective />} name="Jimmy Gee" />
+        <Supporter link="https://github.com/Luen" icon={<FaGithubAlt />} name="Luen" />
       </div>
 
       <div style={{ marginTop: 80, marginBottom: 400, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
