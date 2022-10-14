@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaGithubAlt, FaHeart } from 'react-icons/fa';
+import { CgOpenCollective } from 'react-icons/cg';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
@@ -28,12 +29,17 @@ const linkStyle = {
 }
 
 const Supporter = ({ icon, name, link, children }) => {
-  const maybeLink = link ? <Link style={{ ...linkStyle, marginLeft: '.4em' }} to={link}>{name}</Link> : <div style={{ marginLeft: '.4em' }}>{name}</div>;
+  const SupporterInner = ({ children }) => (link ? (
+    <Link style={{ ...supporterStyle, ...linkStyle }} to={link}>{children}</Link>
+  ) : (
+    <div style={supporterStyle}>{children}</div>
+  ));
+
   return (
-    <div style={supporterStyle}>
+    <SupporterInner>
       {icon}
-      {maybeLink}
-    </div>
+      <span style={{ marginLeft: '.4em' }}>{name}</span>
+    </SupporterInner>
   );
 }
 
@@ -87,7 +93,8 @@ export default function Thanks() {
         <Supporter link="https://www.patreon.com/cj_and_aya" icon={<span>🎉</span>} name="Nick T." />
         <Supporter icon={<span>🎉</span>} name="RB Evans" />
         <Supporter link="https://www.patreon.com/user?u=10565003" icon={<span>🎉</span>} name="BraveFart" />
-        <Supporter link="https://github.com/luqmannn" icon={<FaGithubAlt />} name=" luqmannn" />
+        <Supporter link="https://github.com/luqmannn" icon={<FaGithubAlt />} name="luqmannn" />
+        <Supporter link="https://opencollective.com/jimmy-gee" icon={<CgOpenCollective />} name="Jimmy Gee" />
       </div>
 
       <div style={{ marginTop: 80, marginBottom: 400, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
