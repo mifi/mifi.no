@@ -19,11 +19,9 @@ export default function Home() {
         <div style={{ textTransform: 'uppercase', fontSize: 20, fontWeight: 300, color: '#999', marginBottom: 30 }}>Mikael Finstad</div>
 
         <div style={{ padding: '0px 10px 0px 10px', textAlign: 'center', lineHeight: '1.6em' }}>
-          <p>
-            <div><Link to="https://github.com/mifi/" className={styles.nicelink}>💙 Free software creator</Link></div>
-            <div>👨‍💻 Software consultant</div>
-            <div>🌋 <Link to="https://www.instagram.com/mifi.no/" className={styles.nicelink}>Traveller &amp; adventurer</Link></div>
-          </p>
+          <div><Link to="https://github.com/mifi/" className={styles.nicelink}>💙 Free software creator</Link></div>
+          <div>👨‍💻 Software consultant</div>
+          <div>🌋 <Link to="https://www.instagram.com/mifi.no/" className={styles.nicelink}>Traveller &amp; adventurer</Link></div>
         </div>
 
         <p style={{ margin: '30px 0', width: 600, maxWidth: '100%', textAlign: 'center' }}>
@@ -70,7 +68,7 @@ export default function Home() {
             {[
               'reactive-video', 'build-electron', 'instauto', 'react-lottie-player', 'telldus-api', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'form-encode-object', 'error-handler-json'
             ].map((project) => (
-              <Link to={`https://github.com/mifi/${project}`} style={{ padding: '8px 12px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} /> {project}</Link>
+              <Link key={project} to={`https://github.com/mifi/${project}`} style={{ padding: '8px 12px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} /> {project}</Link>
             ))}
           </div>
         </div>
