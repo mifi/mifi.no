@@ -6,16 +6,21 @@ tags:
   - apple
   - mac
 ---
-So I bought a MacBook Pro and wanted to start using Mac OS X as my primary OS. I'm used to Windows/Linux so I have some preferences as to behaviour. There are some things that are kind of annoying, many of which can be fixed. Also there are some tricks that make me more productive.
+
+I bought a MacBook Pro and wanted to start using Mac OS X as my primary OS. I'm used to Windows/Linux so I have some preferences as to behaviour. There are some things that are kind of annoying, many of which can be fixed. Also there are some tricks that make me more productive.
+
+## Disable trackpad acceleration
+
+Install https://github.com/linearmouse/linearmouse
 
 ## Command line settings
 
 ```bash
-# Disable trackpad acceleration:
-defaults write .GlobalPreferences com.apple.trackpad.scaling -1
+# Disable trackpad acceleration (no longer works on M2):
+# defaults write .GlobalPreferences com.apple.trackpad.scaling -1
 
-# If you have an external mouse, you have to disable its acceleration separately:
-defaults write .GlobalPreferences com.apple.mouse.scaling -1
+# If you have an external mouse, you have to disable its acceleration separately (no longer works on M2):
+# defaults write .GlobalPreferences com.apple.mouse.scaling -1
 
 # Always show Finder path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -125,6 +130,13 @@ Add to the **top** of `/etc/pam.d/sudo`:
 ```
 auth       sufficient     pam_tid.so
 ```
+
+## Reduce space usage
+
+System Settings -> Storage
+- Music Creation -> Remove Garageband Sound Library
+- Remove unneeded stock apps
+- Developer tools
 
 ## Tricks
 
