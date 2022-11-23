@@ -144,25 +144,25 @@ Create the following certs:
 
 Then dowload them and drag drop into Keychain access. You may safely delete the downloaded `.cer` files.
 
-Note that MAS build can no longer be run locally on a dev Mac. For running MAS app locally, we need to create a separate provisioning profile for development, with the **Developer Mac's UUID** and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
+Note that MAS build can no longer be run locally on a dev Mac. For running MAS app locally, we need to create a separate provisioning profile for development, with the **Developer Mac's UDID** and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
 
 **Important:** Now we need to regenerate provisioning profile(s) after creating new certificates.
 
 For each of the "App Store" and "Developement" Provisioning Profiles:
+- First, for the Development provisioning profile, make sure that the Mac's device UDID is registered. be sure to use the **Provisioning UDID**, **not** the Hardware UUID [More information about registering device](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices)
 - Go to Edit
-- For the Development profile, check all Certificates and Devices
-- For the Development profile, make sure that the Mac's device UUID is registered. Then select the Mac [More information about registering device](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices)
+- For the Development profile, check all Certificates and Devices, and select the device you registered earlier.
 - For the App Store profile, check the newly generated "Mac App Distribution" certificate's radio box
 - Then Save and Download
 
-For the App Store profile, run:
+For the App Store provisioning profile, run:
 ```bash
 base64 < LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | pbcopy
 ```
 
-Then paste to a new env variable `PROVISIONING_PROFILE_BASE64` (or replace existing) at https://github.com/mifi/lossless-cut/settings/secrets/actions/new
+...then paste to a new env variable `PROVISIONING_PROFILE_BASE64` (or replace existing) at https://github.com/mifi/lossless-cut/settings/secrets/actions/new
 
-For the Development profile, add the new profile into the project (overwrite existing). (don't check into git)
+For the Development profile, add the new profile into the project (don't check it into git.)
 
 Then from Keychain access, select and export the following certificates to `.p12` with a strong random password:
 - Developer ID Installer
