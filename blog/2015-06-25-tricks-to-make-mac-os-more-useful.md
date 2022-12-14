@@ -67,8 +67,10 @@ sudo mdutil -a -i off
 # Disable indexing in XCode
 defaults write com.apple.dt.XCode IDEIndexDisable 1
 
-# Show hidden / dotfiles
+# enable VSCode Autorepeat
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
+# Show hidden / dotfiles
 defaults write com.apple.finder AppleShowAllFiles true; killall Finder 
 ```
 
@@ -156,6 +158,7 @@ Print screen: **<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>** (press space 
 
 ## References
 
+* https://git.herrbischoff.com/awesome-macos-command-line/about/
 * https://gist.github.com/lexrus/081fa687d8b2475d3367
 * https://github.com/divio/osx-bootstrap/blob/master/core/defaults.sh
 * https://github.com/herrbischoff/awesome-osx-command-line
