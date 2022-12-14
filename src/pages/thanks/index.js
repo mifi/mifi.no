@@ -80,6 +80,7 @@ export default function Thanks() {
       </div>
 
       <div style={{ margin: '0 auto', fontSize: 28, display: 'flex', flexWrap: 'wrap', maxWidth: 1000 }}>
+        <Supporter link="https://github.com/t3dotgg" icon={<FaGithubAlt />} name="t3dotgg" />
         <Supporter link="https://github.com/thomasbachem" icon={<FaGithubAlt />} name="thomasbachem" />
         <Supporter link="https://github.com/msarahan" icon={<FaGithubAlt />} name="msarahan" />
         <Supporter link="https://github.com/terasaka2k" icon={<FaGithubAlt />} name="terasaka2k" />
