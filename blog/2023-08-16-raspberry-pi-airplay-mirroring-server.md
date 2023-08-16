@@ -86,6 +86,29 @@ sudo apt install gstreamer1.0-alsa
 sudo usermod -a -G audio pi
 ```
 
+Edit `/home/pi/.asoundrc`
+
+```
+pcm.!default {
+  type asym
+  playback.pcm {
+    type plug
+    slave.pcm "output"
+  }
+  capture.pcm {
+    type plug
+    slave.pcm "input"
+  }
+}
+
+pcm.output "hdmi:CARD=vc4hdmi,DEV=0"
+
+ctl.!default {
+  type hw
+  card 1
+}
+```
+
 `sudo raspi-config` then choose: System -> Audio -> HDMI
 
 ## Setup simple desktop (run on boot)
