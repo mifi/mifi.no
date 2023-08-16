@@ -48,6 +48,13 @@ sudo usermod -a -G tty pi
 allowed_users = anybody
 ```
 
+### Openbox
+
+Openbox is needed for fullscreen / scaling to work properly. Without a Window manager, the window will probably get cropped.
+
+```bash
+sudo apt install openbox
+```
 
 ## Install UxPlay
 
@@ -136,8 +143,10 @@ xset s off
 xset -dpms
 xset s noblank
 
+openbox &
+
 while true; do
-  /home/pi/UxPlay/uxplay -bt709 -nh -n TV -fs -as alsasink
+  /home/pi/UxPlay/uxplay -bt709 -nh -n TV -fs -as alsasink -nohold
   sleep 5
 done
 ```
