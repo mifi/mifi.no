@@ -31,4 +31,8 @@ CONTENT
 const date = new Date().toISOString().split('T')[0];
 const filename = `${date}-${slug}.md`;
 
-await writeFile(new URL(`blog/${filename}`, import.meta.url), md);
+const filePath = new URL(`blog/${filename}`, import.meta.url);
+
+await writeFile(new URL(filePath), md);
+
+console.log(filePath.toString());
