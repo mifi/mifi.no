@@ -76,6 +76,18 @@ startx
 DISPLAY=:0 ./uxplay -bt709 -nh -n TV -fs
 ```
 
+## Setup audio
+
+```bash
+sudo apt install gstreamer1.0-alsa
+```
+
+```bash
+sudo usermod -a -G audio pi
+```
+
+`sudo raspi-config` then choose: System -> Audio -> HDMI
+
 ## Setup simple desktop (run on boot)
 
 We'll use LightDM to provide a desktop.
@@ -102,7 +114,7 @@ xset -dpms
 xset s noblank
 
 while true; do
-  /home/pi/UxPlay/uxplay -bt709 -nh -n TV -fs
+  /home/pi/UxPlay/uxplay -bt709 -nh -n TV -fs -as alsasink
   sleep 5
 done
 ```
@@ -110,4 +122,3 @@ done
 `sudo raspi-config` then enable: System -> Boot -> Desktop GUI, automatically logged in as 'pi' user.
 
 Reboot and test!
-
