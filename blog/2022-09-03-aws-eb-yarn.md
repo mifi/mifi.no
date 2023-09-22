@@ -33,12 +33,21 @@ Create `.platform/hooks/predeploy/yarn.sh`:
 corepack yarn
 ```
 
+**Update:** As of Amazon Linux 2023, `corepack` is no longer included, and needs to be explicitly installed:
+
+Edit `your_project/.platform/hooks/prebuild/corepack.sh`:
+```bash
+#!/bin/bash
+npm i -g corepack
+```
+
 > :warning: Be sure to also create symlinks under `confighooks` in your project, or else it will fail to build when changing config (e.g. updating environment values):
 
 ```bash
 mkdir -p .platform/confighooks/{prebuild,predeploy}
 ln -s ../../hooks/predeploy/yarn.sh .platform/confighooks/predeploy/yarn.sh
 ln -s ../../hooks/prebuild/prevent-npm.sh .platform/confighooks/prebuild/prevent-npm.sh
+ln -s ../../hooks/prebuild/corepack.sh .platform/confighooks/prebuild/corepack.sh
 ```
 
 ## References:
