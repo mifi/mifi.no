@@ -24,20 +24,11 @@ I think the key to any well-maintained project is to have an automated release p
 
 ![](https://static.mifi.no/uploads/screenshot-2020-03-31-at-15.58.18.png)
 
-Building and releasing for big stores like Microsoft and Mac App Store can be a true hassle and a nightmare that can take weeks to set up, however thanks to awesome projects like `electron-builder` and `action-electron-builder`, it is not really that bad and only took me a few days.
-
-Here are the most valuable resources I used to set up everything:
-
-* https://www.electron.build/
-* https://github.com/samuelmeuli/action-electron-builder
-* https://github.com/samuelmeuli/action-snapcraft
-* https://github.com/samuelmeuli/mini-diary/blob/master/package.json
-* https://github.com/electron-userland/electron-builder/issues/4293
-* https://github.com/nektos/act
+Building and releasing for big stores like Microsoft and Mac App Store can be a true hassle and a nightmare that can take weeks to set up, however thanks to awesome projects like `electron-builder` and `action-electron-builder`, it is not really that bad and only took me a few days to setup, and once setup the code is automatically built and ready to be released. The only remaining task is regenerating Apple certificates and provisioning profiles once per year.
 
 # Biggest issues
 
-The things that I had the most trouble with were:
+The things that I had the most trouble with when setting up were:
 
 ## Getting all the correct metadata in place
 
@@ -47,7 +38,7 @@ This is mostly handled by `electron-builder` and can be seen in [package.json](h
 
 In `package.json`, `hardenedRuntime` needs to be set to `true` for the `mac` platform, because notarized apps need to be hardened.
 
-However for Mac App Store signed apps `mas`, it **needs to be set to false**.
+However for Mac App Store signed apps `mas`, it **needs to be set to `false`**.
 
 ## Microsoft Store
 
@@ -133,26 +124,25 @@ Then rebuild and verify that the `____chkstk_darwin` symbol reference is gone.
 
 ### Certificate creation/renewal
 
-Go to certificates
-https://developer.apple.com/account/resources/certificates/list
-Create the following certs:
-- Developer ID Installer
-- Developer ID Application
+First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA
+
+Go to [certificates](https://developer.apple.com/account/resources/certificates/list) and create the following certs:
+- Developer ID Installer (maybe not needed if already long expiry)
+- Developer ID Application (maybe not needed if already long expiry)
 - Mac Installer Distribution
 - Mac App Distribution
 - Mac Development
 
 Then dowload them and drag drop into Keychain access. You may safely delete the downloaded `.cer` files.
 
-Note that MAS build can no longer be run locally on a dev Mac. For running MAS app locally, we need to create a separate provisioning profile for development, with the **Developer Mac's UDID** and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
+Note that the Electron `mas` build can no longer be run locally on a dev Mac. For running MAS app locally, we need to create a separate provisioning profile for development, with the **Developer Mac's UDID** and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
 
-**Important:** Now we need to regenerate provisioning profile(s) after creating new certificates.
+Under [Devices](https://developer.apple.com/account/resources/devices/list), make sure that the your development Mac's device UDID is registered. Be sure to use the **Provisioning UDID**, *not the Hardware UUID* [More information about registering device](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices).
 
-For each of the "App Store" and "Developement" Provisioning Profiles:
-- First, for the Development provisioning profile, make sure that the Mac's device UDID is registered. be sure to use the **Provisioning UDID**, **not** the Hardware UUID [More information about registering device](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices)
+Now we need to regenerate [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list). For each of the "App Store" and "Developement" Provisioning Profiles:
 - Go to Edit
-- For the Development profile, check all Certificates and Devices, and select the device you registered earlier.
-- For the App Store profile, check the newly generated "Mac App Distribution" certificate's radio box
+- (For the Development profile only) check all Certificates and Devices, and select the device you registered earlier.
+- (For the App Store profile only) check the newly generated "Mac App Distribution" certificate's radio box
 - Then Save and Download
 
 For the App Store provisioning profile, run:
@@ -160,26 +150,32 @@ For the App Store provisioning profile, run:
 base64 < LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | pbcopy
 ```
 
-...then paste to a new env variable `PROVISIONING_PROFILE_BASE64` (or replace existing) at https://github.com/mifi/lossless-cut/settings/secrets/actions/new
+...then paste to a new env variable (or replace existing) `PROVISIONING_PROFILE_BASE64` at https://github.com/mifi/lossless-cut/settings/secrets/actions/new
 
-For the Development profile, add the new profile into the project (don't check it into git.)
+For the Development profile, add the new profile into the project folder (don't check it into git.)
 
-Then from Keychain access, select and export the following certificates to `.p12` with a strong random password:
-- Developer ID Installer
+From Keychain access, go to My Certificates, then select the following certificates and export to `.p12` with a strong random password:
 - Developer ID Application
+- Developer ID Installer
 - 3rd Party Mac Developer Installer
 - 3rd Party Mac Developer Application
 
 Make sure they are from the ones you just created, downloaded an imported to Keychain. (check date)
 
 In the GitHub project, set `MAC_CERTS_PASSWORD` to the generated password and set `MAC_CERTS` to the output of this command:
-```
+```bash
 base64 -i Certificates.p12 -o -
 ```
 
 See also https://github.com/samuelmeuli/action-electron-builder#code-signing
 
 See also:
+ https://www.electron.build/
+- https://github.com/samuelmeuli/action-electron-builder
+- https://github.com/samuelmeuli/action-snapcraft
+- https://github.com/samuelmeuli/mini-diary/blob/master/package.json
+- https://github.com/electron-userland/electron-builder/issues/4293
+- https://github.com/nektos/act
 - https://github.com/pyinstaller/pyinstaller/issues/694
 - https://support.zabbix.com/browse/ZBX-17114
 - https://github.com/acoustid/ffmpeg-build/blob/master/build-macos.sh
