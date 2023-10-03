@@ -28,6 +28,10 @@ Apparently most mainstream VPNs like NordVPN, ExpressVPN etc. all *claim* to wor
 
 - https://www.reddit.com/r/China/comments/13lhb9n/am_i_able_to_buy_and_use_letsvpn_while_in_china/
 
+## Clodflare WARP+ (aka. 1.1.1.1)
+
+Reportedly this service works well in China because Cloudflare runs the VPN on the same servers of websites that Chinese rely on every day, making it harder to block.
+
 ## [Shadowrocket](https://apps.apple.com/ca/app/shadowrocket/id932747118)
 
 Shadowrocket is a **paid** iOS/iPadOS app that also works on Apple Silicon Macs (M1/M2) due to ARM. This app supports most exotic open source tunneling protocols and can also be used with other servers than WannaFlix 👍
