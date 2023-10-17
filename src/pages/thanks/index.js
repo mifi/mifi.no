@@ -61,7 +61,13 @@ export default function Thanks() {
 
         <div style={{ zIndex: 1, maxWidth: 600, backgroundColor: 'rgba(243, 244, 237, 0.6)', color: 'black', padding: 10, borderRadius: 5, marginTop: 10, marginBottom: 40 }}>
           <div style={{ fontWeight: 'bold', marginBottom: 10 }}>Want to support my free work?</div>
-          <div style={{ marginBottom: 10 }}><Link style={{ ...linkStyle, color: '#1e6f5c', fontWeight: 'bold' }} to="https://paypal.me/mifino/usd">PayPal</Link> | <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="https://github.com/sponsors/mifi">GitHub sponsors</Link> | <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="stripe">Stripe</Link> | <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="https://opencollective.com/losslesscut">OpenCollective</Link></div>
+          <div style={{ marginBottom: 10 }}>
+            <Link style={{ ...linkStyle, color: '#1e6f5c', fontWeight: 'bold' }} to="https://paypal.me/mifino/usd">PayPal</Link>{' | '}
+            <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="https://github.com/sponsors/mifi">GitHub sponsors</Link>{' | '}
+            <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="stripe">Stripe</Link>{' | '}
+            <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="stripe">微信支付</Link>{' | '}
+            <Link style={{ ...linkStyle, color: '#1e6f5c' }} to="https://opencollective.com/losslesscut">OpenCollective</Link>
+          </div>
           <div style={{ fontWeight: 'bold' }}>Bitcoin:</div>
           <div style={{ wordBreak: 'break-all', marginBottom: 10 }}><a style={linkStyle} href="bitcoin:197wMK3YkwFgqrmRQbMgFb4ADCX6q6FiMW">197wMK3YkwFgqrmRQbMgFb4ADCX6q6FiMW</a></div>
           <div style={{ fontWeight: 'bold' }}>Ethereum</div>
