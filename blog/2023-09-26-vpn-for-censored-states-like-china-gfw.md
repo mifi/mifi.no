@@ -145,6 +145,19 @@ Trojan is a newer protocol designed to act like HTTPS which is the most common t
 
 ...
 
+## Update *Oct 24 2023*
+
+I only made it to the border between Hong Kong and China, before having to go back to Hong Kong. Anyways, I managed to log onto the Chinese WiFi and test some VPNs.
+- SurfShark did not work in China.
+- Free providers like VPN.fail and sshOcean (through Shadowrocket) did not work.
+- CloudFlare WARP (not plus) did not work
+- **Hong Kong SIM with China roaming worked!** Although personal hotspot did not seem to work using the SIM.
+- **LetsVPN worked!**
+
+### The story of failed entry
+
+> Just went to Lo Wu / Luohu office today at 14:00 to get the 5 day port visa aka visa on arrival. Even though the «application hours» on the door says 09 to 16:30, the had «run out» of queue number tickets, so they were just rejecting everyone and not giving out any more visa on arrival for the day. Talking to some other people they said that China now has a quota of a hundred visa on arrivals each day, and once the quota is filled, they will just reject everyone. If you want to be certain to get an entry ticket you have to queue at 8am and once inside, wait for them to process your application which takes a few hours. They have two batches, one before 12 and one after 12. If you don’t make it in the first batch you might have to wait until the end of the day to get your visa processed. Then once rejected, they take your passport and you have to wait two hours in No Mans Land without any information while they process the re-entry into Hong Kong, until they finally release you. Wasted a whole day on this, so not sure if I would do it again.
+
 ## Other / technical info
 - https://github.com/net4people/bbs/issues/129
 - https://github.com/klzgrad/naiveproxy
