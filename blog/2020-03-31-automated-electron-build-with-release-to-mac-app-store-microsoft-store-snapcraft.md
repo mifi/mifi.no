@@ -18,21 +18,19 @@ I [just released LosslessCut](https://blog.mifi.no/2020/04/01/losslesscut-now-on
 
 <!--truncate-->
 
-I think the key to any well-maintained project is to have an automated release pipeline, or else it will be a hassle every time one wants to do bug fixes and improvements. I have now taken some time to set up automated build and signing for Mac OS (notarization) as well as release to the Mac App Store, Microsoft Store and Snapcraft. I have used many CI systems but I find that the new Github Actions are very fast and feature rich, and with its reusable action ecosystem it is quite easy to use. And all the setup and configuration is of course available open source for anyone to see [here](https://github.com/mifi/lossless-cut/blob/master/.github/workflows/build.yml). See the actions in action(heh) [here](https://github.com/mifi/lossless-cut/actions), as a free reference for anyone else needing to set up an automated build and release process of their Electron app.
+I believe the key to any well-maintained project is to have an automated release pipeline, or else it will be a hassle every time one wants to do bug fixes and improvements. I have now taken some time to set up automated build and signing for Mac OS (notarization) as well as release to the Mac App Store, Microsoft Store and Snapcraft. I have used many CI systems but I find that the new Github Actions are very fast and feature rich, and with its reusable action ecosystem it is quite easy to use. And all the setup and configuration is of course available open source for anyone to see [here](https://github.com/mifi/lossless-cut/blob/master/.github/workflows/build.yml). See the actions in action(heh) [here](https://github.com/mifi/lossless-cut/actions), as a free reference for anyone else needing to set up an automated build and release process of their Electron app.
 
 ![](https://static.mifi.no/uploads/screenshot-2020-03-31-at-15.58.55.png)
 
 ![](https://static.mifi.no/uploads/screenshot-2020-03-31-at-15.58.18.png)
 
-Building and releasing for big stores like Microsoft and Mac App Store can be a true hassle and a nightmare that can take weeks to set up, however thanks to awesome projects like `electron-builder` and `action-electron-builder`, it is not really that bad and only took me a few days to setup, and once setup the code is automatically built and ready to be released. The only remaining task is regenerating Apple certificates and provisioning profiles once per year.
-
-# Biggest issues
+Building and releasing for big stores like Microsoft and Mac App Store can be a true nightmare that can take weeks to set up, however thanks to awesome projects like `electron-builder` and `action-electron-builder`, it is not really that bad and only took me a few days to setup, and once setup the code is automatically built and ready to be released. The only recurring task is regenerating Apple certificates and provisioning profiles once per year.
 
 The things that I had the most trouble with when setting up were:
 
-## Getting all the correct metadata in place
+## Correct metadata
 
-This is mostly handled by `electron-builder` and can be seen in [package.json](https://github.com/mifi/lossless-cut/blob/master/package.json), but some things did not give an error until a human looked at it during the review process.
+Getting all the correct metadata in place was mostly handled by `electron-builder` and can be seen in [package.json](https://github.com/mifi/lossless-cut/blob/master/package.json), but some things did not give an error until a human looked at it during the review process.
 
 ## Hardened runtime
 
@@ -126,18 +124,17 @@ Then rebuild and verify that the `____chkstk_darwin` symbol reference is gone.
 
 First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA
 
-Go to [certificates](https://developer.apple.com/account/resources/certificates/list) and create the following certs:
+Go to [certificates](https://developer.apple.com/account/resources/certificates/list). For Mac App Store and Notarized apps, create the following certs:
 - Developer ID Installer (maybe not needed if already long expiry)
 - Developer ID Application (maybe not needed if already long expiry)
 - Mac Installer Distribution
 - Mac App Distribution
 - Mac Development
 
-Then dowload them and drag drop into Keychain access. You may safely delete the downloaded `.cer` files.
+However for notarized only apps (non App Store), you only need to create this certificate:
+- Developer ID Application
 
-Note that the Electron `mas` build can no longer be run locally on a dev Mac. For running MAS app locally, we need to create a separate provisioning profile for development, with the **Developer Mac's UDID** and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
-
-Under [Devices](https://developer.apple.com/account/resources/devices/list), make sure that the your development Mac's device UDID is registered. Be sure to use the **Provisioning UDID**, *not the Hardware UUID* [More information about registering device](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices).
+Then dowload them and drag drop into Keychain access. You may then safely delete the downloaded `.cer` files.
 
 Now we need to regenerate [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list). For each of the "App Store" and "Developement" Provisioning Profiles:
 - Go to Edit
@@ -154,11 +151,14 @@ base64 < LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | pbcop
 
 For the Development profile, add the new profile into the project folder (don't check it into git.)
 
-From Keychain access, go to My Certificates, then select the following certificates and export to `.p12` with a strong random password:
+From Keychain access, go to My Certificates, then select the following certificates (Mac App Store + Notarized) and export to `.p12` with a strong random password:
 - Developer ID Application
 - Developer ID Installer
 - 3rd Party Mac Developer Installer
 - 3rd Party Mac Developer Application
+
+If notarized build only (no Mac App Store), you need:
+- Developer ID Application
 
 Make sure they are from the ones you just created, downloaded an imported to Keychain. (check date)
 
@@ -167,10 +167,16 @@ In the GitHub project, set `MAC_CERTS_PASSWORD` to the generated password and se
 base64 -i Certificates.p12 -o -
 ```
 
-See also https://github.com/samuelmeuli/action-electron-builder#code-signing
+### Testing mas builds locally
 
-See also:
- https://www.electron.build/
+Note that the Electron `mas` build can no longer be run locally on a dev Mac. For running MAS app locally, we need to create a separate provisioning profile for development, with the **Developer Mac's UDID** and use `mas-dev` with that profile. See [this issue](https://github.com/electron-userland/electron-builder/issues/1196#issuecomment-310638965).
+
+Under [Devices](https://developer.apple.com/account/resources/devices/list), make sure that the your development Mac's device UDID is registered. Be sure to use the **Provisioning UDID**, *not the Hardware UUID* [More information about registering device](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices).
+
+## See also
+
+- https://github.com/samuelmeuli/action-electron-builder#code-signing
+- https://www.electron.build/
 - https://github.com/samuelmeuli/action-electron-builder
 - https://github.com/samuelmeuli/action-snapcraft
 - https://github.com/samuelmeuli/mini-diary/blob/master/package.json
