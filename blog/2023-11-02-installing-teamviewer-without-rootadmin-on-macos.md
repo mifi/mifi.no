@@ -13,9 +13,11 @@ It used to be so easy to connect to someone's computer using TeamViewer, because
 
 ## There is a solution
 
-First, copy `Install TeamViewer.app` from the `.dmg` to your home folder. Now we can extract the `.pkg` file:
+First, copy `Install TeamViewer.app` from inside the `.dmg` to your home folder. Now we can extract the `.pkg` file:
 
 ```bash
+cd ~
+
 pkgutil --expand-full Install\ TeamViewer.app/Contents/Resources/Install\ TeamViewer.pkg TeamViewer-extracted/
 ```
 
@@ -26,7 +28,7 @@ $ ls TeamViewer-extracted
 AuthPluginPackage.pkg/ RemotePrintingPackage.pkg/ Distribution Resources/ FullEnforceUIVersionPackage.pkg/ TeamViewerApp.pkg/ FullSilentInstallerPackage.pkg/ UninstallerAppPackage.pkg/ PriviledgedHelperPackage.pkg/ UninstallerHelperPackage.pkg/ RemoteAudioDriverPackage.pkg/
 ```
 
-We don't need any of those. Instead we will just grab the `TeamViewer.app` from inside mv `TeamViewerApp.pkg`:
+We don't need any of those. Instead we will just grab the `TeamViewer.app` from inside `TeamViewerApp.pkg`:
 ```bash
 mv TeamViewer-extracted/TeamViewerApp.pkg/Payload/TeamViewer.app ~/Desktop/
 ```
