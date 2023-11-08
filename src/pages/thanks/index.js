@@ -87,15 +87,14 @@ export default function Thanks() {
 
       <div style={{ margin: '0 auto', fontSize: 28, display: 'flex', flexWrap: 'wrap', maxWidth: 1000 }}>
         <Supporter link="https://github.com/t3dotgg" icon={<FaGithubAlt />} name="t3dotgg" />
-        <Supporter link="https://github.com/thomasbachem" icon={<FaGithubAlt />} name="thomasbachem" />
+        <Supporter link="https://github.com/nick2i" icon={<FaGithubAlt />} name="nick2i" />
         <Supporter link="https://github.com/msarahan" icon={<FaGithubAlt />} name="msarahan" />
-        <Supporter link="https://github.com/terasaka2k" icon={<FaGithubAlt />} name="terasaka2k" />
-        <Supporter link="https://github.com/peterhighgrove" icon={<FaGithubAlt />} name="peterhighgrove" />
         <Supporter link="https://unli.xyz/" icon={<span>🎉</span>} name="Jacob Chapman" />
         <Supporter link="https://www.patreon.com/user/creators?u=36832428" icon={<span>🎉</span>} name="mav6771" />
         <Supporter link="https://github.com/sparanoid" icon={<FaGithubAlt />} name="sparanoid" />
         <Supporter link="https://www.terranovadance.com/" icon={<span>🎉</span>} name="Formica" />
         <Supporter link="https://github.com/SignpostMarv" icon={<FaGithubAlt />} name="SignpostMarv" />
+        <Supporter link="https://github.com/vegeta897" icon={<FaGithubAlt />} name="vegeta897" />
         <Supporter link="https://www.patreon.com/cj_and_aya" icon={<span>🎉</span>} name="Nick T." />
         <Supporter icon={<span>🎉</span>} name="RB Evans" />
         <Supporter link="https://www.patreon.com/user?u=10565003" icon={<span>🎉</span>} name="BraveFart" />
