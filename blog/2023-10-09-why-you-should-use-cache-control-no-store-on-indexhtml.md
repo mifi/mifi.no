@@ -9,9 +9,9 @@ Because of iOS Safari.
 
 <!--truncate-->
 
-I would say Safari on iOS has become the new IE - they have to do everything a little bit different.
+I would say Safari on iOS has become the new IE - they just *have* to do things a little bit different.
 
-Isn't it nice to have a HTTP standard [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) response header that lets us control how browsers cache our content? Well yes, until of course one of the most popular browsers doen't follow that standard.
+Isn't it nice to have a HTTP standard [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) response header that lets us control how browsers cache our content? Well yes, until of course one of the most popular browsers doesn't follow that standard.
 
 When building a website, e.g. single page application, we like to set `Cache-Control` `no-cache` or `max-age=300, must-revalidate` on the index page (`/`). That way, the browser will always revalidate with the server before considering using a cached version, and we can make sure that we're not serving old content to the user when pushing updates! 🙌 This seems to work nicely in most browsers. Even Safari on MacOS behaves like this. But not Safari on iOS 🤡
 
