@@ -24,10 +24,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - run: yarn install --immutable
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
       - run: yarn build
       - run: yarn deploy
         env:
