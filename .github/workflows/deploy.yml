@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      # https://github.com/actions/setup-node/issues/531
+      SKIP_YARN_COREPACK_CHECK: true
+    
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
