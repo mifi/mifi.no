@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '@theme-original/BlogPostItem/Footer';
 import Giscus from '@giscus/react';
 
-import {useBlogPost} from '@docusaurus/theme-common/internal';
+import {useBlogPost} from '@docusaurus/theme-common/lib/internal.js';
 
 export default function FooterWrapper(props) {
   const { isBlogPostPage } = useBlogPost();
