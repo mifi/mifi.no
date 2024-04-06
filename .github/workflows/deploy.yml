@@ -8,10 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    env:
-      # https://github.com/actions/setup-node/issues/531
-      SKIP_YARN_COREPACK_CHECK: true
     
     steps:
       - uses: actions/checkout@v3
@@ -26,9 +22,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - run: yarn deploy
+      - run: corepack yarn install --immutable
+      - run: corepack yarn build
+      - run: corepack yarn deploy
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_INVALIDATE_DISTRIBUTION_ID: ${{ secrets.AWS_INVALIDATE_DISTRIBUTION_ID }}
