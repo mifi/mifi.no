@@ -122,22 +122,25 @@ Then rebuild and verify that the `____chkstk_darwin` symbol reference is gone.
 
 ### Certificate creation/renewal
 
-First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA
+First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA. Enter email. "Saved to disk".
 
-Go to [certificates](https://developer.apple.com/account/resources/certificates/list). For Mac App Store and Notarized apps, create the following certs:
-- Developer ID Installer (maybe not needed if already long expiry)
-- Developer ID Application (maybe not needed if already long expiry)
-- Mac Installer Distribution
-- Mac App Distribution
-- Mac Development
+Go to [certificates](https://developer.apple.com/account/resources/certificates/list). See which certificates that are about to expire soon - only generate those.
 
-However for notarized only apps (non App Store), you only need to create this certificate:
-- Developer ID Application
+For notarized only apps (non-App Store), you only need to create this certificate:
+- `Developer ID Application`
 
-Then dowload them and drag drop into Keychain access. You may then safely delete the downloaded `.cer` files.
+For Mac App Store and Notarized apps create the following certs:
+- `Developer ID Installer` (not needed if already long expiry)
+- `Developer ID Application` (not needed if already long expiry)
+- `Mac Installer Distribution`
+- `Mac App Distribution`
+- `Mac Development`
 
-Now we need to regenerate [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list). For each of the "App Store" and "Developement" Provisioning Profiles:
-- Go to Edit
+Then dowload them and drag drop into Keychain Access ("Login" keychain). You may then safely delete the downloaded `.cer` files.
+
+Now regenerate [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list). For **each of** the "App Store" and "Developement" Provisioning Profiles:
+- Open the provisioning profile
+- Edit
 - (For the Development profile only) check all Certificates and Devices, and select the device you registered earlier.
 - (For the App Store profile only) check the newly generated "Mac App Distribution" certificate's radio box
 - Then Save and Download
@@ -147,25 +150,26 @@ For the App Store provisioning profile, run:
 base64 < LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | pbcopy
 ```
 
-...then paste to a new env variable (or replace existing) `PROVISIONING_PROFILE_BASE64` at https://github.com/mifi/lossless-cut/settings/secrets/actions/new
+...then paste the clipboard contents to replace the env variable in the GitHub project [`PROVISIONING_PROFILE_BASE64`](https://github.com/mifi/lossless-cut/settings/secrets/actions/PROVISIONING_PROFILE_BASE64).
 
 For the Development profile, add the new profile into the project folder (don't check it into git.)
 
-From Keychain access, go to My Certificates, then select the following certificates (Mac App Store + Notarized) and export to `.p12` with a strong random password:
-- Developer ID Application
-- Developer ID Installer
-- 3rd Party Mac Developer Installer
-- 3rd Party Mac Developer Application
+In Keychain Access go to Login keychain -> My Certificates
 
-If notarized build only (no Mac App Store), you need:
-- Developer ID Application
+For Mac App Store + Notarized apps, select the following certificates (if duplicates, choose the one with the longest expiry):
+- `Developer ID Application: *`
+- `Developer ID Installer: *`
+- `3rd Party Mac Developer Installer: *`
+- `3rd Party Mac Developer Application: *`
 
-Make sure they are from the ones you just created, downloaded an imported to Keychain. (check date)
+If notarized build only (no Mac App Store), select:
+- `Developer ID Application: *`
 
-In the GitHub project, set `MAC_CERTS_PASSWORD` to the generated password and set `MAC_CERTS` to the output of this command:
-```bash
-base64 -i Certificates.p12 -o -
-```
+Then right click and export to `Certificates.p12` with a strong random password, note the password.
+
+In the GitHub project replace:
+- [`MAC_CERTS_PASSWORD`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS_PASSWORD) with the generated password.
+- [`MAC_CERTS`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS) to the output of this command: `base64 -i Certificates.p12 -o -`
 
 ### Testing mas builds locally
 
