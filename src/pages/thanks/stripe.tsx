@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
@@ -7,7 +7,7 @@ import styles from './stripe.module.css';
 
 const testMode = false;
 
-const wrapperStyle = {
+const wrapperStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -28,7 +28,7 @@ export default function Stripe() {
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div style={{ margin: '20px 40px' }}>
             <h2 style={{ fontWeight: 300 }}>Monthly support</h2>
-            <ul className={styles.optionList}>
+            <ul className={styles['optionList']}>
               <li>
                 <Link to={testMode ? 'https://buy.stripe.com/test_fZeaGGdfwgWEgKIcMR' : 'https://buy.stripe.com/7sI7tIegVaQT8EgcMQ'}>100$ / month</Link>
               </li>
@@ -49,7 +49,7 @@ export default function Stripe() {
 
           <div style={{ margin: '20px 40px' }}>
             <h2 style={{ fontWeight: 300 }}>One-time donation</h2>
-            <ul className={styles.optionList}>
+            <ul className={styles['optionList']}>
               <li>
                 <Link to={testMode ? 'https://donate.stripe.com/test_cN29CCfnE5dW3XWbII' : 'https://donate.stripe.com/9AQ6pEfkZ4sv3jW009'}>100$ one-time</Link>
               </li>

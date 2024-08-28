@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { CSSProperties, ReactNode, useEffect } from 'react';
 import { FaGithubAlt, FaHeart } from 'react-icons/fa';
 import { CgOpenCollective } from 'react-icons/cg';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
+// https://confettijs.org/
 import Confetti from '../../confetti.min.js'
 
-const wrapperStyle = {
+
+const wrapperStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -16,38 +18,51 @@ const wrapperStyle = {
   padding: '40px 40px 0 40px',
 };
 
-const supporterStyle = {
+const supporterStyle: CSSProperties = {
   padding: '4px 0',
   display: 'flex',
   alignItems: 'center',
   margin: '10px 40px',
 }
 
-const linkStyle = {
+const linkStyle: CSSProperties = {
   textDecoration: 'none',
   color: 'crimson',
 }
 
-const Supporter = ({ icon, name, link, children }) => {
-  const SupporterInner = ({ children }) => (link ? (
-    <Link style={{ ...supporterStyle, ...linkStyle }} to={link}>{children}</Link>
-  ) : (
-    <div style={supporterStyle}>{children}</div>
-  ));
+const SupporterInner = ({ children, link }: {
+  children?: ReactNode,
+  link?: string | undefined,
+}) => (link ? (
+  <Link style={{ ...supporterStyle, ...linkStyle }} to={link}>{children}</Link>
+) : (
+  <div style={supporterStyle}>{children}</div>
+));
+
+const Supporter = ({ icon, name, link, children }: {
+  icon?: ReactNode,
+  name: string,
+  link?: string,
+  children?: ReactNode,
+}) => {
 
   return (
-    <SupporterInner>
+    <SupporterInner link={link}>
       {icon}
       <span style={{ marginLeft: '.4em' }}>{name}</span>
+      {children}
     </SupporterInner>
   );
 }
 
 export default function Thanks() {
   useEffect(() => {
+    // @ts-expect-error not sure how
     const confetti = new Confetti({ target: 'my-canvas', max: 300 });
     confetti.render();
-    return () => confetti.destroyTarget(true);
+    return () => {
+      confetti.destroyTarget?.(true);
+    }
   }, []);
 
   return (

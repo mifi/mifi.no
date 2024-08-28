@@ -10,7 +10,7 @@ assert(title, 'Title needed');
 // https://stackoverflow.com/a/1054862/6519037
 const slug = title.toLowerCase().replace(/ /g, '-').replace(/[-]+/g, '-').replace(/[^\w-]+/g, '');
 
-const esc = (str) => `'${str.replace(/'/g, "''")}'`;
+const esc = (str: string) => `'${str.replace(/'/g, "''")}'`;
 
 const md = `\
 ---
@@ -33,6 +33,7 @@ const filename = `${date}-${slug}.md`;
 
 const filePath = new URL(`blog/${filename}`, import.meta.url);
 
+// @ts-expect-error todo
 await writeFile(new URL(filePath), md);
 
 console.log(filePath.toString());

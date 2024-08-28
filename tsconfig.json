@@ -1,0 +1,8 @@
+{
+  "extends": ["@docusaurus/tsconfig", "@tsconfig/strictest"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+  },
+  "exclude": ["build/**/*"]
+}

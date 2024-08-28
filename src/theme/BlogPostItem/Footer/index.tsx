@@ -1,16 +1,20 @@
 import React from 'react';
 import Footer from '@theme-original/BlogPostItem/Footer';
+import type FooterType from '@theme/BlogPostItem/Footer';
+import type {WrapperProps} from '@docusaurus/types';
+import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import Giscus from '@giscus/react';
 
-import {useBlogPost} from '@docusaurus/theme-common/internal';
 
-export default function FooterWrapper(props) {
+type Props = WrapperProps<typeof FooterType>;
+
+export default function FooterWrapper(props: Props): JSX.Element {
   const { isBlogPostPage } = useBlogPost();
 
   return (
     <>
       <Footer {...props} />
-      
+
       {isBlogPostPage && (
         <Giscus
           repo="mifi/mifi.no"

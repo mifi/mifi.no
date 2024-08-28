@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Head from '@docusaurus/Head';
 
-export default function Root({ children }) {
+
+export default function Root({ children }: { children: ReactNode }) {
   return (
     <>
       <Head>
