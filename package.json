@@ -13,7 +13,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "make-blogpost": "tsx make-blogpost.ts"
+    "make-blogpost": "tsx make-blogpost.mts"
   },
   "dependencies": {
     "@docusaurus/core": "^3.5.2",
