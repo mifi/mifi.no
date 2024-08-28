@@ -5,7 +5,7 @@ authors: mifi
 tags: [java]
 ---
 
-**Update: [See this article too](./2023-11-02-installing-teamviewer-without-rootadmin-on-macos.md)**
+See also [this article](/docs/macos/installing-pkg).
 
 Oracle no longer provides compressed versions of JDK 😡 and require root to install (probably they also install an auto updater nagging you all the time)
 

@@ -1,32 +1,32 @@
 # mifi.no
 
-Replaced blog.mifi.no and mifi.no. Built using [Docusaurus 2](https://docusaurus.io/).
+Built using [Docusaurus](https://docusaurus.io/).
 
 Old site can be found at https://github.com/mifi/mifi.no-old
 
 ### Installation
 
-```
-$ yarn
+```bash
+yarn
 ```
 
 ### Local Development
 
-```
-$ yarn start
+```bash
+yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Create blog post
 
-```
+```bash
 yarn make-blogpost 'My blogpost title'
 ```
 
 ### Build
 
-```
+```bash
 $ yarn build
 ```
 

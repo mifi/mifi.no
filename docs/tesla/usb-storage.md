@@ -1,15 +1,13 @@
 ---
-slug: tesla-usb-multi-partitions
-title: Format Tesla USB stick with multiple partitions
 authors: mifi
 tags: [tesla, usb, boombox, teslacam, sentry]
 ---
 
+# USB storage
+
+## Multiple partitions
+
 How to format the Tesla USB stick to allow recording TeslaCam / Sentry Mode as well as Boombox with the same stick.
-
-<!--truncate-->
-
-**Note: [Moved here](/docs/tesla/usb-storage).**
 
 Command on MacOS:
 
@@ -24,5 +22,6 @@ Then create the required directories:
 ```bash
 mkdir /Volumes/TESLACAM/Teslacam
 mkdir /Volumes/BOOMBOX/Boombox
+```
 
 See also https://tesla-info.com/blog/tesla-storage-sentry-mode-dashcam.php

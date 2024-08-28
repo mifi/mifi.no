@@ -16,4 +16,4 @@ I hope you like it and I will continue improving LosslessCut 🙌
 
 [Get the new LosslessCut](https://mifi.no/losslesscut/)
 
-The source code is freely available for anyone to look at, and if you are interested in seeing how the project is automatically built and deployed, check out [this blog post.](https://blog.mifi.no/2020/03/31/automated-electron-build-with-release-to-mac-app-store-microsoft-store-snapcraft/)
+The source code is freely available for anyone to look at, and if you are interested in seeing how the project is automatically built and deployed, check out [this blog post](./2020-03-31-automated-electron-build-with-release-to-mac-app-store-microsoft-store-snapcraft.md).

@@ -20,14 +20,11 @@ export default function Home() {
         <div style={{ textTransform: 'uppercase', fontSize: 40, fontWeight: 500, lineHeight: '1em' }}>mifi.no</div>
         <div style={{ textTransform: 'uppercase', fontSize: 20, fontWeight: 300, color: '#999', marginBottom: 30 }}>Mikael Finstad</div>
 
-        <div style={{ padding: '0px 10px 0px 10px', textAlign: 'center', lineHeight: '1.6em' }}>
-          <div><Link to="https://github.com/mifi/" className={styles['nicelink']!}>💙 Free software creator</Link></div>
-          <div>👨‍💻 Software consultant</div>
-          <div>🌋 <Link to="https://www.instagram.com/mifi.no/" className={styles['nicelink']!}>Traveller &amp; adventurer</Link></div>
-        </div>
-
         <p style={{ margin: '30px 0', width: 600, maxWidth: '100%', textAlign: 'center' }}>
-          I create free and open source software to share with the world because<br />I believe software should be available to everyone.
+          I create <Link to="https://github.com/mifi/" className={styles['nicelink']!}>free and open source</Link> software to share with the world because<br />
+          I believe software should be available to everyone.<br />
+          I love <Link to="https://www.instagram.com/mifi.no/" className={styles['nicelink']!}>🌋 travel and hiking</Link>.
+          I write a <Link to="/blog" className={styles['nicelink']!}>📝 blog</Link> and a <Link to="/docs" className={styles['nicelink']!}>📚 knowledge base</Link>.
         </p>
 
         <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" className={styles['nicelink']!} style={{ fontSize: 30, fontWeight: 200 }}>Thanks to my supporters ❤️</Link></p>

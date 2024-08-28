@@ -1,15 +1,10 @@
 ---
-slug: aws-eb-yarn
-title: Use Yarn for Elastic Beanstalk (or any other package manger than npm)
-authors: mifi
 tags: [eb, elasticbeanstalk, yarn, npm, nodejs]
 ---
 
-This article describes how to use `yarn` instead of `npm` when deploying an Elastic Beanstalk Node.js app.
+# Use Yarn for Elastic Beanstalk
 
-<!--truncate-->
-
-**Note: [Moved here](/docs/aws/elastic-beanstalk).**
+This article describes how to use `yarn` (or any other package manager than npm) instead of `npm` when deploying an Elastic Beanstalk Node.js app.
 
 One problem is that EB will automatically run `npm install` if it finds a `package.json` file. An easy way to prevent EB from running `npm install` is to create an empty `node_modules` folder in a `prebuild` hook:
 

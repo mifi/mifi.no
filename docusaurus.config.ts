@@ -35,7 +35,9 @@ const config: Config = {
     [
       'classic',
       {
-        docs: false,
+        docs: {
+          
+        },
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
@@ -60,6 +62,11 @@ const config: Config = {
         {
           to: '/blog',
           label: 'Blog',
+          position: 'left',
+        },
+        {
+          to: '/docs',
+          label: 'Knowledge',
           position: 'left',
         },
         {
@@ -123,6 +130,10 @@ const config: Config = {
               to: '/blog',
             },
             {
+              label: 'Knowledge',
+              to: '/docs',
+            },
+            {
               label: 'Free wallpapers',
               to: 'https://static.mifi.no/wp',
             },
@@ -133,7 +144,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Mikael Finstad ❤️ Docusaurus`,
+      copyright: `© ${new Date().getFullYear()} Mikael Finstad 🇳🇴 Docusaurus`,
     },
     image: 'https://static.mifi.no/og-image.jpg',
     prism: {

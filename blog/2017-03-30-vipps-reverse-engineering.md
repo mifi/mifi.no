@@ -5,7 +5,7 @@ authors: mifi
 tags: []
 ---
 
-**UPDATE:** Outdated - [See new article](https://blog.mifi.no/2020/12/25/sniffing-ssl-traffic-on-android-vipps-payment-app/)
+**UPDATE:** Outdated - [See new article](./2020-12-25-sniffing-ssl-traffic-on-android-vipps-payment-app.md)
 
 The VIPPS app is using API SSL certificate pinning to prevent MITM attacks, and the pinned certificate(s) is stored in the APK itself, so it can easily be replaced by our own generated Charles certificate. This allows sniffing the data going from the app to VIPPS servers.
 

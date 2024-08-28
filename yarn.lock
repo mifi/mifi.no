@@ -1909,7 +1909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-docs@npm:3.5.2":
+"@docusaurus/plugin-content-docs@npm:3.5.2, @docusaurus/plugin-content-docs@npm:^3.5.2":
   version: 3.5.2
   resolution: "@docusaurus/plugin-content-docs@npm:3.5.2"
   dependencies:
@@ -8387,6 +8387,7 @@ __metadata:
   dependencies:
     "@docusaurus/core": "npm:^3.5.2"
     "@docusaurus/module-type-aliases": "npm:^3.5.2"
+    "@docusaurus/plugin-content-docs": "npm:^3.5.2"
     "@docusaurus/preset-classic": "npm:^3.5.2"
     "@docusaurus/tsconfig": "npm:^3.5.2"
     "@giscus/react": "npm:^2.2.0"

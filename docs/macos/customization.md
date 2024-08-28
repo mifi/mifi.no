@@ -1,19 +1,6 @@
----
-slug: tricks-to-make-mac-os-more-useful
-title: Mac OS X preferences, improvements and config tricks
-tags:
-  - tip
-  - apple
-  - mac
----
-
-**Note: [Moved here](/docs/macos).**
+# Customization
 
 I bought a MacBook Pro and wanted to start using Mac OS X as my primary OS. I'm used to Windows/Linux so I have some preferences as to behaviour. There are some things that are kind of annoying, many of which can be fixed. Also there are some tricks that make me more productive.
-
-## Disable trackpad acceleration
-
-Install https://github.com/linearmouse/linearmouse
 
 ## Command line settings
 
@@ -67,6 +54,7 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 sudo mdutil -a -i off
 
 # Disable indexing in XCode
+# https://stackoverflow.com/questions/13959709/stopping-xcode-from-indexing
 defaults write com.apple.dt.XCode IDEIndexDisable 1
 
 # enable VSCode Autorepeat
@@ -76,49 +64,15 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.apple.finder AppleShowAllFiles true; killall Finder 
 ```
 
+## Disable trackpad acceleration
+
+Install [LinearMouse](https://github.com/linearmouse/linearmouse).
+
 ## Reduce animations
 
 Makes mac faster and use less CPU/power:
 
-`System Preferences -> Accessibility -> Display -> Reduce transparency`
-
-## Improve WiFi/AirPlay performance
-
-Reduce stuttering in AirPlay Mirroring by disabling the extra wifi channel.
-
-Make a script:
-
-```bash
-#https://medium.com/@mariociabarra/wifried-ios-8-wifi-performance-issues-3029a1$
-
-UPDOWN="$1"
-
-case "$UPDOWN" in
-    up|down) echo "$UPDOWN" ;;
-    *) echo 'Specify up or down'; exit 1 ;;
-esac
-
-sudo ifconfig awdl0 "$UPDOWN"
-```
-
-* https://medium.com/@mariociabarra/wifried-ios-8-wifi-performance-issues-3029a164ce94
-* https://medium.com/@mariociabarra/wifriedx-in-depth-look-at-yosemite-wifi-and-awdl-airdrop-41a93eb22e48
-
-## Fix slow/buggy WiFi
-
-1. Turn OFF wi-fi by selecting the wi-fi menu bar item and choosing “Turn Wi-Fi Off”
-2. `open /Library/Preferences/SystemConfiguration/`
-3. Trash the following files:
-```
-com.apple.airport.preferences.plist
-com.apple.network.eapolclient.configuration.plist
-com.apple.wifi.message-tracer.plist
-NetworkInterfaces.plist
-preferences.plist
-```
-4. Reboot
-
-Taken from https://osxdaily.com/2016/09/22/fix-wi-fi-problems-macos-sierra/
+`System Preferences` -> `Accessibility` -> `Display` -> `Reduce transparency`
 
 ## Other
 
@@ -131,7 +85,7 @@ Taken from https://osxdaily.com/2016/09/22/fix-wi-fi-problems-macos-sierra/
 
 Add to the **top** of `/etc/pam.d/sudo`:
 
-```
+```conf
 auth       sufficient     pam_tid.so
 ```
 
@@ -139,29 +93,13 @@ auth       sufficient     pam_tid.so
 
 System Settings -> Storage
 - Music Creation -> Remove Garageband Sound Library
-- Remove unneeded stock apps
+- Remove unneeded stock apps from `/Applications`
 - Developer tools
-
-## Tricks
-
-### Finder
-
-Go to path: **<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>**
-
-cd .. **<kbd>Cmd</kbd> + <kbd>↑</kbd>**
-
-cd / "Run" file **<kbd>Cmd</kbd> + <kbd>↓</kbd>**
-
-Print screen: **<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>** (press space to select window)
-
-### Keyboard shortcuts
-
-System Preferences -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window: **<kbd>Cmd</kbd> + <kbd>`</kbd>**
 
 ## References
 
-* https://git.herrbischoff.com/awesome-macos-command-line/about/
-* https://gist.github.com/lexrus/081fa687d8b2475d3367
-* https://github.com/divio/osx-bootstrap/blob/master/core/defaults.sh
-* https://github.com/herrbischoff/awesome-osx-command-line
-* http://osxdaily.com/2015/04/06/windowserver-high-cpu-usage-mac-os-x/
+- https://git.herrbischoff.com/awesome-macos-command-line/about/
+- https://gist.github.com/lexrus/081fa687d8b2475d3367
+- https://github.com/divio/osx-bootstrap/blob/master/core/defaults.sh
+- http://osxdaily.com/2015/04/06/windowserver-high-cpu-usage-mac-os-x/
+- https://www.bresink.com/osx/0TinkerTool/details.html

@@ -1,18 +1,13 @@
----
-slug: iceland-hidden-hot-spring
-title: Hidden hot spring behind Seljavallalaug in Iceland
-authors: mifi
-tags:
-  - iceland
-  - travel
-  - hot spring
----
+# Hot springs
+
+There are many natural hot springs around the world. Especially in countries like Japan, Iceland and New Zealand. Here I will document my favorites.
+
+
+## Iceland
+
+### Hidden spring behind Seljavallalaug
 
 ![Seljavallalaug pool](https://static.mifi.no/uploads/IMG_1236-1024.jpg)
-
-<!--truncate-->
-
-**Note: [Moved here](/docs/hot-springs).**
 
 Most people have heard about the Seljavallalaug pool. Its temperature is lukewarm and some people advise against swimming there because of bacteria/algae in the pool. However if you go a couple hundred meters up the river, you will find a pretty cool makeshift hot pool right next to the river where you can do cold dipping in the glacial river followed by 42C of pleasure.
 

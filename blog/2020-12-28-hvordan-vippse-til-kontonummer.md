@@ -4,7 +4,8 @@ title: Hvordan Vippse til kontonummer
 authors: mifi
 tags: []
 ---
-Hvordan Vippse penger til et kontonummer i stedet for et telefonnummer:
+
+Hvordan Vippse penger til et kontonummer i stedet for et telefonnummer.
 
 This article shows how to send money using the Vipps apps to an arbitrary bank account number instead of a phone number.
 
