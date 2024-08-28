@@ -1,11 +1,11 @@
 ---
 slug: installing-teamviewer-without-rootadmin-on-macos
-title: 'Installing TeamViewer without root/admin on MacOS'
+title: 'Installing .pkg without root/admin on MacOS'
 authors: 'mifi'
 tags: []
 ---
 
-How to install TeamViewer on a Mac without admin privileges ☺️
+How to install a MacOS `.pkg` (TeamViewer) on a Mac without admin privileges ☺️
 
 <!--truncate-->
 
@@ -13,18 +13,17 @@ It used to be so easy to connect to someone's computer using TeamViewer, because
 
 ## There is a solution
 
-First, copy `Install TeamViewer.app` from inside the `.dmg` to your home folder. Now we can extract the `.pkg` file:
+First, copy `Install TeamViewer.app` from inside the `.dmg` to your home folder. Now we can extract the `.pkg` file within:
 
 ```bash
-cd ~
-
 pkgutil --expand-full Install\ TeamViewer.app/Contents/Resources/Install\ TeamViewer.pkg TeamViewer-extracted/
+
+ls TeamViewer-extracted
 ```
 
-Notice how the TeamViewer-extracted folder contains a lot of crap: 💩
+Notice how the `TeamViewer-extracted` folder contains a lot of crap: 💩
 
-```
-$ ls TeamViewer-extracted
+```bash
 AuthPluginPackage.pkg/ RemotePrintingPackage.pkg/ Distribution Resources/ FullEnforceUIVersionPackage.pkg/ TeamViewerApp.pkg/ FullSilentInstallerPackage.pkg/ UninstallerAppPackage.pkg/ PriviledgedHelperPackage.pkg/ UninstallerHelperPackage.pkg/ RemoteAudioDriverPackage.pkg/
 ```
 
