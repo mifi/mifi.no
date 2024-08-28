@@ -154,7 +154,7 @@ Print screen: **<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>** (press space 
 
 ### Keyboard shortcuts
 
-`System Preferences -> Keyboard -> Shortcuts -> keyboard move focus to next window`: <kbd>Cmd</kbd>+<kbd><</kbd>
+System Preferences -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window: **<kbd>Cmd</kbd> + <kbd>`</kbd>**
 
 ## References
 
