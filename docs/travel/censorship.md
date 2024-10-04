@@ -24,9 +24,9 @@ Apparently most mainstream VPNs like NordVPN, ExpressVPN, Surfshark etc. all *cl
 
 ### ✅ [LetsVPN](https://letsvpn.world/)
 
-**Cheap.** Many people report it working. Possibly Chinese owned, local servers. Probably not 100% safe and they might monitor traffic - some reports of people getting [banned from visiting certain sites](https://www.reddit.com/r/vpnreviews/comments/149d55a/working_vpn_in_china/jo6xps5/). Not sure if it works on all sites.
+**Cheap.** Many people report it working. Possibly Chinese owned, local servers. Probably not 100% safe and they might monitor traffic. Some reports of people getting banned from visiting certain sites [[1]](https://www.reddit.com/r/vpnreviews/comments/149d55a/working_vpn_in_china/jo6xps5/)[[2]](https://www.reddit.com/r/dumbclub/comments/17uzdtv/bypass_letsvpn_ai_account_blocking/)[[3]](https://www.reddit.com/r/chinalife/comments/1cwb9tc/warning_about_letsvpn/). Not sure if it works on all sites. Some Norwegian websites seem to have blocked requests coming from Chinese LetsVPN servers, probably because of Chinese IP address. Choosing a Norwegian server (identified as Microsoft Corporation in Oslo) seems to resolve the problem (requires LetsVPN Platinum subscription).
 
-Tested by me Oct 24 2023 Hong Kong/China border - Works!
+Tested by me Oct 24 2023 Hong Kong/China border - Works! Sep 2024: Still works, but it's a bit slow.
 
 - https://www.reddit.com/r/China/comments/13lhb9n/am_i_able_to_buy_and_use_letsvpn_while_in_china/
 
@@ -136,7 +136,37 @@ Example output:
 
 #### Hosting your own server
 
-Drawbacks: In order to host many different protocols (for redundancy), take a lot of effort setting up. Also if your IP gets banned, there's no fallback. There are many open source protocols like Shadowsocks.
+Drawbacks:
+- Takes effort to set up
+- If your IP gets flagged/banned, there's no fallback.
+
+There are many open source protocols like Shadowsocks.
+
+##### [`shadowsocks-libev`](https://github.com/shadowsocks/shadowsocks-libev)
+
+On ubuntu:
+
+```bash
+sudo apt install shadowsocks-libev
+```
+
+Now edit `/etc/shadowsocks-libev/config.json`:
+
+```conf
+{
+    "server":["::0", "0.0.0.0"],
+    "mode":"tcp_and_udp",
+    "server_port":8388,
+    "local_port":1080,
+    "password":"create a strong password",
+    "timeout":86400,
+    "method":"chacha20-ietf-poly1305"
+}
+```
+
+```bash
+sudo systemctl restart shadowsocks-libev
+```
 
 - https://github.com/shadowsocks/shadowsocks-rust
 
