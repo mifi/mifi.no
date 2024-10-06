@@ -38,11 +38,11 @@ Can download translations offline, allowing you to translate text, camera/image 
 
 See [censorship](censorship.md).
 
-### [Wise](https://wise.com/)
+### [Wise](https://wise.prf.hn/click/camref:1100l457Yb) [^1]
 
 Invaluable for international travel / payments.
 
-### Trip.com
+### [Trip.com](https://www.trip.com/t/GW6LAnzQTX1) [^1]
 
 One of the best apps to book hotels and attractions in China for foreigners. Singapore based.
 
@@ -54,4 +54,5 @@ Make international calls (almost) for free.
 
 - DiDi: can be hard to download / use for foreigners, but it can also be found as a mini-app inside AliPay.
 - Baidu Maps: Cannot be downloaded by foreigners (of many countries)
-- 
+
+[^1]: Affiliate link
