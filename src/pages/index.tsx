@@ -2,10 +2,38 @@ import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import { FaNpm } from 'react-icons/fa';
+import { FaGithub, FaNpm } from 'react-icons/fa';
 
 import styles from './index.module.css';
 
+
+// https://github.com/mifi?tab=repositories&q=&type=source&language=&sort=stargazers
+
+const githubProjects = [
+  'youtube-import-playlist', 'in-app-subscription-example',
+];
+
+const npmModules = [
+  'cloudwatch-winston', 'mjml-dynamic', 'reactive-video', 'instauto', 'react-lottie-player', 'telldus-api', 'telldus-local-auth', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'error-handler-json', 'commonify', 'eslint-config-mifi',
+];
+
+const archivedNpmModules = [
+  'build-electron', 'form-encode-object',
+];
+
+function Project({ name, type } : { name: string, type: 'github' | 'npm' | 'npm-archived' }) {
+  const url = type === 'github' ? `https://github.com/mifi/${name}` : `https://www.npmjs.com/package/${name}`;
+  return (
+    <Link key={name} to={url} style={{ padding: '8px 12px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none', opacity: type === 'npm-archived' ? 0.4 : 1 }}>
+      {type === 'github' ? (
+        <FaGithub style={{ marginRight: 4 }} />
+      ) : (
+        <FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} />
+      )}
+      {name}
+    </Link>
+  );
+}
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -29,7 +57,7 @@ export default function Home() {
 
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" className={styles['nicelink']!} style={{ fontSize: 30, fontWeight: 200 }}>Thanks to my supporters ❤️</Link></p>
 
-          <a href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" src="ukraine/ukraine.svg" style={{ width: 150, marginTop: 100, marginBottom: 100 }} /></a>
+          <a style={{ marginTop: 100, marginBottom: 100 }} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" src="ukraine/ukraine.svg" style={{ width: 150 }} /></a>
 
           <div style={{ padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
             <div style={{ margin: '40px 0', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
@@ -48,7 +76,7 @@ export default function Home() {
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <Link className={styles['appStore']!} style={{ margin: '0 2px' }} to="https://apps.apple.com/app/id1505323402"><img src="https://github.com/mifi/lossless-cut/raw/master/mac-app-store-badge.svg?sanitize=true" alt="Mac App Store" height="50" /></Link>
                 <Link className={styles['appStore']!} style={{ borderRadius: 13, margin: '0 2px' }} to="https://www.microsoft.com/store/apps/9P30LSR4705L?cid=storebadge&ocid=badge"><img src="https://github.com/mifi/lossless-cut/raw/master/ms-store-badge.svg?sanitize=true" alt="MS badge" height="50" /></Link>
-                <Link className={styles['appStore']!} style={{ borderRadius: 13, margin: '0 2px' }} to="https://snapcraft.io/losslesscut"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Snapcraft" height="50" /></Link>
+                <Link className={styles['appStore']!} style={{ borderRadius: 13, margin: '0 2px' }} to="https://snapcraft.io/losslesscut"><img src="https://github.com/mifi/lossless-cut/raw/master/snap-store-black.svg?sanitize=true" alt="Snapcraft" height="50" /></Link>
               </div>
             </div>
 
@@ -61,14 +89,12 @@ export default function Home() {
               <Link className={styles['app']!} to="https://github.com/mifi/VideoGrader"><span className={styles['appIcon']}>🎨</span> VideoGrader</Link>
             </div>
 
-            <h1 className={styles['heading']}>JS modules</h1>
+            <h1 className={styles['heading']}>Projects</h1>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto 100px auto', maxWidth: 1000 }}>
-              {[
-                'reactive-video', 'build-electron', 'instauto', 'react-lottie-player', 'telldus-api', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'form-encode-object', 'error-handler-json'
-              ].map((project) => (
-                <Link key={project} to={`https://github.com/mifi/${project}`} style={{ padding: '8px 12px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} /> {project}</Link>
-              ))}
+              {githubProjects.map((project) => <Project key={project} name={project} type="github" />)}
+              {npmModules.map((project) => <Project key={project} name={project} type="npm" />)}
+              {archivedNpmModules.map((project) => <Project key={project} name={project} type="npm-archived" />)}
             </div>
           </div>
         </div>

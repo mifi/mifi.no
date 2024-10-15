@@ -60,8 +60,8 @@ const config: Config = {
       },
       items: [
         {
-          to: '/blog',
-          label: 'Blog',
+          to: '/thanks',
+          label: 'Thanks',
           position: 'left',
         },
         {
@@ -70,8 +70,8 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/thanks',
-          label: 'Thanks',
+          to: '/blog',
+          label: 'Blog',
           position: 'left',
         },
         {

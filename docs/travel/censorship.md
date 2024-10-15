@@ -156,7 +156,7 @@ Now edit `/etc/shadowsocks-libev/config.json`:
 {
     "server":["::0", "0.0.0.0"],
     "mode":"tcp_and_udp",
-    "server_port":8388,
+    "server_port":443,
     "local_port":1080,
     "password":"create a strong password",
     "timeout":86400,
@@ -167,6 +167,15 @@ Now edit `/etc/shadowsocks-libev/config.json`:
 ```bash
 sudo systemctl restart shadowsocks-libev
 ```
+
+Then in Shadowrocket add a new connection:
+- Type: Shadowsocks
+- Address: IP of server
+- Port: 443 (some firewalls block other ports)
+- Method: chacha20-ietf-poly1305
+- UDP relay: On
+
+See also:
 
 - https://github.com/shadowsocks/shadowsocks-rust
 

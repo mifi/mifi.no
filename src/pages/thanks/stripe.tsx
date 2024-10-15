@@ -17,6 +17,8 @@ const wrapperStyle: CSSProperties = {
   padding: '40px 40px 0 40px',
 };
 
+export const chinaPayUrl = testMode ? 'https://donate.stripe.com/test_28o7uu1wOayg664dR0' : 'https://donate.stripe.com/5kAdS60q54svbQsfZ9';
+
 export default function Stripe() {
   return (
     <Layout title="Stripe donation">
@@ -66,7 +68,7 @@ export default function Stripe() {
                 <Link to={testMode ? 'https://donate.stripe.com/test_8wMcOOgrI8q8dyw9AE' : 'https://donate.stripe.com/9AQbJY6Ot2knf2E3ch'}>5$ one-time</Link>
               </li>
               <li style={{ marginTop: '1em' }}>
-                <Link to={testMode ? 'https://donate.stripe.com/test_28o7uu1wOayg664dR0' : 'https://donate.stripe.com/5kAdS60q54svbQsfZ9'}>WeChat Pay / 微信支付</Link>
+                <Link to={chinaPayUrl}>WeChat Pay / 微信支付</Link>
               </li>
             </ul>
           </div>

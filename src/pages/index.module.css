@@ -9,7 +9,7 @@
   display: block;
 }
 .app {
-  padding: 10px 13px;
+  padding: 10px 15px;
   margin: 3px;
   border-radius: 10px;
   -box-shadow: rgba(0,0,0,0.03) 0px 0px 10px 4px;
@@ -25,10 +25,7 @@
 .appIcon {
   vertical-align: middle;
   font-size: 1.3em;
-  background-color: white;
-  border-radius: 1em;
-  padding: .2em .25em;
-  margin-right: .2em;
+  margin-right: .1em;
 }
 .appStore {
   overflow: hidden;
@@ -49,6 +46,7 @@
   margin: 5px;
 }
 h1.heading {
+  font-size: 1.5em;
   margin-top: 3em;
   text-transform: uppercase;
   font-weight: 400;
