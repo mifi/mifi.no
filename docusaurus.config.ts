@@ -35,6 +35,18 @@ const config: Config = {
     locales: ['en'],
   },
 
+  headTags: [
+    // Cloudflare Web Analytics
+    ...(process.env['NODE_ENV'] === 'production' ? [{
+      tagName: 'script',
+      attributes: {
+        async: 'true',
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        'data-cf-beacon': '{"token": "98d127ff8c6044e1803f892b89fec233"}',
+      },
+    }] : []),
+  ],
+
   presets: [
     [
       'classic',
