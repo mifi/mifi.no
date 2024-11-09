@@ -1,4 +1,3 @@
-import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -57,7 +56,7 @@ export default function Home() {
 
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" className={styles['nicelink']!} style={{ fontSize: 30, fontWeight: 200 }}>Thanks to my supporters ❤️</Link></p>
 
-          <a style={{ marginTop: 100, marginBottom: 100 }} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" src="ukraine/ukraine.svg" style={{ width: 150 }} /></a>
+          <a style={{ marginTop: 100, marginBottom: 100 }} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ width: 150 }} /></a>
 
           <div style={{ padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
             <div style={{ margin: '40px 0', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
@@ -65,9 +64,11 @@ export default function Home() {
                 <img src="https://static.mifi.no/losslesscut.svg" alt="LosslessCut" style={{ width: 100, marginBottom: 10 }} />
               </a>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ marginTop: 5 }}><a href="/losslesscut/" target="_blank" rel="noopener noreferrer" className={styles['nicelink']} style={{ fontSize: 30, fontWeight: 300 }}>
-                  LosslessCut
-                </a></div>
+                <div style={{ marginTop: 5 }}>
+                  <a href="/losslesscut/" target="_blank" rel="noopener noreferrer" className={styles['nicelink']} style={{ fontSize: 30, fontWeight: 300 }}>
+                    LosslessCut
+                  </a>
+                </div>
 
                 <p>Get it from your favorite store:</p>
                 {/* <span style={{ fontWeight: 800, lineHeight: '3em', color: '#d05b5a' }}>50% off until May 1st 2020</span> */}
@@ -101,9 +102,9 @@ export default function Home() {
 
         <div style={{ backgroundColor: 'black', padding: 6, marginTop: 40 }}>
           <div className={styles['instafeed']}>
-            <Link to="https://www.youtube.com/watch?v=Zv5RvLhCz4M" style={{ display: 'block' }}><video className={styles['vidBlock']} src="https://static.mifi.no/Zv5RvLhCz4M-small.mp4" playsInline preload="none" autoPlay loop muted></video></Link>
-            <Link to="https://www.youtube.com/watch?v=uQIv8Vo9_Jc" style={{ display: 'block' }}><video className={styles['vidBlock']} src="https://static.mifi.no/uQIv8Vo9_Jc-small.mp4" playsInline preload="none" autoPlay loop muted></video></Link>
-            <Link to="https://www.youtube.com/watch?v=qnDpUbggHHQ" style={{ display: 'block' }}><video className={styles['vidBlock']} src="https://static.mifi.no/qnDpUbggHHQ-small.mp4" playsInline preload="none" autoPlay loop muted></video></Link>
+            <Link to="https://www.youtube.com/watch?v=Zv5RvLhCz4M" style={{ display: 'block' }}><video className={styles['vidBlock']} src="https://static.mifi.no/Zv5RvLhCz4M-small.mp4" playsInline preload="none" autoPlay loop muted /></Link>
+            <Link to="https://www.youtube.com/watch?v=uQIv8Vo9_Jc" style={{ display: 'block' }}><video className={styles['vidBlock']} src="https://static.mifi.no/uQIv8Vo9_Jc-small.mp4" playsInline preload="none" autoPlay loop muted /></Link>
+            <Link to="https://www.youtube.com/watch?v=qnDpUbggHHQ" style={{ display: 'block' }}><video className={styles['vidBlock']} src="https://static.mifi.no/qnDpUbggHHQ-small.mp4" playsInline preload="none" autoPlay loop muted /></Link>
           </div>
         </div>
       </>

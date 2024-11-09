@@ -5,7 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "tsc": "tsc",
-    "start": "docusaurus start",
+    "lint": "eslint .",
+    "dev": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "aws s3 sync --delete build/ \"s3://${AWS_S3_BUCKET}/\" --cache-control max-age=600 && aws cloudfront create-invalidation --distribution-id \"${AWS_INVALIDATE_DISTRIBUTION_ID}\" --paths '/*'",
@@ -13,29 +14,46 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "make-blogpost": "tsx make-blogpost.mts"
+    "make-blogpost": "tsx makeBlogpost.mts"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.5.2",
-    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/core": "^3.6.1",
+    "@docusaurus/preset-classic": "^3.6.1",
     "@giscus/react": "^2.2.0",
     "@mdx-js/react": "^3.0.1",
+    "csv-parse": "^5.5.6",
+    "flag-icons": "^7.2.3",
+    "ky": "^1.7.2",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
     "prism-react-renderer": "^1.3.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "swr": "^2.2.5",
+    "tiny-invariant": "^1.3.3",
+    "use-debounce": "^10.0.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.5.2",
-    "@docusaurus/plugin-content-docs": "^3.5.2",
-    "@docusaurus/tsconfig": "^3.5.2",
+    "@docusaurus/module-type-aliases": "^3.6.1",
+    "@docusaurus/plugin-content-docs": "^3.6.1",
+    "@docusaurus/tsconfig": "^3.6.1",
     "@tsconfig/strictest": "^2.0.5",
+    "@types/eslint-plugin-jsx-a11y": "^6",
     "@types/lodash": "^4",
     "@types/luxon": "^3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.2.0",
+    "eslint-config-mifi": "^0.0.6",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-unicorn": "^51.0.1",
     "tsx": "^4.19.0",
-    "typescript": "^5.5.4"
+    "typescript": "~5.3.0"
   },
   "browserslist": {
     "production": [

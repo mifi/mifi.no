@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import assert from 'assert';
-import { writeFile } from 'fs/promises';
+import assert from 'node:assert';
+import { writeFile } from 'node:fs/promises';
 
 const author = 'mifi';
 
@@ -8,9 +8,9 @@ const title = process.argv[2];
 assert(title, 'Title needed');
 
 // https://stackoverflow.com/a/1054862/6519037
-const slug = title.toLowerCase().replace(/ /g, '-').replace(/[-]+/g, '-').replace(/[^\w-]+/g, '');
+const slug = title.toLowerCase().replaceAll(' ', '-').replaceAll(/-+/g, '-').replaceAll(/[^\w-]+/g, '');
 
-const esc = (str: string) => `'${str.replace(/'/g, "''")}'`;
+const esc = (str: string) => `'${str.replaceAll('\'', "''")}'`;
 
 const md = `\
 ---
@@ -33,7 +33,6 @@ const filename = `${date}-${slug}.md`;
 
 const filePath = new URL(`blog/${filename}`, import.meta.url);
 
-// @ts-expect-error todo
 await writeFile(new URL(filePath), md);
 
 console.log(filePath.toString());

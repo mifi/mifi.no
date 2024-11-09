@@ -1,7 +1,11 @@
+// eslint-disable-next-line import/no-import-module-exports
 import { Config } from '@docusaurus/types';
+// eslint-disable-next-line import/no-import-module-exports
 import type * as Preset from '@docusaurus/preset-classic';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const lightCodeTheme = require('prism-react-renderer/themes/github');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 
@@ -35,9 +39,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          
-        },
+        docs: {},
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
@@ -72,6 +74,11 @@ const config: Config = {
         {
           to: '/blog',
           label: 'Blog',
+          position: 'left',
+        },
+        {
+          to: '/tools',
+          label: 'Free tools',
           position: 'left',
         },
         {
@@ -140,7 +147,7 @@ const config: Config = {
             {
               label: 'Mail me',
               to: 'mailto:mikael@yankee.no',
-            }
+            },
           ],
         },
       ],

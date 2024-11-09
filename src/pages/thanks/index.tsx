@@ -1,13 +1,13 @@
-import React, { CSSProperties, ReactNode, useEffect } from 'react';
+import { CSSProperties, ReactNode, useEffect } from 'react';
 import { FaGithubAlt, FaHeart } from 'react-icons/fa';
 import { CgOpenCollective, CgPatreon } from 'react-icons/cg';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import orderBy from 'lodash/orderBy';
+import { DateTime } from 'luxon';
 
 // https://confettijs.org/
-import Confetti from '../../confetti.min.js'
-import { DateTime } from 'luxon';
+import Confetti from '../../confetti.min.js';
 import { chinaPayUrl } from './stripe';
 
 
@@ -17,18 +17,17 @@ const patreons = [
   { since: '2021-11-21', amount: 2, name: 'Nicholas T.', url: 'https://www.patreon.com/cj_and_aya/creators' },
   { since: '2021-07-19', amount: 3, name: 'Formica', url: 'https://www.patreon.com/user/creators?u=2442057' },
   { since: '2021-04-11', amount: 10, name: 'mav6771', url: 'https://www.patreon.com/user/creators?u=36832428' },
-]
+];
 // https://github.com/sponsors/mifi/dashboard/your_sponsors
 const github = [
   { since: '2024-07-23', amount: 10, name: 'derekh4' },
   { since: '2024-05-18', amount: 10, name: 'mandrael' },
   { since: '2024-02-01', amount: 2, name: 'scuba-tech' },
-  { since: '2023-11-02', amount: 10, name: 'nick2i' },
   { since: '2023-06-22', amount: 20, name: 't3dotgg' },
   { since: '2021-12-29', amount: 10, name: 'msarahan' },
   { since: '2021-10-06', amount: 5, name: 'SignpostMarv' },
   { since: '2021-04-27', amount: 5, name: 'sparanoid' },
-]
+];
 
 // https://opencollective.com/dashboard/losslesscut/incoming-contributions?status=ACTIVE&status=ERROR&type=RECURRING
 const openCollective = [
@@ -61,12 +60,12 @@ const supporterStyle: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   margin: '10px 40px',
-}
+};
 
 const linkStyle: CSSProperties = {
   textDecoration: 'none',
   color: 'crimson',
-}
+};
 
 const SupporterInner = ({ children, link }: {
   children?: ReactNode,
@@ -82,18 +81,15 @@ const Supporter = ({ icon, name, link, children }: {
   name: string,
   link?: string,
   children?: ReactNode,
-}) => {
-
-  return (
-    <SupporterInner link={link}>
-      {icon}
-      <div style={{ marginLeft: '.2em' }}>
-        <div style={{ marginBottom: '-0.4em' }}>{name}</div>
-        {children}
-      </div>
-    </SupporterInner>
-  );
-}
+}) => (
+  <SupporterInner link={link}>
+    {icon}
+    <div style={{ marginLeft: '.2em' }}>
+      <div style={{ marginBottom: '-0.4em' }}>{name}</div>
+      {children}
+    </div>
+  </SupporterInner>
+);
 
 export default function Thanks() {
   useEffect(() => {
@@ -102,12 +98,12 @@ export default function Thanks() {
     confetti.render();
     return () => {
       confetti.destroyTarget?.(true);
-    }
+    };
   }, []);
 
   return (
     <Layout title="Thank you">
-      <canvas id="my-canvas" style={{ position: 'fixed', pointerEvents: 'none', opacity: 0.3 }}></canvas>
+      <canvas id="my-canvas" style={{ position: 'fixed', pointerEvents: 'none', opacity: 0.3 }} />
 
       <div style={wrapperStyle}>
         <div style={{ margin: '.3em 0', fontSize: 50, fontWeight: 200 }}>Thank you</div>
@@ -145,6 +141,7 @@ export default function Thanks() {
       <div style={{ margin: '0 auto', fontSize: 28, display: 'flex', flexWrap: 'wrap', maxWidth: 1000 }}>
         {orderBy(supporters, [(s) => s.amount, (s) => s.since], ['desc', 'asc']).map((s) => {
           let icon: ReactNode;
+          // eslint-disable-next-line unicorn/prefer-switch
           if (s.type === 'openCollective') icon = <CgOpenCollective />;
           else if (s.type === 'github') icon = <FaGithubAlt />;
           else if (s.type === 'patreon') icon = <CgPatreon />;

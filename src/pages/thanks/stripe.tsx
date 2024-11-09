@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
@@ -24,7 +24,7 @@ export default function Stripe() {
     <Layout title="Stripe donation">
       <div style={wrapperStyle}>
         <h1 style={{ fontWeight: 300, fontSize: '3em' }}>Stripe donation</h1>
-  
+
         <p style={{ maxWidth: 400 }}>If you would like to support my free / open source work via stripe, please select an option below. <b>Thank you.</b></p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>

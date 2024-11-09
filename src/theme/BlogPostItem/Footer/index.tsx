@@ -1,8 +1,7 @@
-import React from 'react';
 import Footer from '@theme-original/BlogPostItem/Footer';
 import type FooterType from '@theme/BlogPostItem/Footer';
-import type {WrapperProps} from '@docusaurus/types';
-import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
+import type { WrapperProps } from '@docusaurus/types';
+import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
 import Giscus from '@giscus/react';
 
 
@@ -13,6 +12,7 @@ export default function FooterWrapper(props: Props): JSX.Element {
 
   return (
     <>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Footer {...props} />
 
       {isBlogPostPage && (

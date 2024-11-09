@@ -24,7 +24,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - run: yarn install --immutable
+      - run: yarn dedupe --check
       - run: yarn tsc
+      - run: yarn lint
       - run: yarn build
       - run: yarn deploy
         env:
