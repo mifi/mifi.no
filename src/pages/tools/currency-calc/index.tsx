@@ -8,7 +8,7 @@ import invariant from 'tiny-invariant';
 import useSWR from 'swr';
 
 import 'flag-icons/css/flag-icons.min.css';
-import { Currency, CurrencyWithNok, supportedCurrencies, supportedCurrenciesWithNok, supportedCurrencyCodes } from './currencies';
+import { Currency, CurrencyWithNok, supportedCurrencies, supportedCurrenciesWithNok, supportedCurrencyCodes } from '../../../lib/currencies';
 
 
 const currencySchema = z.object({
@@ -189,14 +189,14 @@ export default function CurrencyCalc() {
   return (
     <Layout title="Valutakalkulator med historiske valutakurser fra Norges Bank">
       <main style={{ minHeight: '50vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1em' }}>
-        <div style={{ maxWidth: '30em' }}>
+        <div style={{ maxWidth: '30em', marginBottom: '2em' }}>
           <h1>Valutakurser</h1>
           <p style={{ opacity: 0.7, fontSize: '.8em' }}>Currency calculator for NOK based on <a href="https://www.norges-bank.no/en/" target="blank">Bank of Norway</a>. Norwegian only (not very useful for non-Norwegians)</p>
           <p>Her kan du konvertere valuta til norske kroner (NOK) med historiske valutakurser fra <a href="https://www.norges-bank.no/tema/Statistikk/Valutakurser/?tab=api" target="_blank" rel="noreferrer">Norges Bank</a> for bruk i regnskap o.l.</p>
           <p><strong>NB!</strong> Bruk på eget ansvar! Jeg tar intet ansvar for feil eller annet.</p>
         </div>
 
-        <div style={{ width: '15em' }}>
+        <div style={{ width: '14em' }}>
           <select value={requestedCurrency} onChange={(e) => setRequestedCurrency(e.target.value as Currency)} style={{ width: '100%', fontSize: '1em', padding: '.3em', background: 'transparent', border: 'none', margin: '.3em 0' }}>
             <option disabled>Velg valuta</option>
             {Object.entries(supportedCurrencies).map(([code, { name }]) => <option key={code} value={code}>{code} - {name}</option>)}
@@ -211,14 +211,14 @@ export default function CurrencyCalc() {
               placeholder="eks. 1.000,00"
               value={requestedAmountStr}
               onChange={handleAmountChange}
-              style={{ all: 'unset', width: '100%', fontSize: '1.3em', margin: '.3em 0', padding: '0 .3em 0 1.7em', borderBottom: '1px solid rgba(0,0,0,0.3)' }}
+              style={{ all: 'unset', width: '100%', fontSize: '1.3em', margin: '.3em 0', padding: '0 .3em 0 1.7em', boxSizing: 'border-box', borderBottom: '1px solid rgba(0,0,0,0.3)' }}
             />
           </div>
 
           <input style={{ all: 'unset', display: 'block', width: '100%', fontSize: '1.3em', padding: '.3em' }} type="date" value={requestedDateStr} onChange={handleDateChange} />
         </div>
 
-        <div style={{ margin: '2em .5em', fontSize: '1.3em', display: 'flex', gap: '1em', flexWrap: 'wrap' }}>
+        <div style={{ margin: '2em .5em', fontSize: '1.3em', display: 'flex', gap: '1em', flexWrap: 'wrap', justifyContent: 'center' }}>
           <div style={{ textAlign: 'center', width: '8em' }}>
             <div>
               <CurrencyIcon currency={requestedCurrency} style={{ verticalAlign: 'middle', fontSize: '1.5em', marginRight: '.4em', boxShadow: '0 0 .3em rgba(0,0,0,0.1)' }} />
