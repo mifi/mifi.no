@@ -124,7 +124,7 @@ export default function CurrencyCalc() {
       setResult(undefined);
       setActualDate(undefined);
 
-      console.log({ currencies, requestedDate, requestedAmount });
+      // console.log({ currencies, requestedDate, requestedAmount });
       if (currencies == null || requestedDate == null || requestedAmount == null) return;
 
       const findCurrency = () => {
@@ -147,15 +147,17 @@ export default function CurrencyCalc() {
       setActualDate(timePeriod);
 
       const rate = parseLocaleNumber(currency.OBS_VALUE, 'nb-NO');
+      const unitMult = parseInt(currency.UNIT_MULT, 10);
 
       invariant(!Number.isNaN(rate));
+      invariant(!Number.isNaN(unitMult));
 
       // console.log(1, requestedCurrency, '=', rate, 'NOK');
       // console.log();
       // console.log('NOK:');
 
       // https://stackoverflow.com/a/12402322/6519037
-      const converted = Number((requestedAmount * rate).toFixed(2));
+      const converted = Number((requestedAmount * (rate / (10 ** unitMult))).toFixed(2));
       setResult(converted);
     } catch (err) {
       window.alert(`Something went wrong: ${(err as Error).message}`);
