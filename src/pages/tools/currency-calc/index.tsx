@@ -66,6 +66,19 @@ function getNow() {
 // eslint-disable-next-line react/jsx-props-no-spreading
 const CurrencyIcon = ({ currency, style, ...rest }: { currency: CurrencyWithNok } & HTMLAttributes<HTMLSpanElement>) => <span className={`fi fi-${supportedCurrenciesWithNok[currency].cc.toLocaleLowerCase()}`} style={{ borderRadius: '10%', ...style }} {...rest} />;
 
+const threshold = 8;
+const CurrencyBox = ({ currency, result }: { currency: CurrencyWithNok, result: string }) => (
+  <>
+    <div>
+      <CurrencyIcon currency={currency} style={{ verticalAlign: 'middle', fontSize: '1.5em', marginRight: '.4em', boxShadow: '0 0 .3em rgba(0,0,0,0.1)' }} />
+      <span style={{ opacity: 0.5 }}>{currency}</span>
+    </div>
+    <div style={{ fontSize: '1.5em' }}>
+      <span style={{ fontSize: result.length >= threshold ? `${threshold / result.length}em` : undefined }}>{result}</span>
+    </div>
+  </>
+);
+
 export default function CurrencyCalc() {
   const [requestedDateStr, setRequestedDateStr] = React.useState<string>(getNow());
   const [requestedAmount, setRequestedAmount] = React.useState<number | undefined>(100);
@@ -74,6 +87,7 @@ export default function CurrencyCalc() {
   const [actualDate, setActualDate] = React.useState<DateTime<true>>();
   const [result, setResult] = React.useState<number | null>();
 
+  const requestedAmountTrunc = useMemo(() => (requestedAmount != null ? parseFloat(requestedAmount.toFixed(2)) : undefined), [requestedAmount]);
   const requestedDate = useMemo(() => (requestedDateStr != null ? DateTime.fromISO(requestedDateStr, { zone: timeZone }).setZone(timeZone) : undefined), [requestedDateStr]);
 
   // eslint-disable-next-line no-shadow
@@ -124,8 +138,8 @@ export default function CurrencyCalc() {
       setResult(undefined);
       setActualDate(undefined);
 
-      // console.log({ currencies, requestedDate, requestedAmount });
-      if (currencies == null || requestedDate == null || requestedAmount == null) return;
+      // console.log({ currencies, requestedDate, requestedAmountTrunc });
+      if (currencies == null || requestedDate == null || requestedAmountTrunc == null) return;
 
       const findCurrency = () => {
         for (let i = 0; i < maxDays; i += 1) {
@@ -157,12 +171,12 @@ export default function CurrencyCalc() {
       // console.log('NOK:');
 
       // https://stackoverflow.com/a/12402322/6519037
-      const converted = Number((requestedAmount * (rate / (10 ** unitMult))).toFixed(2));
+      const converted = Number((requestedAmountTrunc * (rate / (10 ** unitMult))).toFixed(2));
       setResult(converted);
     } catch (err) {
       window.alert(`Something went wrong: ${(err as Error).message}`);
     }
-  }, [requestedDate, requestedCurrency, requestedAmount, currencies]);
+  }, [requestedDate, requestedCurrency, requestedAmountTrunc, currencies]);
 
   const handleDateChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('Date', e.target.value);
@@ -222,23 +236,18 @@ export default function CurrencyCalc() {
 
         <div style={{ margin: '2em .5em', fontSize: '1.3em', display: 'flex', gap: '1em', flexWrap: 'wrap', justifyContent: 'center' }}>
           <div style={{ textAlign: 'center', width: '8em' }}>
-            <div>
-              <CurrencyIcon currency={requestedCurrency} style={{ verticalAlign: 'middle', fontSize: '1.5em', marginRight: '.4em', boxShadow: '0 0 .3em rgba(0,0,0,0.1)' }} />
-              <span style={{ opacity: 0.5 }}>{requestedCurrency}</span>
-            </div>
-            <div style={{ fontSize: '1.5em' }}>{requestedAmount != null && formatNo(requestedAmount)}</div>
+            <CurrencyBox currency={requestedCurrency} result={requestedAmountTrunc != null ? formatNo(requestedAmountTrunc) : ''} />
           </div>
 
           <div style={{ textAlign: 'center', width: '8em' }}>
-            <div>
-              <CurrencyIcon currency="NOK" style={{ verticalAlign: 'middle', fontSize: '1.5em', marginRight: '.4em', boxShadow: '0 0 .3em rgba(0,0,0,0.1)' }} />
-              <span style={{ opacity: 0.5 }}>NOK</span>
-            </div>
-            <div style={{ fontSize: '1.5em' }}>
-              {result != null && formatNo(result)}
-              {result === null && 'N/A'}
-              {result === undefined && '...'}
-            </div>
+            <CurrencyBox
+              currency="NOK"
+              result={(
+                  result != null ? formatNo(result) : (
+                    result === null ? 'N/A' : '...'
+                  )
+              )}
+            />
             <div style={{ textAlign: 'center', marginTop: '-.5em' }}>
               {actualDate != null ? <span style={{ opacity: 0.5, fontSize: '.8em' }}>{actualDate.toLocaleString(DateTime.DATE_SHORT)}</span> : <>&nbsp;</>}
             </div>
