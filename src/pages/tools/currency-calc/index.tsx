@@ -53,7 +53,7 @@ function parseLocaleNumber(stringNumber: string, locale: string) {
 const quoteCur = 'NOK';
 const timeZone = 'Europe/Oslo'; // make all accounting transactions relative to Norway TZ, so we don't get any discrepancies
 
-const formatNo = (val: number) => new Intl.NumberFormat('nb-NO', { minimumFractionDigits: 2, maximumFractionDigits: 4 }).format(val);
+const formatNo = (val: number) => new Intl.NumberFormat('nb-NO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
 
 const maxDays = 7;
 
