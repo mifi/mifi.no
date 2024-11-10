@@ -51,10 +51,11 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {},
+        docs: {
+          editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
+        },
         blog: {
           showReadingTime: true,
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
           blogSidebarCount: 50,
         },
