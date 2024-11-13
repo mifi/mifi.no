@@ -5,7 +5,7 @@ authors: 'mifi'
 tags: []
 ---
 
-Jeg vet ikke hvorfor det ikke fantes før, så jeg lagde en slik kalkulator
+Jeg vet ikke hvorfor det ikke fantes før, så jeg lagde en slik kalkulator.
 
 <!--truncate-->
 

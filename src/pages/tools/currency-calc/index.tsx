@@ -206,10 +206,10 @@ export default function CurrencyCalc() {
     <Layout title="Valutakalkulator med historiske valutakurser fra Norges Bank">
       <main style={{ minHeight: '50vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '1em' }}>
         <div style={{ maxWidth: '30em', marginBottom: '2em' }}>
-          <h1>Valutakurser</h1>
-          <p style={{ opacity: 0.7, fontSize: '.8em' }}>Currency calculator for NOK based on <a href="https://www.norges-bank.no/en/" target="blank">Bank of Norway</a>. Norwegian only (not very useful for non-Norwegians)</p>
+          <h1>Valutakalkulatoren</h1>
+          <p style={{ opacity: 0.7, fontSize: '.8em' }}>Currency calculator for NOK based on <a href="https://www.norges-bank.no/en/" target="blank">Bank of Norway</a>. Norwegian only (not very useful for non-Norwegians).</p>
           <p>Her kan du konvertere valuta til norske kroner (NOK) med historiske valutakurser fra <a href="https://www.norges-bank.no/tema/Statistikk/Valutakurser/?tab=api" target="_blank" rel="noreferrer">Norges Bank</a> for bruk i regnskap o.l.</p>
-          <p><strong>NB!</strong> Bruk på eget ansvar! Jeg tar intet ansvar for feil eller annet.</p>
+          <p><strong>NB!</strong> Bruk på eget ansvar! Jeg tar intet ansvar for feil eller annet. <a href="https://github.com/mifi/mifi.no/blob/master/src/pages/tools/currency-calc/index.tsx">Hvordan fungerer den?</a></p>
         </div>
 
         <div style={{ width: '14em' }}>
