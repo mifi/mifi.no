@@ -100,6 +100,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          href: 'https://miffy.no/',
+          label: 'miffy.no',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/mifi',
           label: 'GitHub',
           position: 'right',

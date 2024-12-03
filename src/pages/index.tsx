@@ -51,7 +51,8 @@ export default function Home() {
             I create <Link to="https://github.com/mifi/" className={styles['nicelink']!}>free and open source</Link> software to share with the world because<br />
             I believe software should be available to everyone.<br />
             I love <Link to="https://www.instagram.com/mifi.no/" className={styles['nicelink']!}>🌋 travel and hiking</Link>.
-            I write a <Link to="/blog" className={styles['nicelink']!}>📝 blog</Link> and a <Link to="/docs" className={styles['nicelink']!}>📚 knowledge base</Link>.
+            I write a <Link to="/blog" className={styles['nicelink']!}>📝 blog</Link> and a <Link to="/docs" className={styles['nicelink']!}>📚 knowledge base</Link>.<br />
+            <a href="https://miffy.no/" target="_blank" rel="noopener noreferrer">miffy.no</a> 🌈 mini game 🆕
           </p>
 
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" className={styles['nicelink']!} style={{ fontSize: 30, fontWeight: 200 }}>Thanks to my supporters ❤️</Link></p>
