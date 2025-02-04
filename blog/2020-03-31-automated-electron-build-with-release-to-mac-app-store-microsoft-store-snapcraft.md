@@ -124,7 +124,7 @@ Then rebuild and verify that the `____chkstk_darwin` symbol reference is gone.
 
 ### Certificate creation/renewal
 
-First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA. Enter email. "Saved to disk".
+For each certificate to be created, you need to create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA. Enter email. "Saved to disk".
 
 Go to [certificates](https://developer.apple.com/account/resources/certificates/list). See which certificates that are about to expire soon - only generate those.
 
@@ -137,6 +137,9 @@ For Mac App Store and Notarized apps create the following certs:
 - `Mac Installer Distribution`
 - `Mac App Distribution`
 - `Mac Development`
+
+If you want to build `mas-dev` locally, also create:
+- `Apple Development`
 
 Then dowload them and drag drop into Keychain Access ("Login" keychain). You may then safely delete the downloaded `.cer` files.
 
