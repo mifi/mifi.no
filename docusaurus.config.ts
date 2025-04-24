@@ -75,11 +75,6 @@ const config: Config = {
       },
       items: [
         {
-          to: '/thanks',
-          label: 'Thanks',
-          position: 'left',
-        },
-        {
           to: '/docs',
           label: 'Knowledge',
           position: 'left',
@@ -95,18 +90,23 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://mifi.no/losslesscut/',
-          label: 'LosslessCut',
+          to: '/thanks',
+          label: '🪙 Donate',
           position: 'left',
         },
         {
-          href: 'https://miffy.no/',
-          label: 'miffy.no',
-          position: 'left',
+          href: 'https://mifi.no/losslesscut/',
+          label: 'LosslessCut',
+          position: 'right',
         },
         {
           href: 'https://github.com/mifi',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://miffy.no/',
+          label: 'miffy.no',
           position: 'right',
         },
       ],

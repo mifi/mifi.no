@@ -1,12 +1,15 @@
 .nicelink {
-  color: #0085d8;
-  text-decoration: none !important;
-}
-.appStore {
-  overflow: hidden;
+  color: inherit;
+  text-decoration: underline;
+  /* position text decoration line a bit below: */
+  text-underline-offset: .1em;
+  text-decoration-color: rgba(0,0,0,0.4);
 }
 .appStore img {
   display: block;
+}
+.appStore:hover {
+  filter: saturate(0) invert();
 }
 .app {
   padding: 10px 15px;
@@ -17,21 +20,17 @@
   color: white;
   font-weight: 500;
   text-decoration: none !important;
+  border: 1px solid transparent;
 }
 .app:hover {
-  background: #EB1D36;
-  color: white;
+  background: rgb(240,240,240);
+  color: black;
+  border: 1px solid black;
 }
 .appIcon {
   vertical-align: middle;
   font-size: 1.3em;
   margin-right: .1em;
-}
-.appStore {
-  overflow: hidden;
-}
-.appStore img {
-  display: block;
 }
 .vidBlock {
   display: block;

@@ -52,12 +52,12 @@ export default function Home() {
             I believe software should be available to everyone.<br />
             I love <Link to="https://www.instagram.com/mifi.no/" className={styles['nicelink']!}>🌋 travel and hiking</Link>.
             I write a <Link to="/blog" className={styles['nicelink']!}>📝 blog</Link> and a <Link to="/docs" className={styles['nicelink']!}>📚 knowledge base</Link>.<br />
-            <a href="https://miffy.no/" target="_blank" rel="noopener noreferrer">miffy.no</a> 🌈 mini game 🆕
+            <a href="https://miffy.no/" className={styles['nicelink']!} target="_blank" rel="noopener noreferrer">miffy.no</a> 🌈 mini game 🆕
           </p>
 
-          <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" className={styles['nicelink']!} style={{ fontSize: 30, fontWeight: 200 }}>Thanks to my supporters ❤️</Link></p>
+          <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>Thanks to my supporters ❤️</Link></p>
 
-          <a style={{ marginTop: 100, marginBottom: 100 }} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ width: 150 }} /></a>
+          <a style={{ marginTop: 100, marginBottom: 100 }} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ width: 150, borderRadius: '3%' }} /></a>
 
           <div style={{ padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
             <div style={{ margin: '40px 0', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
@@ -76,9 +76,9 @@ export default function Home() {
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <Link className={styles['appStore']!} style={{ margin: '0 2px' }} to="https://www.microsoft.com/store/apps/9P30LSR4705L?cid=storebadge&ocid=badge"><img src="https://github.com/mifi/lossless-cut/raw/master/ms-store-badge.svg?sanitize=true" alt="MS badge" height="50" /></Link>
                 <Link className={styles['appStore']!} style={{ margin: '0 2px' }} to="https://apps.apple.com/app/id1505323402"><img src="https://github.com/mifi/lossless-cut/raw/master/mac-app-store-badge.svg?sanitize=true" alt="Mac App Store" height="50" /></Link>
-                <Link className={styles['appStore']!} style={{ borderRadius: 13, margin: '0 2px' }} to="https://www.microsoft.com/store/apps/9P30LSR4705L?cid=storebadge&ocid=badge"><img src="https://github.com/mifi/lossless-cut/raw/master/ms-store-badge.svg?sanitize=true" alt="MS badge" height="50" /></Link>
-                <Link className={styles['appStore']!} style={{ borderRadius: 13, margin: '0 2px' }} to="https://snapcraft.io/losslesscut"><img src="https://github.com/mifi/lossless-cut/raw/master/snap-store-black.svg?sanitize=true" alt="Snapcraft" height="50" /></Link>
+                <Link className={styles['appStore']!} style={{ margin: '0 2px' }} to="https://snapcraft.io/losslesscut"><img src="https://github.com/mifi/lossless-cut/raw/master/snap-store-black.svg?sanitize=true" alt="Snapcraft" height="50" /></Link>
               </div>
             </div>
 
