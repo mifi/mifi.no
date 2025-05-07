@@ -8,10 +8,10 @@ tags:
 ---
 I bought a "Multi Battery Parallel Charging Board For DJI phantom3" on ebay, and I soldered on a deans female connector for connecting it to my iMax B6 charger.
 
-![](https://static.mifi.no/uploads/2016/06/s-l1600.jpg)
+![](https://static.mifi.no/dist/2016/06/s-l1600.jpg)
 Since the Phantom 3 battery is intelligent and has its charging circuitry in the battery itself, the iMax will just work as a voltage booster with an output of 18V. This is 0.5V more than the DJI charger provides but it seems to work. So anything that can output &gt;3A ~17.5V should be able to replace the iMax.
 
-![](https://static.mifi.no/uploads/2016/06/IMG_4578.jpg)
+![](https://static.mifi.no/dist/2016/06/IMG_4578.jpg)
 
 
 1. Connect iMax input to car cigarette connector

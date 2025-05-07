@@ -7,7 +7,7 @@ tags:
   - hardware
   - open source
 ---
-![](https://static.mifi.no/uploads/2016/01/IMG_4922.jpg)
+![](https://static.mifi.no/dist/2016/01/IMG_4922.jpg)
 
 I have always wanted to make a custom digital picture/multimedia frame showing things like beautiful earth porn videos from YouTube. For this you need a computer, like a Raspberry PI and an LCD monitor.
 LCD monitors can be bought on ebay but they get a bit pricey if you want a bit of size (10"+), and you often need custom HDMI controllers for them. I had a couple of old EEEPCs lying around, and I figured an EEEPC would be a good fit. It has everything you need. Big slim LCD screen, slim motherboard, integrated WIFI and will boot off an SD card, and it's environmentally friendly to recycle old stuff.
@@ -21,11 +21,11 @@ Careful with WIFI antenna, LCD cable and flatcables connected to the motherboard
 Disconnect anything that is not needed. (camera, touchpad, keyboard, ++)
 Solder a couple of wires with a push-button onto the existing power button pins.
 
-![](https://static.mifi.no/uploads/2016/01/IMG_3698.jpg)
-![](https://static.mifi.no/uploads/2016/01/IMG_3728.jpg)
-![](https://static.mifi.no/uploads/2016/01/IMG_3729.jpg)
-![](https://static.mifi.no/uploads/2016/01/IMG_3730.jpg)
-![](https://static.mifi.no/uploads/2016/01/IMG_3726.jpg)
+![](https://static.mifi.no/dist/2016/01/IMG_3698.jpg)
+![](https://static.mifi.no/dist/2016/01/IMG_3728.jpg)
+![](https://static.mifi.no/dist/2016/01/IMG_3729.jpg)
+![](https://static.mifi.no/dist/2016/01/IMG_3730.jpg)
+![](https://static.mifi.no/dist/2016/01/IMG_3726.jpg)
 
 I built a wooden case for my frame which holds the motherboard towards the back wood plate with some screws, keeping the heatsink metal plate that sat behind the keyboard in the Eee. The screen is screwed into the front frame which is fastened to the wooden supports on the sides.
 

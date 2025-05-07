@@ -13,19 +13,19 @@ This article shows how to send money using the Vipps apps to an arbitrary bank a
 
 1 - Tap **Scan**
 
-![](https://static.mifi.no/uploads/IMG_3190.jpg)
+![](https://static.mifi.no/dist/2022/IMG_3190.jpg)
 
 2 - Choose **Bill**
 3 - Take a picture of anything (not a bill)
 
-![](https://static.mifi.no/uploads/IMG_3191.jpg)
+![](https://static.mifi.no/dist/2022/IMG_3191.jpg)
 
 4 - Choose **Type in**
 
-![](https://static.mifi.no/uploads/IMG_3192.jpg)
+![](https://static.mifi.no/dist/2022/IMG_3192.jpg)
 
 5 - Manually enter the account number, message and amount and send the money
 
-![](https://static.mifi.no/uploads/IMG_3193.jpg)
+![](https://static.mifi.no/dist/2022/IMG_3193.jpg)
 
 6 - Now you know how 😎

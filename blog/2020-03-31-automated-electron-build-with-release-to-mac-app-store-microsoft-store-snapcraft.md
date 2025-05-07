@@ -22,9 +22,9 @@ I [just released LosslessCut](./2020-04-01-losslesscut-now-on-the-mac-app-store-
 
 I believe the key to any well-maintained project is to have an automated release pipeline, or else it will be a hassle every time one wants to do bug fixes and improvements. I have now taken some time to set up automated build and signing for Mac OS (notarization) as well as release to the Mac App Store, Microsoft Store and Snapcraft. I have used many CI systems but I find that the new Github Actions are very fast and feature rich, and with its reusable action ecosystem it is quite easy to use. And all the setup and configuration is of course available open source for anyone to see [here](https://github.com/mifi/lossless-cut/blob/master/.github/workflows/build.yml). See the actions in action(heh) [here](https://github.com/mifi/lossless-cut/actions), as a free reference for anyone else needing to set up an automated build and release process of their Electron app.
 
-![](https://static.mifi.no/uploads/screenshot-2020-03-31-at-15.58.55.png)
+![](https://static.mifi.no/dist/2024/screenshot-2020-03-31-at-15.58.55.jpg)
 
-![](https://static.mifi.no/uploads/screenshot-2020-03-31-at-15.58.18.png)
+![](https://static.mifi.no/dist/2024/screenshot-2020-03-31-at-15.58.18.jpg)
 
 Building and releasing for big stores like Microsoft and Mac App Store can be a true nightmare that can take weeks to set up, however thanks to awesome projects like `electron-builder` and `action-electron-builder`, it is not really that bad and only took me a few days to setup, and once setup the code is automatically built and ready to be released. The only recurring task is regenerating Apple certificates and provisioning profiles once per year.
 

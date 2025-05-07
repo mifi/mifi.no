@@ -15,4 +15,4 @@ Inspired by [this post](http://www.findawayphotography.com/new-zealand-update-cl
 
 For anyone else who are thinking about doing the hike. I think it's a lot easier to follow the Roys Peak track to approx 1100m altitude and then take right up to the ridge that goes down to Coromandel Peak. There is no trail up to the ridge, except for a few weak sheep tracks. Eventually when you get up on the ridge there will be a track there leading down to Coromandel Peak.
 
-![](https://static.mifi.no/uploads/IMG_3204.jpg)
+![](https://static.mifi.no/dist/2018/IMG_3204.jpg)

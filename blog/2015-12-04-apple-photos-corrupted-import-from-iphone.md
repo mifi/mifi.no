@@ -6,7 +6,7 @@ tags:
   - apple
   - mac
 ---
-![](https://static.mifi.no/uploads/2015/12/Screen-Shot-2015-12-04-at-20.13.02.jpg)
+![](https://static.mifi.no/dist/2015/12/Screen-Shot-2015-12-04-at-20.13.02.jpg)
 
 I was importing my photos from my iPhone to my MacBook running El Capitan, and I got errors saying some files were in an unrecognised format, and some pictures turned out completely weird.
 

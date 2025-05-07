@@ -11,11 +11,11 @@ I bought this fun toy, but it had a misaligned LED so i had to disassemble it to
 See here for product demo: https://www.youtube.com/watch?v=W6SSY7ABJkw
 
 PCB photos follow:
-- [IMG_3576.jpg](https://static.mifi.no/uploads/2015/12/IMG_3576.jpg)
-- [IMG_3575.jpg](https://static.mifi.no/uploads/2015/12/IMG_3575.jpg)
-- [IMG_3568.jpg](https://static.mifi.no/uploads/2015/12/IMG_3568.jpg)
-- [IMG_3565.jpg](https://static.mifi.no/uploads/2015/12/IMG_3565.jpg)
-- [IMG_3563.jpg](https://static.mifi.no/uploads/2015/12/IMG_3563.jpg)
-- [IMG_3561.jpg](https://static.mifi.no/uploads/2015/12/IMG_3561.jpg)
-- [IMG_3560.jpg](https://static.mifi.no/uploads/2015/12/IMG_3560.jpg)
-- [IMG_3559.jpg](https://static.mifi.no/uploads/2015/12/IMG_3559.jpg)
+- [IMG_3576.jpg](https://static.mifi.no/src/2015/12/IMG_3576.jpg)
+- [IMG_3575.jpg](https://static.mifi.no/src/2015/12/IMG_3575.jpg)
+- [IMG_3568.jpg](https://static.mifi.no/src/2015/12/IMG_3568.jpg)
+- [IMG_3565.jpg](https://static.mifi.no/src/2015/12/IMG_3565.jpg)
+- [IMG_3563.jpg](https://static.mifi.no/src/2015/12/IMG_3563.jpg)
+- [IMG_3561.jpg](https://static.mifi.no/src/2015/12/IMG_3561.jpg)
+- [IMG_3560.jpg](https://static.mifi.no/src/2015/12/IMG_3560.jpg)
+- [IMG_3559.jpg](https://static.mifi.no/src/2015/12/IMG_3559.jpg)

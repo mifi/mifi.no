@@ -160,7 +160,7 @@ const config: Config = {
             },
             {
               label: 'Free wallpapers',
-              to: 'https://static.mifi.no/wp',
+              to: '/wp',
             },
             {
               label: 'Mail me',
