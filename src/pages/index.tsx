@@ -57,7 +57,10 @@ export default function Home() {
 
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>Thanks to my supporters ❤️</Link></p>
 
-          <a style={{ marginTop: 100, marginBottom: 100 }} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ width: 150, borderRadius: '3%' }} /></a>
+          <div style={{ marginTop: 100, marginBottom: 100, display: 'flex', flexWrap: 'wrap', gap: '1em', fontSize: '1.5em' }}>
+            <a href="/palestine/" target="_blank" rel="noopener noreferrer"><img title="Gaza Genocide" alt="" src="palestine/palestine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
+            <a href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
+          </div>
 
           <div style={{ padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
             <div style={{ margin: '40px 0', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
