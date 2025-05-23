@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import { FaGithub, FaNpm } from 'react-icons/fa';
 
 import styles from './index.module.css';
+import NorwayFlag from './norway.svg';
 
 
 // https://github.com/mifi?tab=repositories&q=&type=source&language=&sort=stargazers
@@ -52,13 +53,14 @@ export default function Home() {
             I believe software should be available to everyone.<br />
             I love <Link to="https://www.instagram.com/mifi.no/" className={styles['nicelink']!}>🌋 travel and hiking</Link>.
             I write a <Link to="/blog" className={styles['nicelink']!}>📝 blog</Link> and a <Link to="/docs" className={styles['nicelink']!}>📚 knowledge base</Link>.<br />
-            <a href="https://miffy.no/" className={styles['nicelink']!} target="_blank" rel="noopener noreferrer">miffy.no</a> 🌈 mini game 🆕
+            <a href="https://miffy.no/" className={styles['nicelink']!} target="_blank" rel="noopener noreferrer">miffy.no</a> 🌈 mini game
           </p>
 
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>Thanks to my supporters ❤️</Link></p>
 
           <div style={{ marginTop: 100, marginBottom: 100, display: 'flex', flexWrap: 'wrap', gap: '1em', fontSize: '1.5em' }}>
             <a href="/palestine/" target="_blank" rel="noopener noreferrer"><img title="Gaza Genocide" alt="" src="palestine/palestine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
+            <NorwayFlag style={{ height: '3em', borderRadius: '3%' }} />
             <a href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
           </div>
 
