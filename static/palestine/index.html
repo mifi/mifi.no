@@ -85,12 +85,12 @@
       try {
         const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
-        if (timeZone.startsWith('America/')) return 'Tell Congress to end U.S. funding of Israel\'s genocide in Gaza.';
-        if (timeZone === 'Europe/London') return 'Urge your MP to start sanctioning Israel and end military support.';
+        if (timeZone.startsWith('America/')) return 'Tell Congress: Stop funding Israel\'s genocide in Gaza.';
+        if (timeZone === 'Europe/London') return 'Call on your MP: Sanction Israel and end military backing.';
       } catch (err) {
         console.error(err);
       }
-      return 'Urge your politicians to start sanctioning Israel and end military support.'
+      return 'Urge your leaders: Sanction Israel and end military support.'
     })();
 
     document.querySelector('.info2 .message').innerText = message;
@@ -101,10 +101,11 @@
 <div id="container"></div>
 
 <div class="info1">
-  Names of some of the children that have been killed in the Gaza <span style="font-weight: bold">genocide</span> since <span style="white-space: nowrap; font-weight: bold;">October 7, 2023.</span>
+  Names of some of the children that have been killed in the Gaza <span style="font-weight: bold">genocide</span> since <span style="white-space: nowrap; font-weight: bold;">October 7, 2023:</span>
 </div>
 
 <div class="info2">
+  <div>There is still hope.</div>
   <div class="message"></div>
   <div class="message2" style="margin-top: 1em; color: rgba(255, 255, 255, 0.5)">Your silence supports the killing.</div>
 </div>

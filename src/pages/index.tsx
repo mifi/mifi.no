@@ -2,6 +2,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import { FaGithub, FaNpm } from 'react-icons/fa';
+import { useCallback, useRef } from 'react';
 
 import styles from './index.module.css';
 import NorwayFlag from './norway.svg';
@@ -38,6 +39,25 @@ function Project({ name, type } : { name: string, type: 'github' | 'npm' | 'npm-
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
+  const palestineRef = useRef<HTMLAnchorElement>(null);
+  const ukraineRef = useRef<HTMLAnchorElement>(null);
+
+  const handleNorwayClick = useCallback(() => {
+    const animate = (el: HTMLAnchorElement | null) => {
+      if (!el) return;
+      el.animate([
+        { transform: 'scale(1)', offset: 0 },
+        { transform: 'scale(1.3)', offset: 0.2 },
+        { transform: 'rotate(1)' },
+      ], {
+        duration: 200,
+      });
+    };
+
+    animate(palestineRef.current);
+    animate(ukraineRef.current);
+  }, []);
+
   return (
     <Layout
       title={siteConfig.title}
@@ -59,9 +79,9 @@ export default function Home() {
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>Thanks to my supporters ❤️</Link></p>
 
           <div style={{ marginTop: 100, marginBottom: 100, display: 'flex', flexWrap: 'wrap', gap: '1em', fontSize: '1.5em' }}>
-            <a href="/palestine/" target="_blank" rel="noopener noreferrer"><img title="Gaza Genocide" alt="" src="palestine/palestine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
-            <NorwayFlag style={{ height: '3em', borderRadius: '3%' }} />
-            <a href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
+            <a ref={palestineRef} href="/palestine/" target="_blank" rel="noopener noreferrer"><img title="Gaza Genocide" alt="" src="palestine/palestine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
+            <NorwayFlag style={{ height: '3em', borderRadius: '3%', cursor: 'pointer' }} onClick={handleNorwayClick} />
+            <a ref={ukraineRef} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
           </div>
 
           <div style={{ padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
