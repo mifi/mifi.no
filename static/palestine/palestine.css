@@ -44,7 +44,7 @@ body {
   cursor: none;
 }
 
-.info {
+.info1, .info2 {
   position: fixed;
   pointer-events: none;
   cursor: none;
@@ -53,11 +53,17 @@ body {
   color: rgba(255, 255, 255, .7);
   text-align: center;
   font-size: 4vmin;
-
-  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
+}
+
+.info1 {
+  top: 15%;
+}
+
+.info2 {
+  bottom: 15%;
 }
 
 .footer {
