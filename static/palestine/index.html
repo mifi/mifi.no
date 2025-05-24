@@ -32,9 +32,11 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    const body = document.querySelector('body');
     const container = document.getElementById('container');
 
     const childByNode = new Map();
+    const nodeByChild = new Map();
 
     shuffleArray(children).forEach((child) => {
       const childNode = document.createElement('div');
@@ -43,6 +45,7 @@
 
       container.appendChild(childNode);
       childByNode.set(childNode, child);
+      nodeByChild.set(child, childNode);
     });
 
     const handleMove = (e) => {
@@ -83,11 +86,11 @@
         const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
         if (timeZone.startsWith('America/')) return 'Tell Congress to end U.S. funding of Israel\'s genocide in Gaza.';
-        if (timeZone === 'Europe/London') return 'Urge your MP to start sanctioning Israel and stop military aid.';
+        if (timeZone === 'Europe/London') return 'Urge your MP to start sanctioning Israel and end military support.';
       } catch (err) {
         console.error(err);
       }
-      return 'Urge your politicians to start sanctioning Israel and stop military aid.'
+      return 'Urge your politicians to start sanctioning Israel and end military support.'
     })();
 
     document.querySelector('.info2 .message').innerText = message;
