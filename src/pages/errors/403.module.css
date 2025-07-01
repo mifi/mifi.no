@@ -1,0 +1,20 @@
+.code {
+  margin-left: .5em;
+  transform-origin: 20% 23%;
+  font-size: 5.5em;
+  font-weight: 200;
+  animation: errorCode 2s ease-in-out infinite;
+  color: #209CEE;
+}
+
+@keyframes errorCode {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
