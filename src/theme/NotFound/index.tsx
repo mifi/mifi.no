@@ -1,10 +1,14 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import type NotFoundType from '@theme/NotFound';
+import type { WrapperProps } from '@docusaurus/types';
 
-import styles from './403.module.css';
+import styles from './index.module.css';
 
+type Props = WrapperProps<typeof NotFoundType>;
 
-export default function Error() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function NotFoundWrapper(_props: Props): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
   const errorCode = 403;
