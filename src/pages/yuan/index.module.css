@@ -75,7 +75,6 @@ ul.menu-items li a {
 .locationPin {
   animation: bounce 1.5s ease-in-out infinite;
   margin-right: .6em;
-  font-size: 1.7em
 }
 
 .tapIndicator {
@@ -98,9 +97,17 @@ ul.menu-items li a {
   animation: kenBurnsEffect1 20s ease-in-out infinite;
 }
 
-.kenBurns2 {
+.mainImg {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
   animation: kenBurnsEffect2 20s ease-in-out infinite;
+  background-size: cover;
+  background-position-x: 70%;
+  background-repeat: no-repeat;
 }
+
+
 
 @keyframes kenBurnsEffect1 {
   0% {
@@ -159,6 +166,9 @@ h2.qa {
   align-items: center;
   flex-direction: column;
   margin-bottom: 2em;
+  background-color: rgba(255,255,255,0.6);
+  padding: 1.5em;
+  border-radius: 1em;
 }
 
 .button, .buttonInverse {

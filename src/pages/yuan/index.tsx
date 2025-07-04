@@ -73,12 +73,12 @@ function handleRsvpClick(e: React.MouseEvent<HTMLAnchorElement>) {
 
 const Location = ({ href, name }: { href: string, name: string }) => (
   <a rel="noopener nofollow noreferrer" target="_blank" href={href} style={{ textDecoration: 'underline', color: 'inherit', display: 'flex', alignItems: 'center' }}>
-    <FiMapPin className={classes['locationPin']} />
+    <FiMapPin className={classes['locationPin']} style={{ fontSize: '1.7em' }} />
     <span>{name}</span>
   </a>
 );
 
-function Event({ title, description, time, startDate, endDate, location }: { title: string, description?: string, time: string, startDate: Date, endDate: Date, location: string }) {
+function Event({ locationShort, locationHref, title, description, time, startDate, endDate, location }: { locationShort?: string, locationHref?: string, title: string, description?: string, time: string, startDate: Date, endDate: Date, location: string }) {
   function downloadCal() {
     function formatDate(date: Date) {
       return `${date.toISOString().replaceAll(/[:-]/g, '').split('.')[0]}Z`;
@@ -110,11 +110,17 @@ END:VCALENDAR
   return (
     <>
       <p style={{ fontSize: '1.1em' }}>{title}</p>
+      {locationShort && locationHref && (
+        <a rel="noopener nofollow noreferrer" target="_blank" href={locationHref} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', marginBottom: '.1em' }}>
+          <FiMapPin className={classes['locationPin']} style={{ fontSize: '.8em', marginRight: '.4em' }} />
+          <span>{locationShort}</span>
+        </a>
+      )}
       <p style={{ opacity: 0.7 }}>{time}</p>
-      <button type="button" onClick={downloadCal} className={classes['button']} style={{ marginBottom: '2em', display: 'flex', alignItems: 'center' }}>
-        <FiCalendar style={{ fontSize: '1.4em', marginRight: '.5em' }} /> Add to Calendar
+      <button type="button" onClick={downloadCal} className={classes['button']} style={{ marginBottom: '2em', display: 'flex', alignItems: 'center', fontSize: '.7em', padding: '.3em .8em' }}>
+        <FiCalendar style={{ fontSize: '1.2em', marginRight: '.5em' }} /> Add to Calendar
       </button>
-      {description && <p>{description}</p>}
+      {description && <p style={{ textAlign: 'center' }}>{description}</p>}
     </>
   );
 }
@@ -180,11 +186,9 @@ export default function MifiYuan() {
         <div>
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
           <div style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={(e) => makeHearts({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight })} tabIndex={0}>
-            <img
-              className={classes['kenBurns2']}
-              src={`${staticBaseUrl}${'26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg'}`}
-              alt="Main"
-              style={{ objectFit: 'cover', width: '100vw', height: '70vh' }}
+            <div
+              className={classes['mainImg']}
+              style={{ backgroundImage: `url(${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg` }}
             />
 
             <div style={{ position: 'absolute', bottom: 0, left: 0, color: 'white', padding: '0 3em' }}>
@@ -232,44 +236,36 @@ export default function MifiYuan() {
             <div className={classes['locationHeader']}>Friday, December 12</div>
 
             <div className={classes['schedule']}>
-              <Event title="🎂 Celebrating Mikael's Birthday" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-12T18:00:00+07:00')} endDate={new Date('2025-12-12T20:00:00+07:00')} description="We're planning an Italian dinner at Terra in Mae Rim for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" location="Terra Rim Tai, Mae Rim District, Chiang Mai, Thailand" />
-
-              <Location href="https://www.google.com/maps/search/?api=1&query=Terra+Rim+Tai%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" name="Terra Rim Tai, Mae Rim District, Chiang Mai, Thailand" />
+              <Event title="🎂 Celebrating Mikael's Birthday" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-12T18:00:00+07:00')} endDate={new Date('2025-12-12T20:00:00+07:00')} description="We're planning an Italian dinner at Terra in Mae Rim for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" locationShort="Terra" location="Terra" locationHref="https://www.google.com/maps/search/?api=1&query=Terra+Rim+Tai%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
             </div>
 
 
             <div className={classes['locationHeader']}>Saturday, December 13</div>
 
             <div className={classes['schedule']}>
-              <Event title="🚌 Shuttle Bus" time="3:30 PM to 4:00 PM" startDate={new Date('2025-12-13T15:30:00+07:00')} endDate={new Date('2025-12-13T16:00:00+07:00')} description="Shuttle buses leave from Proud Phu Fah Muang Chiang Mai hotel and straight to the venue and back to the hotel at 8pm." location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" />
-
-              <Location href="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" name="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" />
+              <Event title="🚌 Shuttle Bus" time="3:30 PM to 4:00 PM" startDate={new Date('2025-12-13T15:30:00+07:00')} endDate={new Date('2025-12-13T16:00:00+07:00')} description="Shuttle buses leave from Proud Phu Fah Muang Chiang Mai hotel and straight to the venue and back to the hotel at 8pm." locationShort="Proud Phu Fah" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" />
             </div>
 
 
             <div className={classes['schedule']}>
-              <Event title="🥂 Reception and Light Bites" time="4:00 PM to 5:30 PM" startDate={new Date('2025-12-13T16:00:00+07:00')} endDate={new Date('2025-12-13T17:30:00+07:00')} location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
+              <Event title="🥂 Reception and Light Bites" time="4:00 PM to 5:30 PM" startDate={new Date('2025-12-13T16:00:00+07:00')} endDate={new Date('2025-12-13T17:30:00+07:00')} locationShort="The Ironwood" location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=The+Ironwood%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1+-+%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%87+Mae+Raem%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
 
-              <div>
-                <div style={{ marginBottom: '1em', textAlign: 'center' }}><PiCoatHanger style={{ fontSize: '2em', verticalAlign: 'middle', marginRight: '.4em' }} /> Dress code: Happy Colours</div>
-
-                <Location href="https://www.google.com/maps/search/?api=1&amp;query=The+Ironwood%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1+-+%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%87+Mae+Raem%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" name="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
-              </div>
+              <div style={{ marginBottom: '1em', textAlign: 'center' }}><PiCoatHanger style={{ fontSize: '1.2em', verticalAlign: 'middle', marginRight: 0 }} /> Dress code: Happy Colours</div>
             </div>
 
             <div className={classes['schedule']}>
-              <Event title="🍽 Dinner" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-13T18:00:00+07:00')} endDate={new Date('2025-12-13T20:00:00+07:00')} location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
+              <Event title="🍽 Dinner" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-13T18:00:00+07:00')} endDate={new Date('2025-12-13T20:00:00+07:00')} locationShort="The Ironwood" locationShort="The Ironwood" location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=The+Ironwood%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1+-+%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%87+Mae+Raem%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
+            </div>
 
-              <Event title="🍹🪩 Party!" time="9:00 PM to 11:00 PM" startDate={new Date('2025-12-13T21:00:00+07:00')} endDate={new Date('2025-12-13T23:00:00+07:00')} description="We will first head back to hotel to change and go to a nice bar after that!" location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
+            <div className={classes['schedule']}>
+              <Event title="🍹🪩 Party!" time="9:00 PM to 11:00 PM" startDate={new Date('2025-12-13T21:00:00+07:00')} endDate={new Date('2025-12-13T23:00:00+07:00')} description="We will first head back to hotel to change and go to a nice bar after that!" locationShort="The Ironwood" location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
             </div>
 
 
             <div className={classes['locationHeader']}>Sunday, December 14</div>
 
             <div className={classes['schedule']}>
-              <Event title="Breakfast Get Together 🍳🥐🥓" time="8:30 AM to 10:00 AM" startDate={new Date('2025-12-14T08:30:00+07:00')} endDate={new Date('2025-12-14T10:00:00+07:00')} description="Complimentary breakfast at the hotel, let's all meet at 8:30am!" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" />
-
-              <Location href="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" name="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" />
+              <Event title="Breakfast Get Together 🍳🥐🥓" time="8:30 AM to 10:00 AM" startDate={new Date('2025-12-14T08:30:00+07:00')} endDate={new Date('2025-12-14T10:00:00+07:00')} description="Complimentary breakfast at the hotel, let's all meet at 8:30am!" locationShort="Proud Phu Fah" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" />
             </div>
           </div>
 
@@ -455,7 +451,7 @@ export default function MifiYuan() {
         </div>
       </div>
 
-      <button className={classes['button']} type="button" style={{ position: 'fixed', top: '3vw', left: '3vw', backgroundColor: 'white', opacity: 0.8, fontFamily: 'Libertinus Math', letterSpacing: '.1em', display: 'flex', alignItems: 'center' }} onClick={() => setMenuVisible((v) => !v)}>
+      <button className={classes['button']} type="button" style={{ position: 'fixed', top: '5vw', left: '5vw', backgroundColor: 'white', opacity: 0.8, fontFamily: 'Libertinus Math', letterSpacing: '.1em', display: 'flex', alignItems: 'center' }} onClick={() => setMenuVisible((v) => !v)}>
         <IoIosMenu style={{ marginRight: '.5em' }} />
         <span>MENU</span>
       </button>
