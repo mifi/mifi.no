@@ -73,7 +73,7 @@ function handleRsvpClick(e: React.MouseEvent<HTMLAnchorElement>) {
 
 const Location = ({ href, name }: { href: string, name: string }) => (
   <a rel="noopener nofollow noreferrer" target="_blank" href={href} style={{ textDecoration: 'underline', color: 'inherit', display: 'flex', alignItems: 'center' }}>
-    <FiMapPin style={{ marginRight: '.6em', fontSize: '2em' }} className={classes['locationPin']} />
+    <FiMapPin className={classes['locationPin']} />
     <span>{name}</span>
   </a>
 );
@@ -109,8 +109,8 @@ END:VCALENDAR
 
   return (
     <>
-      <p>{title}</p>
-      <p>{time}</p>
+      <p style={{ fontSize: '1.1em' }}>{title}</p>
+      <p style={{ opacity: 0.7 }}>{time}</p>
       <button type="button" onClick={downloadCal} className={classes['button']} style={{ marginBottom: '2em', display: 'flex', alignItems: 'center' }}>
         <FiCalendar style={{ fontSize: '1.4em', marginRight: '.5em' }} /> Add to Calendar
       </button>
@@ -156,7 +156,7 @@ export default function MifiYuan() {
 
       WebFont.load({
         google: {
-          families: ['Alegreya', 'WindSong', 'Merriweather'],
+          families: ['Alegreya', 'WindSong', 'Merriweather', 'Libertinus Math'],
         },
       });
 
@@ -221,7 +221,7 @@ export default function MifiYuan() {
           <div className={classes['box']} id="home">
             <h1 id="accomodation">Accomodation</h1>
 
-            <p>We will be providing a complimentary one-night stay on 13-14th Dec at Proud Phu Fah Muang Chiang Mai, along with shuttle service to the event venue.</p>
+            <p>We will be providing a complimentary one-night stay on 13-14th Dec at <a href="https://www.proudphufah.com/muang/" target="_blank" rel="noopener noreferrer">Proud Phu Fah Muang Chiang Mai</a>, along with shuttle service to the event venue.</p>
           </div>
 
           <Img src="aedbb6f0-56cb-11f0-a43d-71246f6bde58-terra-1000.jpg" colors={['#2c442c', '#39bf39']} />
@@ -251,7 +251,7 @@ export default function MifiYuan() {
               <Event title="🥂 Reception and Light Bites" time="4:00 PM to 5:30 PM" startDate={new Date('2025-12-13T16:00:00+07:00')} endDate={new Date('2025-12-13T17:30:00+07:00')} location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
 
               <div>
-                <div style={{ marginBottom: '1em' }}><PiCoatHanger style={{ fontSize: '2em', verticalAlign: 'middle', marginRight: '.4em' }} /> Happy Colours</div>
+                <div style={{ marginBottom: '1em', textAlign: 'center' }}><PiCoatHanger style={{ fontSize: '2em', verticalAlign: 'middle', marginRight: '.4em' }} /> Dress code: Happy Colours</div>
 
                 <Location href="https://www.google.com/maps/search/?api=1&amp;query=The+Ironwood%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1+-+%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%87+Mae+Raem%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" name="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" />
               </div>
@@ -455,9 +455,9 @@ export default function MifiYuan() {
         </div>
       </div>
 
-      <button className={classes['button']} type="button" style={{ position: 'fixed', top: '3vw', left: '3vw', backgroundColor: 'white', opacity: 0.8 }} onClick={() => setMenuVisible((v) => !v)}>
-        <IoIosMenu style={{ verticalAlign: 'middle', marginRight: '.5em' }} />
-        Menu
+      <button className={classes['button']} type="button" style={{ position: 'fixed', top: '3vw', left: '3vw', backgroundColor: 'white', opacity: 0.8, fontFamily: 'Libertinus Math', letterSpacing: '.1em', display: 'flex', alignItems: 'center' }} onClick={() => setMenuVisible((v) => !v)}>
+        <IoIosMenu style={{ marginRight: '.5em' }} />
+        <span>MENU</span>
       </button>
 
       <div className={classes['menu']} data-visible={menuVisible}>
@@ -474,7 +474,7 @@ export default function MifiYuan() {
           <li><a href="#qa" onClick={handleMenuClose}>Q &amp; A</a></li>
         </ul>
 
-        <a className={classes['button']} style={{ fontSize: '1.3em', width: '100%', boxSizing: 'border-box', textAlign: 'center' }} href="https://withjoy.com/yuan-and-mikael/rsvp" onClick={handleRsvpClick}>RSVP</a>
+        <a className={classes['buttonInverse']} style={{ fontSize: '1.3em', width: '100%', boxSizing: 'border-box', textAlign: 'center', fontWeight: 400 }} href="https://withjoy.com/yuan-and-mikael/rsvp" onClick={handleRsvpClick}>RSVP</a>
 
         <button type="button" style={{ all: 'unset', position: 'absolute', right: 0, top: 0 }} onClick={handleMenuClose}>
           <IoIosClose style={{ fontSize: '2em', color: 'black', padding: '.3em', boxSizing: 'content-box', cursor: 'pointer' }} />

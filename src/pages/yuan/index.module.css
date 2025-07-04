@@ -2,6 +2,18 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: underline;
+}
+
+.locationPin, a {
+  color: inherit;
+}
+
+.locationPin, a:hover, a:focus, a:active {
+  color: rgba(170,50,50);
+}
+
 .wrapper {
   width: 100vw;
   overflow-x: hidden;
@@ -38,18 +50,18 @@ ul.big li {
 }
 
 ul.menu-items {
+  font-size: 1.3em;
   margin-left: 0;
 }
 
 ul.menu-items li {
-  line-height: 200%;
+  line-height: 250%;
   letter-spacing: .05em;
   list-style-type: none;
 }
 
 ul.menu-items li a {
   text-decoration: none;
-  color: black;
 }
 
 .headingIcon {
@@ -62,6 +74,8 @@ ul.menu-items li a {
 
 .locationPin {
   animation: bounce 1.5s ease-in-out infinite;
+  margin-right: .6em;
+  font-size: 1.7em
 }
 
 .tapIndicator {
@@ -147,7 +161,7 @@ h2.qa {
   margin-bottom: 2em;
 }
 
-.button {
+.button, .buttonInverse {
   all: unset;
   border-radius: 1.5em;
   padding: .5em 1em;
@@ -156,9 +170,14 @@ h2.qa {
   display: inline-block;
 }
 
-.button:hover {
+.button:hover, .buttonInverse:hover {
   text-decoration: inherit;
   color: inherit;
+  background-color: white;
+}
+
+.buttonInverse:hover {
+  background-color: rgb(255 240 240);
 }
 
 .menu {
@@ -171,6 +190,7 @@ h2.qa {
   left: -400px;
   opacity: 0;
   min-width: 300px;
+  font-family: 'Libertinus Math';
 }
 
 .menu[data-visible="false"] {
