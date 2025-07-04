@@ -254,7 +254,7 @@ export default function MifiYuan() {
             </div>
 
             <div className={classes['schedule']}>
-              <Event title="🍽 Dinner" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-13T18:00:00+07:00')} endDate={new Date('2025-12-13T20:00:00+07:00')} locationShort="The Ironwood" locationShort="The Ironwood" location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=The+Ironwood%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1+-+%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%87+Mae+Raem%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
+              <Event title="🍽 Dinner" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-13T18:00:00+07:00')} endDate={new Date('2025-12-13T20:00:00+07:00')} locationShort="The Ironwood" location="The Ironwood, ถนนแม่ริม - สะเมิง Mae Raem, Mae Rim District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=The+Ironwood%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B4%E0%B8%A1+-+%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%A1%E0%B8%B4%E0%B8%87+Mae+Raem%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
             </div>
 
             <div className={classes['schedule']}>
