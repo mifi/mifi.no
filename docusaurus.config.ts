@@ -4,9 +4,7 @@ import { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { dark: darkCodeTheme, light: lightCodeTheme } = require('prism-react-renderer');
 
 
 const config: Config = {
