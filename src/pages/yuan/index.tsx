@@ -8,20 +8,20 @@ import { IoIosClose, IoIosMenu } from 'react-icons/io';
 import { BsFillTaxiFrontFill, BsThermometerHalf } from 'react-icons/bs';
 import { TbPlaneArrival } from 'react-icons/tb';
 import { FiCalendar, FiMapPin } from 'react-icons/fi';
-import { PiCoatHanger } from 'react-icons/pi';
+import { PiCoatHanger, PiHandTapThin } from 'react-icons/pi';
 import classes from './index.module.css';
 
 
 // const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
 const staticBaseUrl = 'https://static.mifi.no/dist/2025/mifiyuan/';
 
-function makeConfetti(opts: object) {
+function makeConfetti({ decay = 0.99, ticks = 1, ...opts }: Record<string, unknown>) {
   // @ts-expect-error no type
   confetti({
     spread: 360,
-    ticks: 1,
+    ticks,
     gravity: 0,
-    decay: 0.99,
+    decay,
     startVelocity: 5,
     ...opts,
     particleCount: 50,
@@ -29,17 +29,27 @@ function makeConfetti(opts: object) {
   });
 }
 
-function makeHearts() {
+function makeHearts(origin: unknown) {
   makeConfetti({
     shapes: ['heart'],
     // colors: ['FFC0CB', 'FF69B4', 'FFD0DB', 'C71585'],
     colors: ['FFCCCC', 'FF9999', 'FFDDDD', 'C74444'],
-    origin: {
-      x: 0.5, y: 0.3,
-    },
+    origin,
   });
 }
 
+function makeColorHearts(e: React.MouseEvent<HTMLImageElement>, colors: string[]) {
+  makeConfetti({
+    ticks: 300,
+    shapes: ['heart'],
+    colors: colors.map((c) => c.replace(/^#/, '')),
+    origin: {
+      // mouse position
+      x: e.clientX / window.innerWidth,
+      y: e.clientY / window.innerHeight,
+    },
+  });
+}
 function handleRsvpClick(e: React.MouseEvent<HTMLAnchorElement>) {
   e.preventDefault();
   makeConfetti({
@@ -109,10 +119,10 @@ END:VCALENDAR
   );
 }
 
-function Img({ src, ...props }: { src: string } & React.ImgHTMLAttributes<HTMLImageElement>) {
+function Img({ src, style, colors, ...props }: { src: string, colors: string[] } & React.ImgHTMLAttributes<HTMLImageElement>) {
   return (
-    // eslint-disable-next-line jsx-a11y/img-redundant-alt, react/jsx-props-no-spreading
-    <img src={`${staticBaseUrl}${src}`} alt="Image" style={{ width: '100vw' }} {...props} />
+    // eslint-disable-next-line jsx-a11y/img-redundant-alt, react/jsx-props-no-spreading, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-to-interactive-role
+    <img src={`${staticBaseUrl}${src}`} alt="Image" style={{ width: '100vw', cursor: 'pointer', ...style }} {...props} role="button" tabIndex={0} onClick={(e) => makeColorHearts(e, colors)} />
   );
 }
 
@@ -150,7 +160,7 @@ export default function MifiYuan() {
         },
       });
 
-      makeHearts();
+      makeHearts({ x: 0.5, y: 0.3 });
     })();
   }, []);
 
@@ -169,7 +179,7 @@ export default function MifiYuan() {
 
         <div>
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-          <div style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={makeHearts} tabIndex={0}>
+          <div style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={(e) => makeHearts({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight })} tabIndex={0}>
             <img
               className={classes['kenBurns2']}
               src={`${staticBaseUrl}${'26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg'}`}
@@ -185,6 +195,10 @@ export default function MifiYuan() {
               <div style={{ paddingBottom: '3em', fontSize: '1em' }}>
                 We can&apos;t wait to share our special day with you!
               </div>
+            </div>
+
+            <div style={{ position: 'absolute', right: '2vw', bottom: '2vw', color: 'white', fontSize: '2em' }}>
+              <PiHandTapThin className={classes['tapIndicator']} />
             </div>
           </div>
 
@@ -202,7 +216,7 @@ export default function MifiYuan() {
             </div>
           </div>
 
-          <Img src="a6fa92a0-56c9-11f0-97fb-595f0db69573-ppf-1000.jpg" />
+          <Img src="a6fa92a0-56c9-11f0-97fb-595f0db69573-ppf-1000.jpg" colors={['#26e9f1', '#4ba8ac']} />
 
           <div className={classes['box']} id="home">
             <h1 id="accomodation">Accomodation</h1>
@@ -210,7 +224,7 @@ export default function MifiYuan() {
             <p>We will be providing a complimentary one-night stay on 13-14th Dec at Proud Phu Fah Muang Chiang Mai, along with shuttle service to the event venue.</p>
           </div>
 
-          <Img src="aedbb6f0-56cb-11f0-a43d-71246f6bde58-terra-1000.jpg" />
+          <Img src="aedbb6f0-56cb-11f0-a43d-71246f6bde58-terra-1000.jpg" colors={['#2c442c', '#39bf39']} />
 
           <div className={classes['box']}>
             <h1 id="schedule">Schedule</h1>
@@ -259,7 +273,7 @@ export default function MifiYuan() {
             </div>
           </div>
 
-          <Img src="13b68050-56cc-11f0-8c28-6bf975c32ddf-CM-1000.jpg" />
+          <Img src="13b68050-56cc-11f0-8c28-6bf975c32ddf-CM-1000.jpg" colors={['#ffd03e', '#e9b000']} />
 
           <div className={classes['box']}>
             <h1 id="travel">Travel</h1>
@@ -393,7 +407,7 @@ export default function MifiYuan() {
           </div>
         </div>
 
-        <Img src="94bcd530-5732-11f0-8836-e57660e7e040-love-1000.jpg" className={classes['kenBurns1']} style={{ margin: '10vw 0' }} />
+        <Img src="94bcd530-5732-11f0-8836-e57660e7e040-love-1000.jpg" className={classes['kenBurns1']} style={{ margin: '10vw 0' }} colors={['#ffd03e', '#ff603e']} />
 
         <div className={classes['box']}>
           <h2 id="qa" className={classes['qa']}>Q & A</h2>
