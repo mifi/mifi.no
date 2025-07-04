@@ -74,16 +74,33 @@ ul.menu-items li a {
   }
 }
 
-.kenBurns {
-  animation: kenBurnsEffect 20s ease-in-out infinite;
+.kenBurns1 {
+  animation: kenBurnsEffect1 20s ease-in-out infinite;
 }
 
-@keyframes kenBurnsEffect {
+.kenBurns2 {
+  animation: kenBurnsEffect2 20s ease-in-out infinite;
+}
+
+@keyframes kenBurnsEffect1 {
   0% {
     transform: scale(1);
   }
   70% {
     transform: scale(1.2);
+    filter: brightness(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes kenBurnsEffect2 {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2) translateX(-7vw);
     filter: brightness(1.4);
   }
   100% {

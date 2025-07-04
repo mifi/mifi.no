@@ -32,7 +32,8 @@ function makeConfetti(opts: object) {
 function makeHearts() {
   makeConfetti({
     shapes: ['heart'],
-    colors: ['FFC0CB', 'FF69B4', 'FFD0DB', 'C71585'],
+    // colors: ['FFC0CB', 'FF69B4', 'FFD0DB', 'C71585'],
+    colors: ['FFCCCC', 'FF9999', 'FFDDDD', 'C74444'],
     origin: {
       x: 0.5, y: 0.3,
     },
@@ -45,7 +46,7 @@ function handleRsvpClick(e: React.MouseEvent<HTMLAnchorElement>) {
     shapes: ['emoji'],
     shapeOptions: {
       emoji: {
-        value: ['🦄', '🌈', '❤️'],
+        value: ['🦄', '🌈', '🤩'],
       },
     },
     origin: {
@@ -170,7 +171,7 @@ export default function MifiYuan() {
           {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
           <div style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={makeHearts} tabIndex={0}>
             <img
-              className={classes['kenBurns']}
+              className={classes['kenBurns2']}
               src={`${staticBaseUrl}${'26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg'}`}
               alt="Main"
               style={{ objectFit: 'cover', width: '100vw', height: '70vh' }}
@@ -392,7 +393,7 @@ export default function MifiYuan() {
           </div>
         </div>
 
-        <Img src="94bcd530-5732-11f0-8836-e57660e7e040-love-1000.jpg" className={classes['kenBurns']} style={{ margin: '10vw 0' }} />
+        <Img src="94bcd530-5732-11f0-8836-e57660e7e040-love-1000.jpg" className={classes['kenBurns1']} style={{ margin: '10vw 0' }} />
 
         <div className={classes['box']}>
           <h2 id="qa" className={classes['qa']}>Q & A</h2>
@@ -435,7 +436,9 @@ export default function MifiYuan() {
           </div>
         </div>
 
-        <div style={{ marginBottom: '3em', marginTop: '5em', textAlign: 'center' }}>mifi.no</div>
+        <div style={{ marginBottom: '3em', marginTop: '5em', textAlign: 'center', opacity: 0.7 }}>
+          <a href="https://mifi.no/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>mifi.no</a> <span style={{ opacity: 0.4 }}> | <a href="https://github.com/mifi/mifi.no/blob/master/src/pages/yuan/index.tsx" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>Source code 🤓</a></span>
+        </div>
       </div>
 
       <button className={classes['button']} type="button" style={{ position: 'fixed', top: '3vw', left: '3vw', backgroundColor: 'white', opacity: 0.8 }} onClick={() => setMenuVisible((v) => !v)}>
