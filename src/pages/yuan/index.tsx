@@ -11,7 +11,8 @@ import { PiCoatHanger } from 'react-icons/pi';
 import classes from './index.module.css';
 
 
-const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
+// const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
+const staticBaseUrl = 'https://static.mifi.no/dist/2025/mifiyuan/';
 
 const Location = ({ href, name }: { href: string, name: string }) => (
   <a rel="noopener nofollow noreferrer" target="_blank" href={href} style={{ textDecoration: 'underline', color: 'inherit', display: 'flex', alignItems: 'center' }}>
