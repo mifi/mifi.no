@@ -109,7 +109,8 @@ END:VCALENDAR
 
   return (
     <>
-      <p style={{ fontSize: '1.1em' }}>{title}</p>
+      <p style={{ fontSize: '1.1em', textAlign: 'center' }}>{title}</p>
+
       {locationShort && locationHref && (
         <a rel="noopener nofollow noreferrer" target="_blank" href={locationHref} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', marginBottom: '.1em' }}>
           <FiMapPin className={classes['locationPin']} style={{ fontSize: '.8em', marginRight: '.4em' }} />
@@ -179,8 +180,7 @@ export default function MifiYuan() {
       <div className={classes['wrapper']}>
         <Head>
           <title>Yuan + Mikael</title>
-          <link rel="icon" href={`${staticBaseUrl}favicon.ico`} />
-          <link rel="stylesheet" href={`${staticBaseUrl}styles.css`} />
+          <meta property="og:image" content={`${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg`} />
         </Head>
 
         <div>
@@ -188,7 +188,7 @@ export default function MifiYuan() {
           <div style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={(e) => makeHearts({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight })} tabIndex={0}>
             <div
               className={classes['mainImg']}
-              style={{ backgroundImage: `url(${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg` }}
+              style={{ backgroundImage: `url(${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-2000.jpg` }}
             />
 
             <div style={{ position: 'absolute', bottom: 0, left: 0, color: 'white', padding: '0 3em' }}>
@@ -213,7 +213,7 @@ export default function MifiYuan() {
                 December 13, 2025<br />
               </div>
               <div style={{ fontSize: '1.4em', padding: '1em 0' }}>
-                Chiang Mai, Mueang Chiang Mai District, Chiang Mai, Thailand
+                Chiang Mai, Thailand 🇹🇭
               </div>
 
               <a className={classes['button']} style={{ fontSize: '1.3em' }} href="https://withjoy.com/yuan-and-mikael/rsvp" onClick={handleRsvpClick}>RSVP</a>
@@ -438,7 +438,7 @@ export default function MifiYuan() {
 
             <p>Is there transportation being provided between reception and hotels?</p>
 
-            <p>Yes! The shuttle bus leaves at 3pm from the hotel and back to the hotel at 8:30pm.</p>
+            <p>Yes! The shuttle bus leaves at 3:30pm from the hotel and back to the hotel at 8:30pm.</p>
 
             <p>Do you have hair and makeup contact?</p>
 
