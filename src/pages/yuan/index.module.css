@@ -88,7 +88,7 @@
   .mainImg {
     box-sizing: border-box;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     animation: kenBurnsEffect2 20s ease-in-out infinite;
     background-size: cover;
     background-position-x: 70%;
