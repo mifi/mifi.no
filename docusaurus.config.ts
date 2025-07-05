@@ -58,7 +58,7 @@ const config: Config = {
           blogSidebarCount: 50,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],

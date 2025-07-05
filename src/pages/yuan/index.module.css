@@ -1,213 +1,214 @@
-html {
-  scroll-behavior: smooth;
-}
-
-a {
-  text-decoration: underline;
-}
-
-.locationPin, a {
-  color: inherit;
-}
-
-.locationPin, a:hover, a:focus, a:active {
-  color: rgba(170,50,50);
-}
-
-.wrapper {
-  width: 100vw;
-  overflow-x: hidden;
-  line-height: 1.3;
-  font-family: Alegreya;
-  font-size: 1.2em;
-  color: rgb(51, 51, 51);
+.outerWrapper {
   background-color: rgb(255 240 240);
-}
 
-h1 {
-  font-family: Merriweather;
-  font-weight: 400;
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 1.2em;
-}
-
-h2 {
-  font-family: Merriweather;
-  font-weight: 200;
-  text-align: center;
-  font-size: 1.1em;
-  margin-bottom: 1.2em;
-}
-
-li {
-  line-height: 150%;
-}
-
-ul.big li {
-  line-height: 200%;
-  letter-spacing: .05em;
-}
-
-ul.menu-items {
-  font-size: 1.3em;
-  margin-left: 0;
-}
-
-ul.menu-items li {
-  line-height: 250%;
-  letter-spacing: .05em;
-  list-style-type: none;
-}
-
-ul.menu-items li a {
-  text-decoration: none;
-}
-
-.headingIcon {
-  font-size: 2.8em;
-  text-align: center;
-  margin-bottom: .2em;
-  margin-top: 1.3em;
-  animation: bounce 1s ease-in-out infinite;
-}
-
-.locationPin {
-  animation: bounce 1.5s ease-in-out infinite;
-  margin-right: .6em;
-}
-
-.tapIndicator {
-  animation: bounce 1.5s ease-in-out infinite;
-}
-
-@keyframes bounce {
-	0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+  a {
+    text-decoration: underline;
   }
-	40% {
-    transform: translateY(-.1em) rotate(5deg) scale(1.03);
+
+  .locationPin, a {
+    color: inherit;
   }
-	60% {
-    transform: translateY(-.05em) rotate(-5deg);
+
+  .locationPin, a:hover, a:focus, a:active {
+    color: rgba(170,50,50);
   }
-}
 
-.kenBurns1 {
-  animation: kenBurnsEffect1 20s ease-in-out infinite;
-}
-
-.mainImg {
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  animation: kenBurnsEffect2 20s ease-in-out infinite;
-  background-size: cover;
-  background-position-x: 70%;
-  background-repeat: no-repeat;
-}
-
-
-
-@keyframes kenBurnsEffect1 {
-  0% {
-    transform: scale(1);
+  .wrapper {
+    width: 100vw;
+    max-width: 1000px;
+    margin: auto;
+    overflow-x: hidden;
+    line-height: 1.3;
+    font-family: Alegreya;
+    font-size: 1.2em;
+    color: rgb(51, 51, 51);
   }
-  70% {
-    transform: scale(1.2);
-    filter: brightness(1.4);
+
+  h1 {
+    font-family: Merriweather;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1.2em;
   }
-  100% {
-    transform: scale(1);
+
+  h2 {
+    font-family: Merriweather;
+    font-weight: 200;
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 1.2em;
   }
-}
 
-@keyframes kenBurnsEffect2 {
-  0% {
-    transform: scale(1);
+  li {
+    line-height: 150%;
   }
-  70% {
-    transform: scale(1.2) translateX(-7vw);
-    filter: brightness(1.4);
+
+  ul.big li {
+    line-height: 200%;
+    letter-spacing: .05em;
   }
-  100% {
-    transform: scale(1);
+
+  ul.menu-items {
+    font-size: 1.3em;
+    margin-left: 0;
   }
-}
 
-.box {
-  padding: 4em 2em;
-}
+  ul.menu-items li {
+    line-height: 250%;
+    letter-spacing: .05em;
+    list-style-type: none;
+  }
 
-.qa p:nth-child(even) {
-  font-weight: bold;
-  margin-top: 2.5em;
-}
+  ul.menu-items li a {
+    text-decoration: none;
+  }
 
-h2.qa {
-  font-family: WindSong;
-  font-size: 3em;
-  font-weight: 600;
-}
+  .headingIcon {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: .2em;
+    margin-top: 1.3em;
+    animation: bounce 1s ease-in-out infinite;
+  }
 
-.locationHeader {
-  text-align: center;
-  margin-top: 2.3em;
-  margin-bottom: 1.5em;
-  font-size: 1.3em;
-  font-weight: 200;
-  letter-spacing: .2em;
-  border-bottom: 1px solid black;
-  line-height: 180%;
-}
+  .locationPin {
+    animation: bounce 1.5s ease-in-out infinite;
+    margin-right: .6em;
+  }
 
-.schedule {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 2em;
-  background-color: rgba(255,255,255,0.6);
-  padding: 1.5em;
-  border-radius: 1em;
-}
+  .tapIndicator {
+    animation: bounce 1.5s ease-in-out infinite;
+  }
 
-.button, .buttonInverse {
-  all: unset;
-  border-radius: 1.5em;
-  padding: .5em 1em;
-  border: 1px solid black;
-  cursor: pointer;
-  display: inline-block;
-}
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-.1em) rotate(5deg) scale(1.03);
+    }
+    60% {
+      transform: translateY(-.05em) rotate(-5deg);
+    }
+  }
 
-.button:hover, .buttonInverse:hover {
-  text-decoration: inherit;
-  color: inherit;
-  background-color: white;
-}
+  .kenBurns1 {
+    animation: kenBurnsEffect1 20s ease-in-out infinite;
+  }
 
-.buttonInverse:hover {
-  background-color: rgb(255 240 240);
-}
+  .mainImg {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    animation: kenBurnsEffect2 20s ease-in-out infinite;
+    background-size: cover;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+  }
 
-.menu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  padding: 1em;
-  background-color: white;
-  transition: left 0.3s ease-in-out, opacity 0.5s ease-in-out;
-  left: -400px;
-  opacity: 0;
-  min-width: 300px;
-  font-family: 'Libertinus Math';
-}
 
-.menu[data-visible="false"] {
-  pointer-events: none;
-}
 
-.menu[data-visible="true"] {
-  opacity: 1;
-  left: 0;
+  @keyframes kenBurnsEffect1 {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.2);
+      filter: brightness(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes kenBurnsEffect2 {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.2) translateX(-7vw);
+      filter: brightness(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .box {
+    padding: 4em 2em;
+  }
+
+  .qa p:nth-child(even) {
+    font-weight: bold;
+    margin-top: 2.5em;
+  }
+
+  h2.qa {
+    font-family: WindSong;
+    font-size: 3em;
+    font-weight: 600;
+  }
+
+  .locationHeader {
+    text-align: center;
+    margin-top: 2.3em;
+    margin-bottom: 1.5em;
+    font-size: 1.3em;
+    font-weight: 200;
+    letter-spacing: .2em;
+    border-bottom: 1px solid black;
+    line-height: 180%;
+  }
+
+  .schedule {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    background-color: rgba(255,255,255,0.6);
+    padding: 1.5em;
+    border-radius: 1em;
+  }
+
+  .button, .buttonInverse {
+    all: unset;
+    border-radius: 1.5em;
+    padding: .5em 1em;
+    border: 1px solid black;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .button:hover, .buttonInverse:hover {
+    text-decoration: inherit;
+    color: inherit;
+    background-color: white;
+  }
+
+  .buttonInverse:hover {
+    background-color: rgb(255 240 240);
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 1em;
+    background-color: white;
+    transition: left 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    left: -400px;
+    opacity: 0;
+    min-width: 300px;
+    font-family: 'Libertinus Math';
+  }
+
+  .menu[data-visible="false"] {
+    pointer-events: none;
+  }
+
+  .menu[data-visible="true"] {
+    opacity: 1;
+    left: 0;
+  }
 }
