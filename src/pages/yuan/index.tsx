@@ -131,7 +131,7 @@ END:VCALENDAR
 function Img({ src, style, colors, ...props }: { src: string, colors: string[] } & React.ImgHTMLAttributes<HTMLImageElement>) {
   return (
     // eslint-disable-next-line jsx-a11y/img-redundant-alt, react/jsx-props-no-spreading, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-to-interactive-role
-    <img src={`${staticBaseUrl}${src}`} alt="Image" style={{ width: '100vw', cursor: 'pointer', ...style }} {...props} role="button" tabIndex={0} onClick={(e) => makeColorHearts(e, colors)} />
+    <img src={`${staticBaseUrl}${src}`} alt="Image" style={{ width: '100%', cursor: 'pointer', ...style }} {...props} role="button" tabIndex={0} onClick={(e) => makeColorHearts(e, colors)} />
   );
 }
 
