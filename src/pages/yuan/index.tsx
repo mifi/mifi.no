@@ -1,16 +1,16 @@
 import { BiHotel } from 'react-icons/bi';
 import { GiChopsticks, GiPalmTree } from 'react-icons/gi';
 import { useCallback, useEffect, useState } from 'react';
-import { MdOutlineArrowDownward, MdOutlineTempleBuddhist } from 'react-icons/md';
+import { MdOutlineTempleBuddhist } from 'react-icons/md';
 import Head from '@docusaurus/Head';
 import { IoIosClose, IoIosMenu } from 'react-icons/io';
+import { RxDoubleArrowDown } from 'react-icons/rx';
 
 import { BsFillTaxiFrontFill, BsThermometerHalf } from 'react-icons/bs';
 import { TbPlaneArrival } from 'react-icons/tb';
 import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import { PiCoatHanger, PiHandTapThin } from 'react-icons/pi';
 import classes from './index.module.css';
-import { RxDoubleArrowDown } from 'react-icons/rx';
 
 
 // const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
