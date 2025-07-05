@@ -1,7 +1,7 @@
 import { BiHotel } from 'react-icons/bi';
 import { GiChopsticks, GiPalmTree } from 'react-icons/gi';
 import { useCallback, useEffect, useState } from 'react';
-import { MdOutlineTempleBuddhist } from 'react-icons/md';
+import { MdOutlineArrowDownward, MdOutlineTempleBuddhist } from 'react-icons/md';
 import Head from '@docusaurus/Head';
 import { IoIosClose, IoIosMenu } from 'react-icons/io';
 
@@ -10,6 +10,7 @@ import { TbPlaneArrival } from 'react-icons/tb';
 import { FiCalendar, FiMapPin } from 'react-icons/fi';
 import { PiCoatHanger, PiHandTapThin } from 'react-icons/pi';
 import classes from './index.module.css';
+import { RxDoubleArrowDown } from 'react-icons/rx';
 
 
 // const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
@@ -220,6 +221,8 @@ export default function MifiYuan() {
 
                 <a className={classes['button']} style={{ fontSize: '1.3em' }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a>
                 <p style={{ marginTop: '.5em', opacity: 0.8 }}>Please RSVP by 31st July 2025.</p>
+
+                <RxDoubleArrowDown style={{ fontSize: '3em', marginTop: '1em' }} className={classes['arrow']} />
               </div>
             </div>
 
@@ -228,7 +231,7 @@ export default function MifiYuan() {
             <div className={classes['box']}>
               <h1 id="accomodation">Accomodation</h1>
 
-              <p>We will be providing a complimentary one-night stay on 13-14th Dec at <a href="https://www.proudphufah.com/muang/" target="_blank" rel="noopener noreferrer">Proud Phu Fah Muang Chiang Mai</a>, along with shuttle service to the event venue.</p>
+              <p>We will be providing a complimentary one-night stay on 13-14th Dec at <a href="https://www.proudphufah.com/muang/" target="_blank" rel="noopener noreferrer">Proud Phu Fah Muang Chiang Mai</a>, along with shuttle service to the event venue. Check-in at the hotel is from 2pm. The shuttle bus will leave at 3:30pm from the hotel.</p>
             </div>
 
             <Img src="aedbb6f0-56cb-11f0-a43d-71246f6bde58-terra-1000.jpg" colors={['#2c442c', '#39bf39']} />
@@ -236,14 +239,14 @@ export default function MifiYuan() {
             <div className={classes['box']}>
               <h1 id="schedule">Schedule</h1>
 
-              <div className={classes['locationHeader']}>Friday, December 12</div>
+              <div className={classes['locationHeader']}>Friday, December&nbsp;12</div>
 
               <div className={classes['schedule']}>
                 <Event title="🎂 Celebrating Mikael's Birthday" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-12T18:00:00+07:00')} endDate={new Date('2025-12-12T20:00:00+07:00')} description="Yuan is planning an Italian dinner at Terra in Mae Rim for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" locationShort="Terra" location="Terra" locationHref="https://www.google.com/maps/search/?api=1&query=Terra+Rim+Tai%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
               </div>
 
 
-              <div className={classes['locationHeader']}>Saturday, December 13</div>
+              <div className={classes['locationHeader']}>Saturday, December&nbsp;13</div>
 
               <div className={classes['schedule']}>
                 <Event title="🚌 Shuttle Bus" time="3:30 PM to 4:00 PM" startDate={new Date('2025-12-13T15:30:00+07:00')} endDate={new Date('2025-12-13T16:00:00+07:00')} description="Shuttle buses leave from Proud Phu Fah Muang Chiang Mai hotel and straight to the venue and back to the hotel at 8pm." locationShort="Proud Phu Fah" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" />
@@ -265,7 +268,7 @@ export default function MifiYuan() {
               </div>
 
 
-              <div className={classes['locationHeader']}>Sunday, December 14</div>
+              <div className={classes['locationHeader']}>Sunday, December&nbsp;14</div>
 
               <div className={classes['schedule']}>
                 <Event title="Breakfast Get Together 🍳🥐" time="8:30 AM to 10:00 AM" startDate={new Date('2025-12-14T08:30:00+07:00')} endDate={new Date('2025-12-14T10:00:00+07:00')} description="Complimentary breakfast at the hotel, let's all meet at 8:30am!" locationShort="Proud Phu Fah" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" />

@@ -116,7 +116,7 @@
     margin-bottom: 1.5em;
     font-size: 1.3em;
     font-weight: 200;
-    letter-spacing: .2em;
+    letter-spacing: .1em;
     border-bottom: 1px solid black;
     line-height: 180%;
   }
@@ -170,6 +170,21 @@
   .menu[data-visible="true"] {
     opacity: 1;
     left: 0;
+  }
+
+  .arrow {
+    animation: arrowDown 1s ease-in-out infinite;
+  }
+}
+
+@keyframes arrowDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1em);
+    opacity: 0;
   }
 }
 
