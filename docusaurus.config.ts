@@ -84,7 +84,7 @@ const config: Config = {
         },
         {
           to: '/tools',
-          label: 'Free tools',
+          label: 'Tools',
           position: 'left',
         },
         {
