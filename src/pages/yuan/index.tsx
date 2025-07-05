@@ -187,7 +187,7 @@ export default function MifiYuan() {
         <div className={classes['wrapper']}>
           <div>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-            <div style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={(e) => makeHearts({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight })} tabIndex={0}>
+            <div id="home" style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={(e) => makeHearts({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight })} tabIndex={0}>
               <div
                 className={classes['mainImg']}
                 style={{ backgroundImage: `url(${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-2000.jpg` }}
@@ -208,7 +208,7 @@ export default function MifiYuan() {
               </div>
             </div>
 
-            <div id="home" style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 3em' }}>
+            <div id="rsvp" style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 3em' }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '1.7em' }}>
                   Saturday<br />
@@ -225,7 +225,7 @@ export default function MifiYuan() {
 
             <Img src="a6fa92a0-56c9-11f0-97fb-595f0db69573-ppf-1000.jpg" colors={['#26e9f1', '#4ba8ac']} />
 
-            <div className={classes['box']} id="home">
+            <div className={classes['box']}>
               <h1 id="accomodation">Accomodation</h1>
 
               <p>We will be providing a complimentary one-night stay on 13-14th Dec at <a href="https://www.proudphufah.com/muang/" target="_blank" rel="noopener noreferrer">Proud Phu Fah Muang Chiang Mai</a>, along with shuttle service to the event venue.</p>
@@ -467,13 +467,12 @@ export default function MifiYuan() {
 
           <ul className={classes['menu-items']}>
             <li><a href="#home" onClick={handleMenuClose}>Home</a></li>
+            <li><a href="#rsvp" onClick={handleMenuClose}>RSVP</a></li>
             <li><a href="#accomodation" onClick={handleMenuClose}>Accomodation</a></li>
             <li><a href="#schedule" onClick={handleMenuClose}>Schedule</a></li>
             <li><a href="#travel" onClick={handleMenuClose}>Travel</a></li>
             <li><a href="#qa" onClick={handleMenuClose}>Q &amp; A</a></li>
           </ul>
-
-          <a className={classes['buttonInverse']} style={{ fontSize: '1.3em', width: '100%', boxSizing: 'border-box', textAlign: 'center', fontWeight: 400 }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a>
 
           <button type="button" style={{ all: 'unset', position: 'absolute', right: 0, top: 0 }} onClick={handleMenuClose}>
             <IoIosClose style={{ fontSize: '2em', color: 'black', padding: '.3em', boxSizing: 'content-box', cursor: 'pointer' }} />
