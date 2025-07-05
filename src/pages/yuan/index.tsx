@@ -15,6 +15,8 @@ import classes from './index.module.css';
 // const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
 const staticBaseUrl = 'https://static.mifi.no/dist/2025/mifiyuan/';
 
+const rsvpLink = 'https://forms.gle/wFF2FbJyusforbhn9';
+
 function makeConfetti({ decay = 0.99, ticks = 1, ...opts }: Record<string, unknown>) {
   // @ts-expect-error no type
   confetti({
@@ -216,7 +218,7 @@ export default function MifiYuan() {
                   Chiang Mai, Thailand 🇹🇭
                 </div>
 
-                <a className={classes['button']} style={{ fontSize: '1.3em' }} href="https://withjoy.com/yuan-and-mikael/rsvp" onClick={handleRsvpClick}>RSVP</a>
+                <a className={classes['button']} style={{ fontSize: '1.3em' }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a>
                 <p style={{ marginTop: '.5em', opacity: 0.8 }}>Please RSVP by 31st July 2025.</p>
               </div>
             </div>
@@ -471,7 +473,7 @@ export default function MifiYuan() {
             <li><a href="#qa" onClick={handleMenuClose}>Q &amp; A</a></li>
           </ul>
 
-          <a className={classes['buttonInverse']} style={{ fontSize: '1.3em', width: '100%', boxSizing: 'border-box', textAlign: 'center', fontWeight: 400 }} href="https://withjoy.com/yuan-and-mikael/rsvp" onClick={handleRsvpClick}>RSVP</a>
+          <a className={classes['buttonInverse']} style={{ fontSize: '1.3em', width: '100%', boxSizing: 'border-box', textAlign: 'center', fontWeight: 400 }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a>
 
           <button type="button" style={{ all: 'unset', position: 'absolute', right: 0, top: 0 }} onClick={handleMenuClose}>
             <IoIosClose style={{ fontSize: '2em', color: 'black', padding: '.3em', boxSizing: 'content-box', cursor: 'pointer' }} />
