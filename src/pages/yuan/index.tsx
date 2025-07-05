@@ -239,7 +239,7 @@ export default function MifiYuan() {
               <div className={classes['locationHeader']}>Friday, December 12</div>
 
               <div className={classes['schedule']}>
-                <Event title="🎂 Celebrating Mikael's Birthday" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-12T18:00:00+07:00')} endDate={new Date('2025-12-12T20:00:00+07:00')} description="We're planning an Italian dinner at Terra in Mae Rim for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" locationShort="Terra" location="Terra" locationHref="https://www.google.com/maps/search/?api=1&query=Terra+Rim+Tai%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
+                <Event title="🎂 Celebrating Mikael's Birthday" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-12T18:00:00+07:00')} endDate={new Date('2025-12-12T20:00:00+07:00')} description="Yuan is planning an Italian dinner at Terra in Mae Rim for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" locationShort="Terra" location="Terra" locationHref="https://www.google.com/maps/search/?api=1&query=Terra+Rim+Tai%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
               </div>
 
 
@@ -268,7 +268,7 @@ export default function MifiYuan() {
               <div className={classes['locationHeader']}>Sunday, December 14</div>
 
               <div className={classes['schedule']}>
-                <Event title="Breakfast Get Together 🍳🥐🥓" time="8:30 AM to 10:00 AM" startDate={new Date('2025-12-14T08:30:00+07:00')} endDate={new Date('2025-12-14T10:00:00+07:00')} description="Complimentary breakfast at the hotel, let's all meet at 8:30am!" locationShort="Proud Phu Fah" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" />
+                <Event title="Breakfast Get Together 🍳🥐" time="8:30 AM to 10:00 AM" startDate={new Date('2025-12-14T08:30:00+07:00')} endDate={new Date('2025-12-14T10:00:00+07:00')} description="Complimentary breakfast at the hotel, let's all meet at 8:30am!" locationShort="Proud Phu Fah" location="Proud Phu Fah Muang Chiangmai, ถนนค่ายลูกเสือ Chang Phueak, Mueang Chiang Mai District, Chiang Mai, Thailand" locationHref="https://www.google.com/maps/search/?api=1&amp;query=Proud+Phu+Fah+Muang+Chiangmai%2C+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD+Chang+Phueak%2C+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" />
               </div>
             </div>
 
@@ -295,7 +295,7 @@ export default function MifiYuan() {
               <div className={classes['headingIcon']}><BsFillTaxiFrontFill /></div>
               <h2>Getting Downtown</h2>
 
-              <p>There a lots of ways to get in downtown! There are several car rental options and Grab. If you need car rentals, please let Yuan knows!</p>
+              <p>There&apos;s a few ways to get in downtown. There are several car rental options and Grab. If you need car rentals, please let Yuan know!</p>
 
               <Location href="https://www.google.com/maps/search/?api=1&amp;query=Chiang+Mai+International+Airport+%28CNX%29%2C+%E0%B8%96%E0%B8%99%E0%B8%99+%E0%B8%A1%E0%B8%AB%E0%B8%B4%E0%B8%94%E0%B8%A5+Mueang+Chiang+Mai+District%2C+Chiang+Mai%2C+Thailand" name="Chiang Mai International Airport (CNX), ถนน มหิดล Mueang Chiang Mai District, Chiang Mai, Thailand" />
 
