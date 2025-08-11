@@ -137,16 +137,16 @@ For Mac App Store and Notarized apps create the following certs:
 - `Mac Installer Distribution`
 - `Mac App Distribution`
 - `Mac Development`
+- `Development` (a.k.a `Apple Development`) For building `mas-dev` locally (not needed if already long expiry)
 
-If you want to build `mas-dev` locally, also create:
-- `Apple Development`
+Delete any old certificates
 
 Then dowload them and drag drop into Keychain Access ("Login" keychain). You may then safely delete the downloaded `.cer` files.
 
 Now regenerate [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list). For **each of** the "App Store" and "Developement" Provisioning Profiles:
 - Open the provisioning profile
 - Edit
-- (For the Development profile only) check all Certificates and Devices, and select the device you registered earlier.
+- (For the Development profile only) check all Certificates and Devices (and select the device you registered earlier).
 - (For the App Store profile only) check the newly generated "Mac App Distribution" certificate's radio box
 - Then Save and Download
 
@@ -157,7 +157,7 @@ base64 < LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | pbcop
 
 ...then paste the clipboard contents to replace the env variable in the GitHub project [`PROVISIONING_PROFILE_BASE64`](https://github.com/mifi/lossless-cut/settings/secrets/actions/PROVISIONING_PROFILE_BASE64).
 
-For the Development profile, add the new profile into the project folder (don't check it into git.)
+For the Development profile, move the new profile into the project folder (don't check it into git.)
 
 In Keychain Access go to Login keychain -> My Certificates
 
