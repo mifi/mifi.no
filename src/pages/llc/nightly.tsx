@@ -2,25 +2,47 @@ import Layout from '@theme/Layout';
 import ky from 'ky';
 import { useEffect, useState } from 'react';
 
+
+const lambdaUrl = 'https://qsk5sze4w4bxfgek4rcrncsdpm0qrmfa.lambda-url.us-east-1.on.aws/';
+
+interface WorflowRunResponse {
+  workflow_runs: {
+    id: number,
+    artifacts_url: string,
+    conclusion: string,
+    status: string,
+    head_sha: string,
+    head_branch: string,
+    created_at: string,
+    html_url: string,
+  }[],
+}
+
+interface ArtifactResponse {
+  artifacts: {
+    id: number,
+    name: string,
+    size_in_bytes: number,
+  }[],
+}
+
 export default function LosslessCutNightly() {
   const [latestWorkflow, setLatestWorkflow] = useState<{ headSha: string, headBranch: string, createdAt: string, artifacts: { id: number, name: string, url: string, size: number }[] }>();
 
   useEffect(() => {
     (async () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { workflow_runs: workflowRuns } = await ky.get('https://api.github.com/repos/mifi/lossless-cut/actions/workflows/build.yml/runs').json<{ workflow_runs: any[] }>();
+      const { workflow_runs: workflowRuns } = await ky.get('https://api.github.com/repos/mifi/lossless-cut/actions/workflows/build.yml/runs').json<WorflowRunResponse>();
       const latestWorkflowResponse = workflowRuns.find((r) => r.conclusion === 'success' && r.status === 'completed');
 
       if (latestWorkflowResponse) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const { artifacts: artifactsResponse } = await ky.get(latestWorkflowResponse.artifacts_url).json<{ artifacts: any[] }>();
+        const { artifacts: artifactsResponse } = await ky.get(latestWorkflowResponse.artifacts_url).json<ArtifactResponse>();
         setLatestWorkflow({
           headSha: latestWorkflowResponse.head_sha,
           headBranch: latestWorkflowResponse.head_branch,
           createdAt: latestWorkflowResponse.created_at,
           artifacts: artifactsResponse.map((artifact) => ({
             id: artifact.id,
-            url: `${latestWorkflowResponse.html_url}/artifacts/${artifact.id}`,
+            url: `${lambdaUrl}?artifactId=${encodeURIComponent(artifact.id)}`,
             name: artifact.name,
             size: artifact.size_in_bytes,
           })),
