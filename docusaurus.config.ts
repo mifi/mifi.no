@@ -103,8 +103,8 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://miffy.no/',
-          label: 'miffy.no',
+          label: 'genocide.no',
+          href: 'https://genocide.no/',
           position: 'right',
         },
       ],
@@ -159,6 +159,14 @@ const config: Config = {
             {
               label: 'Free wallpapers',
               to: 'https://mifi.no/wp/',
+            },
+            {
+              to: 'https://miffy.no/',
+              label: 'miffy.no',
+            },
+            {
+              label: 'genocide.no',
+              to: 'https://genocide.no/',
             },
             {
               label: 'Mail me',

@@ -44,9 +44,8 @@ body {
   cursor: none;
 }
 
-.info1, .info2 {
+.info1, .info2, .info3 {
   position: fixed;
-  pointer-events: none;
   cursor: none;
   font-size: 1.2em;
   text-shadow: 0 0 .2em black;
@@ -59,11 +58,18 @@ body {
 }
 
 .info1 {
+  pointer-events: none;
   top: 15%;
 }
 
 .info2 {
+  pointer-events: none;
   bottom: 15%;
+}
+
+.info3 {
+  bottom: 10%;
+  font-size: 4.5vmin;
 }
 
 .footer {
