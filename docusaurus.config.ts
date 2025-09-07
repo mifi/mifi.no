@@ -170,7 +170,7 @@ const config: Config = {
             },
             {
               label: 'Mail me',
-              to: 'mailto:mikael@yankee.no',
+              to: 'mailto:mikael@mifi.no',
             },
           ],
         },
