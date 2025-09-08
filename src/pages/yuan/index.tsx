@@ -220,7 +220,6 @@ export default function MifiYuan() {
                 </div>
 
                 <a className={classes['button']} style={{ fontSize: '1.3em' }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a>
-                <p style={{ marginTop: '.5em', opacity: 0.8 }}>Please RSVP by 31st July 2025.</p>
 
                 <RxDoubleArrowDown style={{ fontSize: '3em', marginTop: '1em' }} className={classes['arrow']} />
               </div>
@@ -418,8 +417,6 @@ export default function MifiYuan() {
               <p>For all our friends and family who have lots of questions, please check out our Q & A first!</p>
 
               <p>When is the RSVP deadline?</p>
-
-              <p>Please RSVP by July 31st, so we can have an accurate headcount. :)</p>
 
               <p>What will the weather be like?</p>
 
