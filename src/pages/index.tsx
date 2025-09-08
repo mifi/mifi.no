@@ -6,6 +6,7 @@ import { useCallback, useRef } from 'react';
 
 import styles from './index.module.css';
 import NorwayFlag from './norway.svg';
+import PalestineFlag from './palestine.svg';
 
 
 // https://github.com/mifi?tab=repositories&q=&type=source&language=&sort=stargazers
@@ -79,7 +80,9 @@ export default function Home() {
           <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>Thanks to my supporters ❤️</Link></p>
 
           <div style={{ marginTop: 100, marginBottom: 100, display: 'flex', flexWrap: 'wrap', gap: '1em', fontSize: '1.5em' }}>
-            <a ref={palestineRef} href="https://genocide.no/palestine/" target="_blank" rel="noopener noreferrer"><img title="Gaza Genocide" alt="" src="palestine/palestine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
+            <a ref={palestineRef} href="https://genocide.no/palestine/" target="_blank" rel="noopener noreferrer">
+              <PalestineFlag title="Gaza Genocide" style={{ height: '3em', borderRadius: '3%' }} />
+            </a>
             <NorwayFlag style={{ height: '3em', borderRadius: '3%', cursor: 'pointer' }} onClick={handleNorwayClick} />
             <a ref={ukraineRef} href="/ukraine/" target="_blank" rel="noopener noreferrer"><img title="Slava Ukraini" alt="" src="ukraine/ukraine.svg" style={{ height: '3em', borderRadius: '3%' }} /></a>
           </div>
