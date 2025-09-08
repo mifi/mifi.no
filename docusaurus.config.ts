@@ -105,6 +105,9 @@ const config: Config = {
         {
           label: 'genocide.no',
           href: 'https://genocide.no/',
+          style: { backgroundColor: '#e62727b9', color: 'white' },
+          // type: 'html',
+          // value: '<a href="https://genocide.no/" target="_blank" rel="noopener noreferrer"><span style="color: #E62727; background-color: black; padding: .07em; border-radius: .2em">genocide<span style="color: white">.</span></span><span style="color: white; background-color: #E62727; padding: .07em; border-radius: .2em">no</span></a>',
           position: 'right',
         },
       ],
