@@ -219,7 +219,7 @@ export default function MifiYuan() {
                   Chiang Mai, Thailand 🇹🇭
                 </div>
 
-                <a className={classes['button']} style={{ fontSize: '1.3em' }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a>
+                <div><a className={classes['button']} style={{ fontSize: '1.3em' }} href={rsvpLink} onClick={handleRsvpClick}>RSVP</a></div>
 
                 <RxDoubleArrowDown style={{ fontSize: '3em', marginTop: '1em' }} className={classes['arrow']} />
               </div>
@@ -415,8 +415,6 @@ export default function MifiYuan() {
 
             <div className={classes['qa']}>
               <p>For all our friends and family who have lots of questions, please check out our Q & A first!</p>
-
-              <p>When is the RSVP deadline?</p>
 
               <p>What will the weather be like?</p>
 
