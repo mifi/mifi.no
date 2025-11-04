@@ -41,3 +41,9 @@ Put an MP3 file on the `BOOMBOX` partition under the `Boombox` folder.
 ```bash
 ffmpeg -i /path/to/sound -ar 44100 -ac 2 -f mp3 /Volumes/BOOMBOX/Boombox/MyCustomSound.mp3
 ```
+
+## teslausb Raspberry Pi device
+
+Allows storing multiple lock chime sounds among other things!
+
+https://github.com/marcone/teslausb?tab=readme-ov-file
