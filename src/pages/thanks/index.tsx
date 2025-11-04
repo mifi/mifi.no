@@ -13,38 +13,45 @@ import { chinaPayUrl } from './stripe';
 
 // https://www.patreon.com/members?sort=-pledgeRelationshipStart&membershipType=active_patron
 const patreons = [
-  { since: '2022-08-13', amount: 5, name: 'BraveFart', url: 'https://www.patreon.com/user?u=10565003' },
-  { since: '2021-11-21', amount: 2, name: 'Nicholas T.', url: 'https://www.patreon.com/cj_and_aya/creators' },
-  // { since: '2021-07-19', amount: 3, name: 'Formica', url: 'https://www.patreon.com/user/creators?u=2442057' },
-  { since: '2021-04-11', amount: 10, name: 'mav6771', url: 'https://www.patreon.com/user/creators?u=36832428' },
+  { from: '2022-08-13', amount: 5, name: 'BraveFart', url: 'https://www.patreon.com/user?u=10565003' },
+  { from: '2021-07-19', amount: 3, name: 'Formica', url: 'https://www.patreon.com/user/creators?u=2442057' },
+  { from: '2025-10-01', amount: 20, name: 'Nommalorel', url: 'https://www.patreon.com/profile/creators?u=188159240' },
+  { from: '2021-11-21', until: '2024-06-02', amount: 2, name: 'Nicholas T.', url: 'https://www.patreon.com/cj_and_aya/creators' },
+  { from: '2021-04-11', until: '2024-10-22', amount: 10, name: 'mav6771', url: 'https://www.patreon.com/user/creators?u=36832428' },
+  { from: '2021-12-08', until: '2022-07-26', amount: 3, name: 'RBE', url: 'https://www.patreon.com/user/creators?u=36832428' },
 ];
 // https://github.com/sponsors/mifi/dashboard/your_sponsors
+// todo previous?
 const github = [
-  { since: '2025-01-29', amount: 10, name: 'chrishuan9' },
-  { since: '2024-07-23', amount: 10, name: 'derekh4' },
-  { since: '2024-05-18', amount: 10, name: 'mandrael' },
-  { since: '2024-02-01', amount: 2, name: 'scuba-tech' },
-  { since: '2023-06-22', amount: 20, name: 't3dotgg' },
-  { since: '2021-12-29', amount: 10, name: 'msarahan' },
-  { since: '2021-10-06', amount: 5, name: 'SignpostMarv' },
-  { since: '2021-04-27', amount: 5, name: 'sparanoid' },
+  { from: '2025-11-02', amount: 5, name: 'LibertusCorditus' },
+  { from: '2025-01-29', amount: 10, name: 'chrishuan9' },
+  { from: '2024-07-23', amount: 10, name: 'derekh4' },
+  { from: '2024-05-18', amount: 10, name: 'mandrael' },
+  { from: '2024-02-01', amount: 2, name: 'scuba-tech' },
+  { from: '2023-06-22', amount: 20, name: 't3dotgg' },
+  { from: '2021-12-29', amount: 10, name: 'msarahan' },
+  { from: '2021-10-06', amount: 5, name: 'SignpostMarv' },
+  { from: '2021-04-27', amount: 5, name: 'sparanoid' },
 ];
 
 // https://opencollective.com/dashboard/losslesscut/incoming-contributions?status=ACTIVE&type=RECURRING
 const openCollective = [
-  { since: '2022-10-01', amount: 5, name: 'jimmy-gee' },
+  { from: '2022-10-09', until: '2024-12-04', amount: 5, name: 'jimmy-gee' },
+  { from: '2023-01-29', until: '2023-07-02', amount: 5, name: 'bigbeno37' },
 ];
 
 const oneTime = [
-  { since: '2020-04-25', amount: 500, name: 'Jacob Chapman', url: 'https://unli.xyz/' },
+  { date: '2020-04-25', total: 500, name: 'Jacob Chapman', url: 'https://unli.xyz/' },
 ];
 
+const estimateTotal = ({ from, amount }: { from: string, amount: number }) => Math.max(0, Math.round(amount * -DateTime.fromISO(from).diffNow().as('months')));
+
 const supporters = [
-  ...patreons.map((p) => ({ ...p, type: 'patreon' })),
-  ...github.map((p) => ({ ...p, type: 'github', url: `https://github.com/${p.name}` })),
-  ...openCollective.map((p) => ({ ...p, type: 'openCollective', url: `https://opencollective.com/${p.name}` })),
-  ...oneTime.map((o) => ({ ...o, type: 'other', amount: Math.round(o.amount / -DateTime.fromISO(o.since).diffNow().as('months')) })),
-];
+  ...patreons.map((p) => ({ ...p, type: 'patreon', total: estimateTotal(p) })),
+  ...github.map((p) => ({ ...p, type: 'github', total: estimateTotal(p), url: `https://github.com/${p.name}` })),
+  ...openCollective.map((p) => ({ ...p, type: 'openCollective', total: estimateTotal(p), url: `https://opencollective.com/${p.name}` })),
+  ...oneTime.map(({ date, ...o }) => ({ ...o, type: 'other', from: date })),
+].filter((s) => !('until' in s && s.until != null));
 
 const wrapperStyle: CSSProperties = {
   display: 'flex',
@@ -140,7 +147,7 @@ export default function Thanks() {
       </div>
 
       <div style={{ margin: '0 auto', fontSize: 28, display: 'flex', flexWrap: 'wrap', maxWidth: 1000 }}>
-        {orderBy(supporters, [(s) => s.amount, (s) => s.since], ['desc', 'asc']).map((s) => {
+        {orderBy(supporters, [(s) => s.total, (s) => s.from], ['desc', 'asc']).map((s) => {
           let icon: ReactNode;
           // eslint-disable-next-line unicorn/prefer-switch
           if (s.type === 'openCollective') icon = <CgOpenCollective />;
@@ -155,7 +162,7 @@ export default function Thanks() {
               name={s.name}
               link={s.url}
             >
-              <div style={{ color: 'rgba(0,0,0,0.3)', fontSize: '0.4em' }}>since {s.since}</div>
+              <div style={{ color: 'rgba(0,0,0,0.3)', fontSize: '0.4em' }}>since {s.from}</div>
             </Supporter>
           );
         })}
