@@ -18,6 +18,17 @@ const staticBaseUrl = 'https://static.mifi.no/dist/2025/mifiyuan/';
 
 const rsvpLink = 'https://forms.gle/wFF2FbJyusforbhn9';
 
+const elephantDescription = `\
+9am - Depart from hotel to Sticky Waterfall
+10am - Arrive to Sticky Waterfall
+11:30am - Depart for lunch
+12:30pm - Arrive at Rab-a-bit cafe for lunch/ coffee
+2:30pm - Depart to Elephant Sanctuary
+3-5pm - Elephant Sanctuary (MaeRim Elephant Home)
+5:30pm - Arrive back to hotel
+6:30pm - To dinner (for those joining for Mikael's birthday)
+9pm - Back to Hotel`;
+
 function makeConfetti({ decay = 0.99, ticks = 1, ...opts }: Record<string, unknown>) {
   // @ts-expect-error no type
   confetti({
@@ -124,7 +135,7 @@ END:VCALENDAR
       <button type="button" onClick={downloadCal} className={classes['button']} style={{ marginBottom: '2em', display: 'flex', alignItems: 'center', fontSize: '.7em', padding: '.3em .8em' }}>
         <FiCalendar style={{ fontSize: '1.2em', marginRight: '.5em' }} /> Add to Calendar
       </button>
-      {description && <p style={{ textAlign: 'center' }}>{description}</p>}
+      {description && <p style={{ textAlign: 'center', whiteSpace: 'pre-wrap' }}>{description}</p>}
     </>
   );
 }
@@ -233,7 +244,7 @@ export default function MifiYuan() {
               <p>We will be providing a complimentary one-night stay on 13-14th Dec at <a href="https://www.proudphufah.com/muang/" target="_blank" rel="noopener noreferrer">Proud Phu Fah Muang Chiang Mai</a>, along with shuttle service to the event venue. Check-in at the hotel is from 2pm. The shuttle bus will leave at 3:30pm from the hotel.</p>
             </div>
 
-            <Img src="aedbb6f0-56cb-11f0-a43d-71246f6bde58-terra-1000.jpg" colors={['#2c442c', '#39bf39']} />
+            <Img src="petitjardin.jpg" colors={['#2c442c', '#39bf39']} />
 
             <div className={classes['box']}>
               <h1 id="schedule">Schedule</h1>
@@ -241,7 +252,11 @@ export default function MifiYuan() {
               <div className={classes['locationHeader']}>Friday, December&nbsp;12</div>
 
               <div className={classes['schedule']}>
-                <Event title="🎂 Celebrating Mikael's Birthday" time="6:00 PM to 8:00 PM" startDate={new Date('2025-12-12T18:00:00+07:00')} endDate={new Date('2025-12-12T20:00:00+07:00')} description="Yuan is planning an Italian dinner at Terra in Mae Rim for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" locationShort="Terra" location="Terra" locationHref="https://www.google.com/maps/search/?api=1&query=Terra+Rim+Tai%2C+Mae+Rim+District%2C+Chiang+Mai%2C+Thailand" />
+                <Event title="Waterfall and Elephant Tour" time="09:00 AM to 5:30 PM" startDate={new Date('2025-12-12T09:00:00+07:00')} endDate={new Date('2025-12-12T17:00:00+07:00')} locationShort="Chiang Mai" location="Chiang Mai" description={elephantDescription} />
+              </div>
+
+              <div className={classes['schedule']}>
+                <Event title="🎂 Celebrating Mikael's Birthday" time="7:00 PM to 9:00 PM" startDate={new Date('2025-12-12T19:00:00+07:00')} endDate={new Date('2025-12-12T21:00:00+07:00')} description="Yuan is planning dinner at Petit Jardin Café et Bistro for Mikael's birthday the day before. Let me know if you'd like to join so I can add you into the booking!" locationShort="Petit Jardin" location="Petit Jardin Café et Bistro" locationHref="https://maps.app.goo.gl/b2qEgceBwTTazP3r8?g_st=ia" />
               </div>
 
 
@@ -325,6 +340,8 @@ export default function MifiYuan() {
                 <Li href={decodeURIComponent('https%3A%2F%2Fwww.viator.com%2Fen-SG%2Ftours%2FChiang-Mai%2FExperience-Elephant-Sanctuary-Sticky-Waterfall%2Fd5267-60309P32%3Fpid%3DP00058688%26uid%3DU00668569%26mcid%3D58086%26currency%3DSGD')}>Elephant Sanctuary Chiang Mai + Sticky Waterfall </Li>
 
                 <Li href={decodeURIComponent('https%3A%2F%2Fg.co%2Fkgs%2FuKVfEC3')}>Kad Na Mor Night Market </Li>
+
+                <Li href="https://maps.app.goo.gl/qoJmWirK67JisZqF8?g_st=ipc">Mae Kha Canal</Li>
               </ul>
 
               <div className={classes['headingIcon']}><GiChopsticks /></div>
@@ -366,6 +383,8 @@ export default function MifiYuan() {
                 <Li href={decodeURIComponent('https%3A%2F%2Fg.co%2Fkgs%2FwpU5jxR')}>The Baristro x Ping River</Li>
 
                 <Li href={decodeURIComponent('https%3A%2F%2Fg.co%2Fkgs%2FN7kR8Xj')}>Bar San</Li>
+
+                <Li href="https://maps.app.goo.gl/oVkxJN6P7qtp5Zcy6?g_st=ipc">Rasik Local Kitchen</Li>
               </ul>
 
               <div className={classes['headingIcon']}><GiPalmTree /></div>
@@ -433,7 +452,7 @@ export default function MifiYuan() {
 
               <p>None, as you please.</p>
 
-              <p>Is the wedding indoors or outdoors?</p>
+              <p>Is the party indoors or outdoors?</p>
 
               <p>The pre-drinks will be held outdoors, and the dinner will be indoors.</p>
 
