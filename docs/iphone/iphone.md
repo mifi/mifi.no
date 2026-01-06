@@ -1,4 +1,7 @@
-# iPhone
+---
+tags: [ios, tips]
+---
+# iOS / iPhone tips
 
 ## Actually "Request Desktop Website"
 

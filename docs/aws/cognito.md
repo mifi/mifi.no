@@ -1,4 +1,7 @@
-# Cognito
+---
+tags: [aws, authentication, coding]
+---
+# AWS Cognito
 
 # Prevent email from being sent when email changed
 

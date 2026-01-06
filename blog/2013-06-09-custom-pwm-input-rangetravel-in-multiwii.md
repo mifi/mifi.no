@@ -4,7 +4,7 @@ title: Custom pwm input range/travel in MultiWii
 authors: mifi
 tags:
   - multicopter
-  - tip
+  - tips
 ---
 I use MultiWii for my quadcopter. But I had a problem. My transmitter was not able to send values in the full range (1000-2000), so i had to scale the value from the center point (1500) up, and down.
 

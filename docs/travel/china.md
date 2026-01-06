@@ -1,3 +1,6 @@
+---
+tags: [travel, china, tips]
+---
 # China travel
 
 ## Must have apps
@@ -24,11 +27,15 @@ Apple's Maps app is notoriously bad in the western world, but in China it's one 
 
 ### Google Maps
 
-Not so popular in China but sometimes it can be useful to find western-perspective reviews of certain attractions. Maps are [obfuscated](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China) (off by a few hundred meters).
+Not so popular in China but sometimes it can be useful to find western-perspective reviews of certain attractions. Maps are [obfuscated](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China) (meaning satellite data will be off by a few hundred meters).
 
 ### [Organic Maps](https://organicmaps.app/)
 
 Offline Open Street Maps. This is useful in every country, also China (but to a lessess extent due to lacking quality of maps).
+
+### Baidu Maps
+
+Cannot be downloaded by foreigners (of many countries).
 
 ### Apple Translate
 
@@ -48,11 +55,14 @@ One of the best apps to book hotels and attractions in China for foreigners. Sin
 
 ### Skype
 
-Make international calls (almost) for free.
+Make international calls (almost) for free. **Update**: Skype is now defunct.
 
-### Other
+### Ride hailing
 
-- DiDi: can be hard to download / use for foreigners, but it can also be found as a mini-app inside AliPay.
-- Baidu Maps: Cannot be downloaded by foreigners (of many countries)
+DiDi: Can be hard to download / use for foreigners, but it can also be found as a mini-app inside AliPay.
+
+## Power banks
+
+Surprising to many is that China is one of few (the only?) countries in the world that doesn't allow powerbanks on **planes** and **trains**, unless the powerbank has a CCC-marking on it (I jokingly call it Chinese Communist Charger ☭🙊). So make sure to get a power bank with a CCC-marking (they can be bought in China). If your powerbank doesn't have this marking, you have to leave it at home! Or try to hide it in your luggage and hope for the best, or put a CCC-sticker on it. 😇
 
 [^1]: Affiliate link

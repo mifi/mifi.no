@@ -1,12 +1,13 @@
+---
+tags: [macos, tips]
+---
 # macOS
 
-## Tricks
-
-### Keyboard shortcuts
+## Keyboard shortcuts
 
 `System Preferences` -> `Keyboard` -> `Shortcuts` -> `Keyboard` -> Move focus to next window: **<kbd>Cmd</kbd> + <kbd>`</kbd>**
 
-### Finder
+### Finder shortcuts
 
 | Action | Keys |
 |-|-|

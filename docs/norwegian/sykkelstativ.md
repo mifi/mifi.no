@@ -1,3 +1,6 @@
+---
+tags: [norwegian, cycling]
+---
 # Sykkelstativ til hengerfeste på bil
 
 I følge norsk lovverk skal skilt være synlig også når man har sykkel på hengerfestet. Det samme gjelder bremse-, rygge- og blinklys. Heldigvis har Biltema en billig [lysramme for bruk med sykkelholder](https://www.biltema.no/bil---mc/laste-og-trekke/transporttilbehor/sykkelstativ/lysramme-for-sykkelholder-2000035881), med plass til skilt.

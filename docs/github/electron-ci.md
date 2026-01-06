@@ -1,14 +1,5 @@
 ---
-tags:
-  - losslesscut
-  - lossless
-  - video editor
-  - building
-  - github
-  - actions
-  - ci
-  - continuous delivery
-  - release
+tags: [losslesscut, video editor, github, ci, coding]
 ---
 
 # Electron app continuous integration

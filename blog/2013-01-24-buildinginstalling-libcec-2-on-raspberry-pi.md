@@ -3,7 +3,7 @@ slug: buildinginstalling-libcec-2-on-raspberry-pi
 title: Building/installing libcec 2 on Raspberry PI
 authors: mifi
 tags:
-  - tip
+  - tips
 ---
 Tested on Raspbian wheezy
 

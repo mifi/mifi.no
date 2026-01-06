@@ -1,3 +1,6 @@
+---
+tags: [travel, china, tibet]
+---
 # Tibet travel
 
 ## Internet / mobile

@@ -3,9 +3,8 @@ slug: time-machine-backup-to-ntfs-without-installing-anything
 title: Time Machine backup to NTFS without installing anything
 authors: mifi
 tags:
-  - tip
-  - apple
-  - mac
+  - tips
+  - macos
 ---
 Here's a way to use an NTFS drive for Time Machine backups, even though it is used for other purposes too.
 

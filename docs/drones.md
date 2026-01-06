@@ -1,3 +1,6 @@
+---
+tags: [travel, drones, china, europe]
+---
 # Drones
 
 ## Drones in Europe (EU/EAA drone classes)

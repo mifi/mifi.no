@@ -1,4 +1,7 @@
-# Code snippets
+---
+tags: [scripts, coding]
+---
+# Scripts
 
 ## Split a PDF by ranges/subranges
 
@@ -7,7 +10,6 @@ import { DateTime } from 'luxon';
 import assert from 'node:assert';
 import { readFile, writeFile } from 'node:fs/promises';
 import { PDFDocument } from 'pdf-lib';
-
 
 // eslint-disable-next-line unicorn/no-unreadable-array-destructuring
 const [, , pdfPath, fromYearMonth, pageLengthsStr] = process.argv;

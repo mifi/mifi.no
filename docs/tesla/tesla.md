@@ -1,3 +1,6 @@
+---
+tags: [tesla]
+---
 # Tesla
 
 Here's some tips I gathered mostly for my 2023 (pre-highland) *Tesla Model 3*, and information about the inner workings of the car (much of which is not officially documented).

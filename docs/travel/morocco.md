@@ -1,3 +1,6 @@
+---
+tags: [travel, morocco, tips]
+---
 # Morocco
 
 ## ATMs

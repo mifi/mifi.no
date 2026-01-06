@@ -4,7 +4,8 @@ title: Use Apple HomeKit to control cheap 433 MHz devices
 authors: mifi
 tags:
   - open source
-  - apple
+  - macos
+  - ios
 ---
 
 [homebridge-telldus](https://github.com/jchnlemon/homebridge-telldus) is a plugin for [homebridge](https://github.com/nfarina/homebridge) which allows you to control cheap 433MHz devices like wireless light switches and dimmers from Apple's Home integration. This is done through [Telldus Live](https://live.telldus.com/), which provides a free service and API integration for people who bought their devices like TellStick Net and TellStick ZNet Lite. It provides a very cheap way to control your house with Siri and Apple Home.

@@ -1,9 +1,7 @@
 ---
-authors: mifi
-tags: [tesla, usb, boombox, teslacam, sentry]
+tags: [tesla, usb, boombox, teslacam, coding, tips]
 ---
-
-# USB storage
+# Tesla USB storage
 
 ## Multiple partitions
 

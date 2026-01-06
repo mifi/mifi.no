@@ -1,3 +1,6 @@
+---
+tags: [travel, hiking]
+---
 # Personal Locator Beacons (PLBs)
 
 [PLBs](https://en.wikipedia.org/wiki/Emergency_position-indicating_radiobeacon) are personal devices that can be used to receiving emergency help when in distress out in the wilderness or out at sea. They are being sold by various companies at a steep price, compared to the cost of the components they use. They usually have a non-rechargeable battery that typically lasts for 10 years, but the PLB manufacturers usually recommend changing them after 5-6 years. Once expired, the battery has to be replaced, typically only by the same company that sold the device - at a price almost as high as the purchase price of the PLB. And because the battery pack is often built in a proprietary way, it's hard to find these batteries for sale anywhere in order to replace them ourselves.

@@ -3,7 +3,7 @@ slug: dji-phantom-3-parallel-battery-charging-in-a-car-with-imax-b6
 title: DJI Phantom 3 parallel battery charging in a car with iMax B6
 authors: mifi
 tags:
-  - tip
+  - tips
   - hardware
 ---
 I bought a "Multi Battery Parallel Charging Board For DJI phantom3" on ebay, and I soldered on a deans female connector for connecting it to my iMax B6 charger.

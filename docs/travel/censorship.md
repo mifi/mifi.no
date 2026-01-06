@@ -1,5 +1,5 @@
 ---
-tags: [vpn, censorship, gfw, china]
+tags: [travel, vpn, censorship, china, coding]
 ---
 
 # Internet censorship

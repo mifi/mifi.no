@@ -4,7 +4,7 @@ title: XBMC memory leak remedy
 authors: mifi
 tags:
   - script
-  - tip
+  - tips
   - xbmc
 ---
 XBMC (now Kodi) has always had a tendency of leaking memory, so that it will eventually thrash and crash. My simple solution to this is to run xbmc inside a for loop instead of directly (just run the script from `.xinitrc`):

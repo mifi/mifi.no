@@ -1,4 +1,7 @@
-# Customization
+---
+tags: [macos, tips]
+---
+# macOS customization
 
 I bought a MacBook Pro and wanted to start using Mac OS X as my primary OS. I'm used to Windows/Linux so I have some preferences as to behaviour. There are some things that are kind of annoying, many of which can be fixed. Also there are some tricks that make me more productive.
 

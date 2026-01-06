@@ -3,8 +3,7 @@ slug: mac-photos-library-on-a-nas
 title: Mac Photos Library on a NAS
 authors: mifi
 tags:
-  - apple
-  - mac
+  - macos
 ---
 I struggled a bit to find out how to store my Photo Library on a NetGear ReadyNAS. SMB did not work, and SSHFS did not work either. I was unable to get AFP working too, and I saw that it was discouraged.
 

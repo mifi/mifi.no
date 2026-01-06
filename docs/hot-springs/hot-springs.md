@@ -1,10 +1,13 @@
+---
+tags: [travel, hot springs, japan, iceland]
+---
 # Hot springs
 
 There are many natural hot springs around the world. Especially in countries like Japan, Iceland and New Zealand. Here I will document my favorites.
 
 ## Japan
 
-in Japan, hot spring baths are called onsen. Try to go to one of the local (non-touristy) public onsen. No need to stay in a fancy resort to use the onsen!
+in Japan, hot spring baths are called onsen. Try to go to one of the local (non-touristy) public onsen. They are affordable and an authentic experience. No need to stay in a fancy resort to use the onsen!
 
 ## Iceland
 

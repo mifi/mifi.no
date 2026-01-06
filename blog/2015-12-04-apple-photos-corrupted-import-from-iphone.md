@@ -3,8 +3,7 @@ slug: apple-photos-corrupted-import-from-iphone
 title: Apple photos corrupted import from iPhone
 authors: mifi
 tags:
-  - apple
-  - mac
+  - macos
 ---
 ![](https://static.mifi.no/dist/2015/12/Screen-Shot-2015-12-04-at-20.13.02.jpg)
 

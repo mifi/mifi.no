@@ -1,3 +1,6 @@
+---
+tags: [scripts, typescript, eslint, coding]
+---
 # Codemods
 
 ## Fix `exactOptionalPropertyTypes` in a project

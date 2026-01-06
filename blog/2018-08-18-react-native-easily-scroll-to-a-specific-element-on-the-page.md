@@ -5,8 +5,6 @@ authors: mifi
 tags:
   - react
   - react native
-  - apple
-  - javascript
   - ios
   - android
   - open source

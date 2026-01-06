@@ -2,7 +2,7 @@
 slug: raspberry-pi-airplay-mirroring-server
 title: 'Raspberry Pi AirPlay Mirroring server'
 authors: 'mifi'
-tags: [airplay, apple, raspberrypi, ]
+tags: [airplay, ios, macos, raspberrypi]
 ---
 
 How to setup an AirPlay server on a Raspberry Pi.

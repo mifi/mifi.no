@@ -1,3 +1,6 @@
+---
+tags: [norwegian, skattelister, coding]
+---
 # Skattelister
 
 Hvis du logger inn på [Skattelistesøk](https://skatt.skatteetaten.no/web/skattelistesoek/) så har du muligheten til å se hvem som har søkt deg opp i skattelistene. Men du får bare se de som har søkt deg opp siste år. Hvordan se hvem som har søkt på dine skattelister, i alle tidligere år?

@@ -5,7 +5,7 @@ authors: mifi
 tags: [java]
 ---
 
-See also [this article](/docs/macos/installing-pkg).
+See also [this article](/docs/macos/macos-installing-pkg).
 
 Oracle no longer provides compressed versions of JDK 😡 and require root to install (probably they also install an auto updater nagging you all the time)
 

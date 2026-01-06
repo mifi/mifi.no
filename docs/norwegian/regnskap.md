@@ -1,3 +1,6 @@
+---
+tags: [norwegian, accounting]
+---
 # Regnskap
 
 ## Valutakalkulator

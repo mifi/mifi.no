@@ -1,7 +1,6 @@
 ---
-tags: [eb, elasticbeanstalk, yarn, npm, nodejs]
+tags: [aws, elasticbeanstalk, yarn, npm, nodejs, coding]
 ---
-
 # Use Yarn for Elastic Beanstalk
 
 This article describes how to use `yarn` (or any other package manager than npm) instead of `npm` when deploying an Elastic Beanstalk Node.js app.

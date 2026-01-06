@@ -1,4 +1,7 @@
-# Installing `.pkg` files (no admin)
+---
+tags: [macos, tips, coding]
+---
+# Installing `.pkg` files without admin
 
 How to install a MacOS `.pkg` on a Mac without root/admin privileges ☺️
 

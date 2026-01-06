@@ -9,7 +9,7 @@ How to install TeamViewer `.pkg` on a Mac without admin privileges ☺️
 
 <!--truncate-->
 
-See also [this article](/docs/macos/installing-pkg).
+See also [this article](/docs/macos/macos-installing-pkg).
 
 It used to be so easy to connect to someone's computer using TeamViewer, because TeamViewer used to provide a Chrome app, however after 2022 they don't provide that anymore, and when downloading TeamViewer, we are presented with an `Install TeamViewer.app` that requires admin privileges to install.
 

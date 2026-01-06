@@ -3,7 +3,7 @@ slug: getting-xbmc-to-work-with-airplay-on-ios7
 title: Getting XBMC to work with AirPlay on iOS7
 authors: mifi
 tags:
-  - apple
+  - ios
 ---
 Since iOS 7 broke Airplay for XBMC, a guy figured out how to get it working again. It involves sending extra Bonjour publishes.
 

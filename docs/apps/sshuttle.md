@@ -1,9 +1,6 @@
 ---
-tags:
-  - tip
-  - mac
+tags: [tips, apps, macos, linux, coding]
 ---
-
 # `sshuttle` - VPN over SSH
 
 There is a cute litte program called sshuttle for shuttling IP subnet traffic over and SSH connection, like a VPN but doesn't require any setup on the remote end. (Mac and Linux).

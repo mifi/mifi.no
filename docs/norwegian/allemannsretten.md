@@ -1,3 +1,6 @@
+---
+tags: [norwegian, hiking, cycling]
+---
 # Allemannsretten
 
 Hva man kan gjøre i utmark og hvilke restriksjoner finnes?

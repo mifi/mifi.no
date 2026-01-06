@@ -3,7 +3,7 @@ slug: readynas-rn102-constant-activity-remedy
 title: ReadyNAS RN102 constant activity remedy
 authors: mifi
 tags:
-  - tip
+  - tips
 ---
 My Netgear ReadyNAS RN102 keeps constantly writing to a file `/var/readynasd`
 I don't want to hold my breath waiting for Netgear to fix this so I took matters into my own hands and implemented a TMPFS fix for my NAS.
