@@ -66,8 +66,12 @@ export default function Home() {
     >
       <>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 40 }}>
-          <div style={{ textTransform: 'uppercase', fontSize: 40, fontWeight: 500, lineHeight: '1em' }}>mifi.no</div>
-          <div style={{ textTransform: 'uppercase', fontSize: 20, fontWeight: 300, color: '#999', marginBottom: 30 }}>Mikael Finstad</div>
+          <div style={{ textTransform: 'uppercase', fontSize: 40, fontWeight: 500, lineHeight: '1em' }}>
+            mifi.no
+          </div>
+          <div style={{ textTransform: 'uppercase', fontSize: 20, fontWeight: 300, color: '#999', marginBottom: 30 }}>
+            Mikael Finstad
+          </div>
 
           <p style={{ margin: '30px 0', width: 600, maxWidth: '100%', textAlign: 'center' }}>
             I create <Link to="https://github.com/mifi/" className={styles['nicelink']!}>free and open source</Link> software to share with the world because<br />
@@ -77,7 +81,11 @@ export default function Home() {
             <a href="https://miffy.no/" className={styles['nicelink']!} target="_blank" rel="noopener noreferrer">miffy.no</a> 🌈 mini game
           </p>
 
-          <p style={{ textAlign: 'center', marginBottom: 50 }}><Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>Thanks to my supporters ❤️</Link></p>
+          <p style={{ textAlign: 'center', marginBottom: 50 }}>
+            <Link to="/thanks" style={{ fontSize: 30, fontWeight: 200, color: 'inherit' }}>
+              Thanks to my supporters ❤️
+            </Link>
+          </p>
 
           <div style={{ marginTop: 100, marginBottom: 100, display: 'flex', flexWrap: 'wrap', gap: '1em', fontSize: '1.5em' }}>
             <a ref={palestineRef} href="https://genocide.no/palestine/" target="_blank" rel="noopener noreferrer">
