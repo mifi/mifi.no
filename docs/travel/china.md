@@ -61,6 +61,26 @@ Make international calls (almost) for free. **Update**: Skype is now defunct.
 
 DiDi: Can be hard to download / use for foreigners, but it can also be found as a mini-app inside AliPay.
 
+## Robotaxi / self driving taxis
+
+### Shanghai
+
+Eight companies—including Pony.ai, Baidu's Apollo Go, SAIC Motor, and Qiangsheng Taxi—may now operate cars with no safety driver in the front seat.
+
+- Pony.ai fleet - Pudong area (Near Shanghai Science and Technology Museum): Use WeChat Pony.ai mini program. [See this post](https://www.reddit.com/r/shanghai/comments/1mrko01/driverless_taxis_now_in_shanghai/).
+- Apollo Go WeChat mini program - Jiading District [See this article](https://www.smartshanghai.com/articles/community/auto-driving-car).
+- ZhixingZhilian (致行智联) mini-program - Lin-gang Special Area [See this page](https://english.shanghai.gov.cn/en-Latest-WhatsNew/20250819/b797865d65994605811042827e4b7ab1.html)
+
+## High speed train
+
+### Shanghai Maglev
+
+From Shanghai Pudong International Airport to Longyang Road. Maximum cruising speed of 300 km/h, reduced from 431 km/h to save cost (air resistance and electricity cost increases exponentially at such high speeds).
+
+### Beijing-Shanghai high-speed rail
+
+This is the world's fastest train in commercial operation, covering the ~1300 km route in about 4.5 hours at speeds up to 350 km/h. Average speed of 291 km/h for the whole journey.
+
 ## Power banks
 
 Surprising to many is that China is one of few (the only?) countries in the world that doesn't allow powerbanks on **planes** and **trains**, unless the powerbank has a CCC-marking on it (I jokingly call it Chinese Communist Charger ☭🙊). So make sure to get a power bank with a CCC-marking (they can be bought in China). If your powerbank doesn't have this marking, you have to leave it at home! Or try to hide it in your luggage and hope for the best, or put a CCC-sticker on it. 😇
