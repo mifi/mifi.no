@@ -1,5 +1,6 @@
 import Layout from '@theme/Layout';
 import ky from 'ky';
+import sortBy from 'lodash/sortBy.js';
 import { useEffect, useState } from 'react';
 
 
@@ -57,11 +58,12 @@ export default function LosslessCutNightly() {
     <Layout>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', minHeight: '50vh' }}>
         {!latestWorkflow ? 'Plase wait while I take you to the latest nightly build...' : (
-          <div>
+          <div style={{ margin: '3em' }}>
             Here is the latest nightly build of LosslessCut.<br />
             <span style={{ opacity: 0.5, fontWeight: 'bold' }}>{new Date(latestWorkflow.createdAt).toLocaleString()}</span><br />
-            <span style={{ opacity: 0.5 }}>{latestWorkflow.headBranch} / {latestWorkflow.headSha}</span><br />
-            {latestWorkflow.artifacts.map((artifact) => (
+            <span style={{ opacity: 0.5 }}>{latestWorkflow.headSha} ({latestWorkflow.headBranch} branch)</span><br />
+
+            {sortBy(latestWorkflow.artifacts, (a) => a.name).map((artifact) => (
               <div key={artifact.id}>
                 <a href={artifact.url}>{artifact.name} ({(artifact.size / 1024 / 1024).toFixed(1)} MB)</a>
               </div>
