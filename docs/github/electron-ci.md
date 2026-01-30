@@ -163,8 +163,38 @@ If notarized build only (no Mac App Store), select:
 Then right click and export to `Certificates.p12` with a strong random password, note the password.
 
 In the GitHub project replace:
-- [`MAC_CERTS_PASSWORD`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS_PASSWORD) with the generated password.
+- [`MAC_CERTS_PASSWORD`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS_PASSWORD) with the password you just created.
 - [`MAC_CERTS`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS) to the output of this command: `base64 -i Certificates.p12 -o -`
+
+Note that in [action-electron-builder](https://github.com/samuelmeuli/action-electron-builder/blob/e4b12cd06ddf023422f1ac4e39632bd76f6e6928/index.js#L98C11-L98C19):
+
+- `CSC_LINK` is called `MAC_CERTS`.
+- `CSC_KEY_PASSWORD` is called `MAC_CERTS_PASSWORD`.
+
+### Notarization
+
+`electron-builder` will try to notarize, if it sees the environment variables `APPLE_API_KEY`, `APPLE_API_KEY_ID` and `APPLE_API_ISSUER`.
+
+To generate an API key, go to Users and Access -> App Store Connect API -> [Team keys](https://appstoreconnect.apple.com/access/integrations/api). Generate a new key with access `App Manager` and download it as `.p8`.
+- `APPLE_API_KEY`: The local path of the downloaded `.p8` file.
+- `APPLE_API_ISSUER`: Issuer ID from the website.
+- `APPLE_API_KEY_ID`: KEY ID from the website (also in the `.p8 file name`).
+
+#### Test signing with notarization locally
+
+```bash
+APPLE_API_KEY="..." APPLE_API_ISSUER="..." CSC_LINK="..." CSC_KEY_PASSWORD="..." yarn electron-builder
+```
+
+#### Slow signing / notarization
+
+Notarization involves uploading the file to Apple's servers. Sometimes it takes Apple longer to do this. And in your build, `electron-builder` log output is seemingly stuck at the "signing" step, even though it is actually stuck notarizing. You can check the notarization status with this command:
+
+```bash
+xcrun notarytool history --apiKey $APPLE_API_KEY_ID --apiIssuer $APPLE_API_ISSUER
+```
+
+Check also Apple's ["Developer ID Notary Service" status](https://developer.apple.com/system-status/), it might be having an outage.
 
 ### Testing mas builds locally
 
@@ -175,7 +205,8 @@ Under [Devices](https://developer.apple.com/account/resources/devices/list), mak
 ## See also
 
 - https://github.com/samuelmeuli/action-electron-builder#code-signing
-- https://www.electron.build/
+- https://www.electron.build/code-signing.html
+- https://www.electron.build/code-signing-mac.html
 - https://github.com/samuelmeuli/action-electron-builder
 - https://github.com/samuelmeuli/action-snapcraft
 - https://github.com/samuelmeuli/mini-diary/blob/master/package.json
