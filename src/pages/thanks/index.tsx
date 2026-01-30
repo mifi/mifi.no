@@ -13,6 +13,8 @@ import { chinaPayUrl } from './stripe';
 
 // https://www.patreon.com/members?sort=-pledgeRelationshipStart&membershipType=active_patron
 const patreons = [
+  { from: '2025-11-29', amount: 10, name: 'ChikaJihyo', url: 'https://www.patreon.com/ChikaJihyo' },
+  { from: '2025-11-28', amount: 5, name: 'Micha', url: 'https://www.patreon.com/user?u=82341256' },
   { from: '2022-08-13', amount: 5, name: 'BraveFart', url: 'https://www.patreon.com/user?u=10565003' },
   { from: '2021-07-19', amount: 3, name: 'Formica', url: 'https://www.patreon.com/user/creators?u=2442057' },
   { from: '2025-10-01', amount: 20, name: 'Nommalorel', url: 'https://www.patreon.com/profile/creators?u=188159240' },
@@ -23,6 +25,7 @@ const patreons = [
 // https://github.com/sponsors/mifi/dashboard/your_sponsors
 // todo previous?
 const github = [
+  { from: '2026-01-25', amount: 3, name: 'LevYas' },
   { from: '2025-11-02', amount: 5, name: 'LibertusCorditus' },
   { from: '2025-01-29', amount: 10, name: 'chrishuan9' },
   { from: '2024-07-23', amount: 10, name: 'derekh4' },
