@@ -9,6 +9,7 @@ const lambdaUrl = 'https://qsk5sze4w4bxfgek4rcrncsdpm0qrmfa.lambda-url.us-east-1
 interface WorflowRunResponse {
   workflow_runs: {
     id: number,
+    event: string,
     artifacts_url: string,
     conclusion: string,
     status: string,
@@ -33,7 +34,7 @@ export default function LosslessCutNightly() {
   useEffect(() => {
     (async () => {
       const { workflow_runs: workflowRuns } = await ky.get('https://api.github.com/repos/mifi/lossless-cut/actions/workflows/build.yml/runs').json<WorflowRunResponse>();
-      const latestWorkflowResponse = workflowRuns.find((r) => r.conclusion === 'success' && r.status === 'completed');
+      const latestWorkflowResponse = workflowRuns.find((r) => r.conclusion === 'success' && r.status === 'completed' && (r.event === 'schedule' || r.event === 'workflow_dispatch'));
 
       if (latestWorkflowResponse) {
         const { artifacts: artifactsResponse } = await ky.get(latestWorkflowResponse.artifacts_url).json<ArtifactResponse>();
