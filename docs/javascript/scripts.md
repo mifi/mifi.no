@@ -1,5 +1,5 @@
 ---
-tags: [scripts, coding]
+tags: [typescript, scripts, coding]
 ---
 # Scripts
 
