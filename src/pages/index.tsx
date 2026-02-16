@@ -24,16 +24,24 @@ const archivedNpmModules = [
 ];
 
 function Project({ name, type } : { name: string, type: 'github' | 'npm' | 'npm-archived' }) {
-  const url = type === 'github' ? `https://github.com/mifi/${name}` : `https://www.npmjs.com/package/${name}`;
+  const npmUrl = `https://www.npmjs.com/package/${name}`;
+  const githubUrl = `https://github.com/mifi/${name}`;
+  const opacity = type === 'npm-archived' ? 0.4 : 1;
+
+  // npm (and npm-archived) — show npm icon and a separate github icon linking to the repo
   return (
-    <Link key={name} to={url} style={{ padding: '8px 12px', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none', opacity: type === 'npm-archived' ? 0.4 : 1 }}>
-      {type === 'github' ? (
-        <FaGithub style={{ marginRight: 4 }} />
-      ) : (
-        <FaNpm color="rgb(206 0 0)" style={{ marginRight: 4 }} />
+    <div key={name} style={{ padding: '.4em .6em', display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none', opacity }}>
+      {type === 'npm' && (
+        <Link to={npmUrl} style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}>
+          <FaNpm color="rgb(206 0 0)" />
+        </Link>
       )}
-      {name}
-    </Link>
+
+      <Link to={githubUrl} style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}>
+        <FaGithub style={{ marginLeft: '.4em', marginRight: '.3em' }} />
+        {name}
+      </Link>
+    </div>
   );
 }
 
