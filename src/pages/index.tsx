@@ -16,7 +16,7 @@ const githubProjects = [
 ];
 
 const npmModules = [
-  'jotta', 'cloudwatch-winston', 'mjml-dynamic', 'reactive-video', 'instauto', 'react-lottie-player', 'telldus-api', 'telldus-local-auth', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'error-handler-json', 'commonify', 'eslint-config-mifi',
+  'tinyshare', 'jotta', 'cloudwatch-winston', 'mjml-dynamic', 'reactive-video', 'instauto', 'react-lottie-player', 'telldus-api', 'telldus-local-auth', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'error-handler-json', 'commonify', 'eslint-config-mifi',
 ];
 
 const archivedNpmModules = [
