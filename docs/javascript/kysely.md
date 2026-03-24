@@ -14,3 +14,16 @@ When using `jsonArrayFrom`/`jsonObjectFrom`, it is very hard to infer which type
 ])
 ```
 This will make sure that the returned value is always `string` (in TypeScript and at runtime) when selected, but you can still store the value as a DECIMAL, to have the benefits of this column type.
+
+### More examples
+
+`jsonObjectFrom`/`jsonArrayFrom` (MySQL `json_object`) converts `TIMESTAMP` to `YYYY-MM-DD hh:mm:ss.ffffff`, which causes different behavior from normal (non JSON) selects. In order to make the behavior the same, we can e.g. convert the timestamps to UNIX time milliseconds inside `jsonObjectFrom`/`jsonArrayFrom`:
+```ts
+export const timestampToUnix = <DBT, TB extends keyof DBT>(
+  eb: ExpressionBuilder<DBT, TB>,
+  expr: ExpressionWrapper<DBT, TB, Date>,
+) => eb(eb.fn<number>('UNIX_TIMESTAMP', [expr]), '*', eb.val(1000));
+
+// usage:
+await kysely.selectFrom('table').select((eb) => timestampToUnix(eb, eb.ref('createdAt')).as('createdAt'))
+```
