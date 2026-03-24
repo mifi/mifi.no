@@ -8,12 +8,6 @@ I bought a MacBook Pro and wanted to start using Mac OS X as my primary OS. I'm 
 ## Command line settings
 
 ```bash
-# Disable trackpad acceleration (no longer works on M2):
-# defaults write .GlobalPreferences com.apple.trackpad.scaling -1
-
-# If you have an external mouse, you have to disable its acceleration separately (no longer works on M2):
-# defaults write .GlobalPreferences com.apple.mouse.scaling -1
-
 # Always show Finder path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
@@ -35,7 +29,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0.00; killall Dock
 # Disable character picker
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Speed up animation
+# Speed up window resize animation
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.03
 
 # Don’t prompt for TimeMachine when plugging devices
@@ -80,7 +74,7 @@ Makes mac faster and use less CPU/power:
 ## Other
 
 * Remove iTunes Helper from Login Items to prevent auto launch on iPhone connect
-* In iTunes, for iPhone, enable **Manually manage music and videos*.
+* In iTunes, for iPhone, enable *Manually manage music and videos*.
 * http://osxdaily.com/2013/03/01/9-simple-tricks-improve-finder-mac-os-x/
 * http://osxdaily.com/2011/07/28/turn-off-auto-correct-in-mac-os-x-lion/
 
