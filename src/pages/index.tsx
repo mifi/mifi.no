@@ -105,12 +105,12 @@ export default function Home() {
 
           <div style={{ padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
             <div style={{ margin: '40px 0', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-              <a href="/losslesscut/" target="_blank" rel="noopener noreferrer">
+              <a href="https://losslesscut.app/" target="_blank" rel="noopener noreferrer">
                 <img src="https://static.mifi.no/losslesscut.svg" alt="LosslessCut" style={{ width: 100, marginBottom: 10 }} />
               </a>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ marginTop: 5 }}>
-                  <a href="/losslesscut/" target="_blank" rel="noopener noreferrer" className={styles['nicelink']} style={{ fontSize: 30, fontWeight: 300 }}>
+                  <a href="https://losslesscut.app/" target="_blank" rel="noopener noreferrer" className={styles['nicelink']} style={{ fontSize: 30, fontWeight: 300 }}>
                     LosslessCut
                   </a>
                 </div>

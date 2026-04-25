@@ -14,6 +14,6 @@ I decided to charge a small price for the apps distributed through the Microsoft
 
 I hope you like it and I will continue improving LosslessCut 🙌
 
-[Get the new LosslessCut](https://mifi.no/losslesscut/)
+[Get the new LosslessCut](https://losslesscut.app/)
 
 The source code is freely available for anyone to look at, and if you are interested in seeing how the project is automatically built and deployed, check out [this blog post](./2020-03-31-automated-electron-build-with-release-to-mac-app-store-microsoft-store-snapcraft.md).

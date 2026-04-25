@@ -93,7 +93,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://mifi.no/losslesscut/',
+          href: 'https://losslesscut.app/',
           label: 'LosslessCut',
           position: 'right',
         },
