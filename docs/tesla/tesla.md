@@ -5,6 +5,12 @@ tags: [tesla]
 
 Here's some tips I gathered mostly for my 2023 (pre-highland) *Tesla Model 3*, and information about the inner workings of the car (much of which is not officially documented).
 
+## Long term storage battery drain
+
+When not plugged in, the car was sitting in a garage at a temperature of about 17C. On Oct 7 2025 I left the car with a battery of about 88%. Picked it up again on Mar 31 2026 with a battery of 57%. This means in 175 days the battery drained a total of 31%, or about **0.177% battery drain per day**!
+
+Note: I charged the battery to 100% a day before parking it in order to calibrate the battery measurement.
+
 ## WiFi / Cellular
 
 Tesla can connect to a WiFi network, setup using its in-car UI.
