@@ -22,6 +22,7 @@
       color: white;
     }
     #wrapper {
+      flex-direction: column;
       display: flex;
       height: 100dvh;
       width: 100dvw;
@@ -29,18 +30,43 @@
       align-items: center;
     }
     a {
+      text-decoration: none;
       color: inherit;
+    }
+    h1 {
+      font-weight: 200;
+    }
+    .link-container {
+      text-align: center;
+    }
+    .link-container:hover {
+      transform: scale(1.05);
+      transition: transform .2s ease;
+    }
+    .link a {
+      display: block;
+      font-size: 1.2em;
+    }
+    a:active, a:hover {
+      text-underline-offset: 0.15em;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
   <div id="wrapper">
-    <div>
       <h1>LosslessCut</h1>
-      <p>LosslessCut has moved to a new domain:</p>
-      <p><a href="https://losslesscut.app/">losslesscut.app</a></p>
-    </div>
+      <div style="margin-bottom: 1.5em">LosslessCut has moved to a new website:</div>
+
+      <div class="link-container">
+        <a href="https://losslesscut.app/">
+          <img src="https://static.mifi.no/losslesscut.svg" alt="LosslessCut" style="width: 6em; max-width: 100%; margin-bottom: 10px" />
+        </a>
+        <div class="link"><a href="https://losslesscut.app/">LosslessCut.app</a></div>
+      </div>
+
+      <div style="margin-top: 1.7em; opacity: .7;">A <a href="https://mifi.no/">mifi.no</a> app</div>
   </div>
 </body>
 </html>
