@@ -1,0 +1,714 @@
+[
+  {
+    "type": "github",
+    "name": "ameaninglessname",
+    "from": "2026-05-16",
+    "medianAmount": 5,
+    "totalAmount": 5,
+    "active": false,
+    "url": "https://github.com/ameaninglessname"
+  },
+  {
+    "type": "github",
+    "name": "grey-software",
+    "from": "2026-05-12",
+    "medianAmount": 5.335,
+    "totalAmount": 10.67,
+    "active": true,
+    "url": "https://github.com/grey-software"
+  },
+  {
+    "type": "github",
+    "name": "dekar91",
+    "from": "2026-05-10",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/dekar91"
+  },
+  {
+    "type": "github",
+    "name": "cheeksspreadington",
+    "from": "2026-05-09",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/cheeksspreadington"
+  },
+  {
+    "type": "github",
+    "name": "rcdunnii",
+    "from": "2026-05-05",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/rcdunnii"
+  },
+  {
+    "type": "github",
+    "name": "serdaryildirim76",
+    "from": "2026-04-13",
+    "until": "2026-05-13",
+    "medianAmount": 1,
+    "totalAmount": 1,
+    "active": false,
+    "url": "https://github.com/serdaryildirim76"
+  },
+  {
+    "type": "github",
+    "name": "DanielYang59",
+    "from": "2026-04-13",
+    "until": "2026-05-13",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/DanielYang59"
+  },
+  {
+    "type": "github",
+    "name": "Eldirans",
+    "from": "2026-03-31",
+    "until": "2026-04-30",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/Eldirans"
+  },
+  {
+    "type": "github",
+    "name": "mjablon1",
+    "from": "2026-02-03",
+    "until": "2026-03-03",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/mjablon1"
+  },
+  {
+    "type": "github",
+    "name": "Dopatale",
+    "from": "2026-01-25",
+    "until": "2026-02-25",
+    "medianAmount": 1,
+    "totalAmount": 1,
+    "active": false,
+    "url": "https://github.com/Dopatale"
+  },
+  {
+    "type": "github",
+    "name": "LevYas",
+    "from": "2026-01-25",
+    "medianAmount": 3,
+    "totalAmount": 15,
+    "active": true,
+    "url": "https://github.com/LevYas"
+  },
+  {
+    "type": "github",
+    "name": "mtubesing",
+    "from": "2025-12-06",
+    "until": "2026-01-06",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/mtubesing"
+  },
+  {
+    "type": "github",
+    "name": "LibertusCorditus",
+    "from": "2025-11-02",
+    "medianAmount": 5,
+    "totalAmount": 90,
+    "active": true,
+    "url": "https://github.com/LibertusCorditus"
+  },
+  {
+    "type": "github",
+    "name": "glecas",
+    "from": "2026-02-08",
+    "until": "2026-03-08",
+    "medianAmount": 10,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/glecas"
+  },
+  {
+    "type": "github",
+    "name": "kornylak",
+    "from": "2025-10-23",
+    "until": "2025-11-23",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/kornylak"
+  },
+  {
+    "type": "github",
+    "name": "omstr",
+    "from": "2025-09-13",
+    "until": "2025-10-13",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/omstr"
+  },
+  {
+    "type": "github",
+    "name": "korrawitp",
+    "from": "2025-07-06",
+    "until": "2025-08-06",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/korrawitp"
+  },
+  {
+    "type": "github",
+    "name": "prameswarinaladita",
+    "from": "2025-06-26",
+    "until": "2025-07-26",
+    "medianAmount": 1,
+    "totalAmount": 1,
+    "active": false,
+    "url": "https://github.com/prameswarinaladita"
+  },
+  {
+    "type": "github",
+    "name": "bradpike",
+    "from": "2025-05-16",
+    "until": "2025-06-16",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/bradpike"
+  },
+  {
+    "type": "github",
+    "name": "FishesHaveNoSoul",
+    "from": "2025-05-02",
+    "until": "2025-06-02",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/FishesHaveNoSoul"
+  },
+  {
+    "type": "github",
+    "name": "exekutive",
+    "from": "2025-03-15",
+    "until": "2025-04-15",
+    "medianAmount": 25,
+    "totalAmount": 25,
+    "active": false,
+    "url": "https://github.com/exekutive"
+  },
+  {
+    "type": "github",
+    "name": "kroesche",
+    "from": "2025-02-04",
+    "until": "2025-03-04",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/kroesche"
+  },
+  {
+    "type": "github",
+    "name": "chrishuan9",
+    "from": "2025-01-29",
+    "medianAmount": 10,
+    "totalAmount": 165.48,
+    "active": true,
+    "url": "https://github.com/chrishuan9"
+  },
+  {
+    "type": "github",
+    "name": "PCWhiz65",
+    "from": "2025-01-10",
+    "until": "2025-02-10",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/PCWhiz65"
+  },
+  {
+    "type": "github",
+    "name": "jeagerspice",
+    "from": "2024-12-24",
+    "until": "2025-01-24",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/jeagerspice"
+  },
+  {
+    "type": "github",
+    "name": "czechmec",
+    "from": "2024-12-23",
+    "until": "2025-01-23",
+    "medianAmount": 50,
+    "totalAmount": 50,
+    "active": false,
+    "url": "https://github.com/czechmec"
+  },
+  {
+    "type": "github",
+    "name": "AbsoluteFatWeeb",
+    "from": "2024-11-14",
+    "until": "2024-12-14",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/AbsoluteFatWeeb"
+  },
+  {
+    "type": "github",
+    "name": "jce-zz",
+    "from": "2024-11-12",
+    "until": "2024-12-12",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/jce-zz"
+  },
+  {
+    "type": "github",
+    "name": "rodrigoea",
+    "from": "2024-11-01",
+    "until": "2024-12-01",
+    "medianAmount": 5,
+    "totalAmount": 5,
+    "active": false,
+    "url": "https://github.com/rodrigoea"
+  },
+  {
+    "type": "github",
+    "name": "yuchenshi",
+    "from": "2024-10-02",
+    "until": "2024-11-02",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/yuchenshi"
+  },
+  {
+    "type": "github",
+    "name": "mschwieger",
+    "from": "2024-09-23",
+    "until": "2024-10-23",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/mschwieger"
+  },
+  {
+    "type": "github",
+    "name": "ependergrass",
+    "from": "2024-09-08",
+    "until": "2024-10-08",
+    "medianAmount": 5,
+    "totalAmount": 5,
+    "active": false,
+    "url": "https://github.com/ependergrass"
+  },
+  {
+    "type": "github",
+    "name": "derekh4",
+    "from": "2024-07-23",
+    "medianAmount": 10,
+    "totalAmount": 230,
+    "active": true,
+    "url": "https://github.com/derekh4"
+  },
+  {
+    "type": "github",
+    "name": "JamesSwift",
+    "from": "2024-07-18",
+    "until": "2024-08-18",
+    "medianAmount": 7,
+    "totalAmount": 7,
+    "active": false,
+    "url": "https://github.com/JamesSwift"
+  },
+  {
+    "type": "github",
+    "name": "mandrael",
+    "from": "2024-05-18",
+    "until": "2026-02-28",
+    "medianAmount": 10,
+    "totalAmount": 213.67,
+    "active": false,
+    "url": "https://github.com/mandrael"
+  },
+  {
+    "type": "github",
+    "name": "ryanilano",
+    "from": "2024-03-30",
+    "until": "2024-04-30",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/ryanilano"
+  },
+  {
+    "type": "github",
+    "name": "timgame0901",
+    "from": "2024-03-24",
+    "until": "2024-04-24",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/timgame0901"
+  },
+  {
+    "type": "github",
+    "name": "scuba-tech",
+    "from": "2024-02-01",
+    "medianAmount": 2,
+    "totalAmount": 56.77,
+    "active": true,
+    "url": "https://github.com/scuba-tech"
+  },
+  {
+    "type": "github",
+    "name": "flipzoom",
+    "from": "2024-01-29",
+    "until": "2024-02-29",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/flipzoom"
+  },
+  {
+    "type": "github",
+    "name": "xrstf",
+    "from": "2025-05-18",
+    "until": "2025-06-18",
+    "medianAmount": 10,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/xrstf"
+  },
+  {
+    "type": "github",
+    "name": "FernandoFuvio",
+    "from": "2023-11-23",
+    "until": "2023-12-23",
+    "medianAmount": 5,
+    "totalAmount": 5,
+    "active": false,
+    "url": "https://github.com/FernandoFuvio"
+  },
+  {
+    "type": "github",
+    "name": "nick2i",
+    "from": "2023-11-02",
+    "until": "2024-11-06",
+    "medianAmount": 10,
+    "totalAmount": 120.97,
+    "active": false,
+    "url": "https://github.com/nick2i"
+  },
+  {
+    "type": "github",
+    "name": "vaad2",
+    "from": "2023-05-24",
+    "until": "2023-06-24",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/vaad2"
+  },
+  {
+    "type": "github",
+    "name": "andrewzah",
+    "from": "2023-04-28",
+    "until": "2023-05-28",
+    "medianAmount": 100,
+    "totalAmount": 100,
+    "active": false,
+    "url": "https://github.com/andrewzah"
+  },
+  {
+    "type": "github",
+    "name": "Ammeltje",
+    "from": "2023-04-15",
+    "until": "2023-05-15",
+    "medianAmount": 20,
+    "totalAmount": 20,
+    "active": false,
+    "url": "https://github.com/Ammeltje"
+  },
+  {
+    "type": "github",
+    "name": "muk-ai",
+    "from": "2023-04-08",
+    "until": "2023-05-08",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/muk-ai"
+  },
+  {
+    "type": "github",
+    "name": "vegeta897",
+    "from": "2023-03-10",
+    "until": "2024-05-23",
+    "medianAmount": 2,
+    "totalAmount": 28.93,
+    "active": false,
+    "url": "https://github.com/vegeta897"
+  },
+  {
+    "type": "github",
+    "name": "dezii98",
+    "from": "2023-02-19",
+    "until": "2023-03-19",
+    "medianAmount": 5,
+    "totalAmount": 5,
+    "active": false,
+    "url": "https://github.com/dezii98"
+  },
+  {
+    "type": "github",
+    "name": "twocaretcat",
+    "from": "2023-01-15",
+    "until": "2023-02-15",
+    "medianAmount": 1,
+    "totalAmount": 1,
+    "active": false,
+    "url": "https://github.com/twocaretcat"
+  },
+  {
+    "type": "github",
+    "name": "t3dotgg",
+    "from": "2023-06-22",
+    "medianAmount": 20,
+    "totalAmount": 767.9599999999999,
+    "active": true,
+    "url": "https://github.com/t3dotgg"
+  },
+  {
+    "type": "github",
+    "name": "Saltiola7",
+    "from": "2022-11-26",
+    "until": "2022-12-26",
+    "medianAmount": 10,
+    "totalAmount": 10,
+    "active": false,
+    "url": "https://github.com/Saltiola7"
+  },
+  {
+    "type": "github",
+    "name": "luqmannn",
+    "from": "2022-08-23",
+    "until": "2022-09-23",
+    "medianAmount": 5,
+    "totalAmount": 5,
+    "active": false,
+    "url": "https://github.com/luqmannn"
+  },
+  {
+    "type": "github",
+    "name": "terasaka2k",
+    "from": "2022-08-07",
+    "until": "2023-01-27",
+    "medianAmount": 10,
+    "totalAmount": 56.13,
+    "active": false,
+    "url": "https://github.com/terasaka2k"
+  },
+  {
+    "type": "github",
+    "name": "Luen",
+    "from": "2022-09-27",
+    "until": "2022-10-27",
+    "medianAmount": 27.5,
+    "totalAmount": 55,
+    "active": false,
+    "url": "https://github.com/Luen"
+  },
+  {
+    "type": "github",
+    "name": "msarahan",
+    "from": "2021-12-29",
+    "medianAmount": 10,
+    "totalAmount": 540,
+    "active": true,
+    "url": "https://github.com/msarahan"
+  },
+  {
+    "type": "github",
+    "name": "SignpostMarv",
+    "from": "2021-10-07",
+    "medianAmount": 5,
+    "totalAmount": 280,
+    "active": true,
+    "url": "https://github.com/SignpostMarv"
+  },
+  {
+    "type": "github",
+    "name": "limonte",
+    "from": "2021-11-22",
+    "until": "2022-04-22",
+    "medianAmount": 5,
+    "totalAmount": 50,
+    "active": false,
+    "url": "https://github.com/limonte"
+  },
+  {
+    "type": "github",
+    "name": "sparanoid",
+    "from": "2021-04-27",
+    "medianAmount": 5,
+    "totalAmount": 310,
+    "active": true,
+    "url": "https://github.com/sparanoid"
+  },
+  {
+    "type": "github",
+    "name": "OasisDigital",
+    "from": "2021-04-19",
+    "until": "2022-09-19",
+    "medianAmount": 10,
+    "totalAmount": 170,
+    "active": false,
+    "url": "https://github.com/OasisDigital"
+  },
+  {
+    "type": "github",
+    "name": "thomasbachem",
+    "from": "2021-01-06",
+    "until": "2023-03-07",
+    "medianAmount": 10,
+    "totalAmount": 260,
+    "active": false,
+    "url": "https://github.com/thomasbachem"
+  },
+  {
+    "type": "github",
+    "name": "TheNewbieWoodworker",
+    "from": "2021-01-01",
+    "until": "2021-09-03",
+    "medianAmount": 5,
+    "totalAmount": 40,
+    "active": false,
+    "url": "https://github.com/TheNewbieWoodworker"
+  },
+  {
+    "type": "github",
+    "name": "gempeler",
+    "from": "2020-07-27",
+    "until": "2021-06-30",
+    "medianAmount": 10,
+    "totalAmount": 111,
+    "active": false,
+    "url": "https://github.com/gempeler"
+  },
+  {
+    "type": "github",
+    "name": "jkowall",
+    "from": "2020-05-04",
+    "until": "2022-05-04",
+    "medianAmount": 5,
+    "totalAmount": 120,
+    "active": false,
+    "url": "https://github.com/jkowall"
+  },
+  {
+    "type": "github",
+    "name": "peterhighgrove",
+    "from": "2020-04-18",
+    "until": "2023-01-26",
+    "medianAmount": 5,
+    "totalAmount": 165,
+    "active": false,
+    "url": "https://github.com/peterhighgrove"
+  },
+  {
+    "type": "patreon",
+    "name": "BraveFart",
+    "from": "2022-08-13",
+    "medianAmount": 5,
+    "totalAmount": 230,
+    "active": true,
+    "url": "https://www.patreon.com/user?u=10565003"
+  },
+  {
+    "type": "patreon",
+    "name": "ChikaJihyo (Sophie)",
+    "from": "2025-11-29",
+    "medianAmount": 10,
+    "totalAmount": 70,
+    "active": true,
+    "url": "https://www.patreon.com/user?u=578954"
+  },
+  {
+    "type": "patreon",
+    "name": "Formica",
+    "from": "2021-07-19",
+    "medianAmount": 3,
+    "totalAmount": 177,
+    "active": true,
+    "url": "https://www.patreon.com/user?u=2442057"
+  },
+  {
+    "type": "patreon",
+    "name": "mav6771",
+    "from": "2021-04-11",
+    "until": "2024-10-21",
+    "medianAmount": 10,
+    "totalAmount": 420,
+    "active": false,
+    "url": "https://www.patreon.com/user?u=36832428"
+  },
+  {
+    "type": "patreon",
+    "name": "Micha",
+    "from": "2025-11-28",
+    "until": "2026-05-28",
+    "medianAmount": 5,
+    "totalAmount": 30,
+    "active": false,
+    "url": "https://www.patreon.com/user?u=82341256"
+  },
+  {
+    "type": "patreon",
+    "name": "Nicholas T.",
+    "from": "2021-11-21",
+    "until": "2025-06-02",
+    "medianAmount": 2,
+    "totalAmount": 84,
+    "active": false,
+    "url": "https://www.patreon.com/user?u=4883048"
+  },
+  {
+    "type": "patreon",
+    "name": "Nick",
+    "from": "2026-03-07",
+    "medianAmount": 5,
+    "totalAmount": 15,
+    "active": true,
+    "url": "https://www.patreon.com/user?u=76985953"
+  },
+  {
+    "type": "patreon",
+    "name": "Nommalorel",
+    "from": "2025-10-01",
+    "until": "2026-02-01",
+    "medianAmount": 20,
+    "totalAmount": 80,
+    "active": false,
+    "url": "https://www.patreon.com/user?u=188159240"
+  },
+  {
+    "type": "patreon",
+    "name": "RBE",
+    "from": "2021-12-07",
+    "until": "2022-07-26",
+    "medianAmount": 3,
+    "totalAmount": 21,
+    "active": false,
+    "url": "https://www.patreon.com/user?u=7815978"
+  }
+]

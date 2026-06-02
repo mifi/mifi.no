@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "tsc": "tsc",
+    "check": "tsc && yarn lint",
     "lint": "eslint .",
     "dev": "docusaurus start",
     "build": "docusaurus build",
@@ -14,7 +14,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "make-blogpost": "tsx makeBlogpost.mts"
+    "make-blogpost": "tsx makeBlogpost.mts",
+    "process-sponsors": "tsx processSponsors.mts"
   },
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
