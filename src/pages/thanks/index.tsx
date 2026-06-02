@@ -25,6 +25,7 @@ const patreons = [
 // https://github.com/sponsors/mifi/dashboard/your_sponsors
 // todo previous?
 const github = [
+  { from: '2026-05-12', amount: 10, name: 'grey-software' },
   { from: '2026-01-25', amount: 3, name: 'LevYas' },
   { from: '2025-11-02', amount: 5, name: 'LibertusCorditus' },
   { from: '2025-01-29', amount: 10, name: 'chrishuan9' },
