@@ -18,7 +18,7 @@ Ref:
 
 Normally credentials have to be set up in expo.dev and `eas build` will pull them from there on every build.
 
-Solution: Set up a local `credentials.json` file.
+Solution: Set up a local `credentials.json` file and set `build.base.credentialsSource` to `local` inside `eas.json`.
 
 ```json
 {
