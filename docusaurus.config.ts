@@ -172,6 +172,10 @@ const config: Config = {
               to: 'https://genocide.no/',
             },
             {
+              label: 'einemo.com',
+              to: 'https://einemo.com/',
+            },
+            {
               label: 'Mail me',
               to: 'mailto:mikael@mifi.no',
             },
