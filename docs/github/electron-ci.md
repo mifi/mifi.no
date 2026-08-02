@@ -117,41 +117,26 @@ Then rebuild and verify that the `____chkstk_darwin` symbol reference is gone.
 
 ### Certificate creation/renewal
 
-First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA. Enter email. "Saved to disk".
+First create a CSR: Keychain Access, Menu -> Certificate assistant -> Request a certificate from a CA. Enter email. "Saved to disk". A single CSR can be reused for all of the certificate types below.
 
-Go to [certificates](https://developer.apple.com/account/resources/certificates/list). See which certificates that are about to expire soon - only generate those.
+Go to [certificates](https://developer.apple.com/account/resources/certificates/list). **If you are a member of multiple teams, first make sure the correct account/team is selected (top right corner) before creating any certificates.** See which certificates that are about to expire soon - only generate those:
 
-For notarized only apps (non-App Store), you only need to create this certificate:
-- `Developer ID Application`
+- For notarized only apps (non-App Store), you only need to create this certificate:
+  - *Developer ID Application*
+- For Mac App Store and Notarized apps create the following certs:
+  - *Developer ID Installer* (skip if already long expiry)
+  - *Developer ID Application* (skip if already long expiry)
+  - *Mac Installer Distribution*
+  - *Mac App Distribution*
+  - *Apple Development* (unified replacement since Xcode 11, previously called *Mac Development*)
 
-For Mac App Store and Notarized apps create the following certs:
-- `Developer ID Installer` (not needed if already long expiry)
-- `Developer ID Application` (not needed if already long expiry)
-- `Mac Installer Distribution`
-- `Mac App Distribution`
-- `Mac Development`
+Now download and drag drop each certificate into Keychain Access (*Login* keychain). You may then safely delete the downloaded `.cer` files.
 
-Then dowload them and drag drop into Keychain Access ("Login" keychain). You may then safely delete the downloaded `.cer` files.
+Then delete the old, expired certificates (Keychain Access menu View -> Show Expired Certificates if they are hidden). Do this from the *My Certificates* view, so that the associated private key gets deleted together with the certificate - deleting from the *Certificates* view can leave an orphaned key behind. This also ensures that there are no duplicates to choose between when exporting below.
 
-Now regenerate [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list). For **each of** the "App Store" and "Developement" Provisioning Profiles:
-- Open the provisioning profile
-- Edit
-- (For the Development profile only) check all Certificates and Devices, and select the device you registered earlier.
-- (For the App Store profile only) check the newly generated "Mac App Distribution" certificate's radio box
-- Then Save and Download
+Now it's time to export from keychain. In Keychain Access go to Login keychain -> My Certificates
 
-For the App Store provisioning profile, run:
-```bash
-base64 < LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | pbcopy
-```
-
-...then paste the clipboard contents to replace the env variable in the GitHub project [`PROVISIONING_PROFILE_BASE64`](https://github.com/mifi/lossless-cut/settings/secrets/actions/PROVISIONING_PROFILE_BASE64).
-
-For the Development profile, add the new profile into the project folder (don't check it into git.)
-
-In Keychain Access go to Login keychain -> My Certificates
-
-For Mac App Store + Notarized apps, select the following certificates (if duplicates, choose the one with the longest expiry):
+For Mac App Store apps, select the following certificates:
 - `Developer ID Application: *`
 - `Developer ID Installer: *`
 - `3rd Party Mac Developer Installer: *`
@@ -160,16 +145,45 @@ For Mac App Store + Notarized apps, select the following certificates (if duplic
 If notarized build only (no Mac App Store), select:
 - `Developer ID Application: *`
 
-Then right click and export to `Certificates.p12` with a strong random password, note the password.
+Then right click and export to `Certificates.p12` with a strong random password, note the password (copy to clipboard).
 
-In the GitHub project replace:
-- [`MAC_CERTS_PASSWORD`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS_PASSWORD) with the password you just created.
-- [`MAC_CERTS`](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS) to the output of this command: `base64 -i Certificates.p12 -o -`
+Update the GitHub Actions secrets using the [`gh` CLI](https://cli.github.com/) (or paste manually in the [repo's secrets](https://github.com/mifi/lossless-cut/settings/secrets/actions/MAC_CERTS)):
+
+```bash
+base64 -i Certificates.p12 | gh secret set MAC_CERTS --repo mifi/lossless-cut
+gh secret set MAC_CERTS_PASSWORD --repo mifi/lossless-cut # paste the p12 password when prompted
+```
+
+You may then safely delete `Certificates.p12` - it can always be re-exported from Keychain.
 
 Note that in [action-electron-builder](https://github.com/samuelmeuli/action-electron-builder/blob/e4b12cd06ddf023422f1ac4e39632bd76f6e6928/index.js#L98C11-L98C19):
 
 - `CSC_LINK` is called `MAC_CERTS`.
 - `CSC_KEY_PASSWORD` is called `MAC_CERTS_PASSWORD`.
+
+### Provisioning profiles
+
+(Mac App Store only): Regenerate each of the *App Store* and *Development* [provisioning profile(s)](https://developer.apple.com/account/resources/profiles/list):
+
+- Open the provisioning profile
+- Edit
+- (For the Development profile only) check all Certificates and Devices, and select the device you registered earlier.
+- (For the App Store profile only) check the newly generated "Mac App Distribution" certificate's radio box
+- Then Save and Download
+
+For the App Store provisioning profile, update the `PROVISIONING_PROFILE_BASE64` using the `gh` CLI (or manually in the [repo's secrets](https://github.com/mifi/lossless-cut/settings/secrets/actions/PROVISIONING_PROFILE_BASE64)):
+
+```bash
+base64 -i LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile | gh secret set PROVISIONING_PROFILE_BASE64 --repo mifi/lossless-cut
+```
+
+For the Development profile, replace the old profile in the project folder root (don't check it into git.)
+
+To verify a downloaded provisioning profile (expiry date and which certificates it embeds):
+
+```bash
+security cms -D -i LosslessCut_Mac_App_Store_provisioning_profile.provisionprofile
+```
 
 ### Notarization
 
