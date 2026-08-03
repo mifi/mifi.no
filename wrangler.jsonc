@@ -1,0 +1,10 @@
+// Cloudflare Workers config for hosting the static site (branch preview deployments).
+// Production hosting remains on S3/CloudFront via the Deploy GitHub workflow.
+{
+  "name": "mifi-no",
+  "compatibility_date": "2026-08-03",
+  "assets": {
+    "directory": "./build",
+    "not_found_handling": "404-page"
+  }
+}

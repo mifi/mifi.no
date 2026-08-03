@@ -5,10 +5,17 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v6
       - run: corepack enable
@@ -17,18 +24,24 @@ jobs:
           node-version: 22
           cache: 'yarn'
 
-      - uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
       - run: yarn install --immutable
       - run: yarn dedupe --check
       - run: yarn tsc
       - run: yarn lint
       - run: yarn build
-      - run: yarn deploy
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - run: |
+          # hashed, immutable assets: cache forever in browsers and CDN
+          aws s3 sync build/assets/ "s3://$AWS_S3_BUCKET/assets/" --cache-control "public,max-age=31536000,immutable"
+          # everything else (html, images): browsers must revalidate, CloudFront caches until invalidated
+          aws s3 sync build/ "s3://$AWS_S3_BUCKET/" --exclude 'assets/*' --cache-control "public,max-age=0,s-maxage=86400,must-revalidate"
+          aws cloudfront create-invalidation --distribution-id $AWS_INVALIDATE_DISTRIBUTION_ID --paths '/*'
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_INVALIDATE_DISTRIBUTION_ID: ${{ secrets.AWS_INVALIDATE_DISTRIBUTION_ID }}
