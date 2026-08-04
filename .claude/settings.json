@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "d=\"${CLAUDE_PROJECT_DIR:-$PWD}\"; exec bash \"$d/.claude/hooks/confirm-master-push.sh\"",
+            "statusMessage": "Checking push target"
+          }
+        ]
+      }
+    ]
+  }
+}
