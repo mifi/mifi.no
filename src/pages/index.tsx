@@ -7,21 +7,8 @@ import { useCallback, useRef } from 'react';
 import styles from './index.module.css';
 import NorwayFlag from './norway.svg';
 import PalestineFlag from './palestine.svg';
+import { apps, archivedNpmModules, githubOnlyRepos, npmModules } from '../lib/projects';
 
-
-// https://github.com/mifi?tab=repositories&q=&type=source&language=&sort=stargazers
-
-const githubProjects = [
-  'youtube-import-playlist', 'in-app-subscription-example',
-];
-
-const npmModules = [
-  'tinyshare', 'jotta', 'cloudwatch-winston', 'mjml-dynamic', 'reactive-video', 'instauto', 'react-lottie-player', 'telldus-api', 'telldus-local-auth', 'stacktracify', 'cognito-backup', 'dynamodump', 'ical-expander', 'hls-vod', 'libxcomfort', 'cordova-xml', 'error-handler-json', 'commonify', 'eslint-config-mifi',
-];
-
-const archivedNpmModules = [
-  'build-electron', 'form-encode-object',
-];
 
 function Project({ name, type } : { name: string, type: 'github' | 'npm' | 'npm-archived' }) {
   const npmUrl = `https://www.npmjs.com/package/${name}`;
@@ -128,17 +115,18 @@ export default function Home() {
 
             <h1 className={styles['heading']}>More Apps</h1>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'center' }}>
-              <Link className={styles['app']!} to="https://mifi.github.io/SimpleInstaBot"><span className={styles['appIcon']}>🤖</span> SimpleInstaBot</Link>
-              <Link className={styles['app']!} to="https://github.com/mifi/editly"><span className={styles['appIcon']}>🎬</span> EDITLY</Link>
-              <Link className={styles['app']!} to="https://github.com/mifi/ezshare"><span className={styles['appIcon']}>🤝</span> EzShare</Link>
-              <Link className={styles['app']!} to="https://github.com/mifi/VideoGrader"><span className={styles['appIcon']}>🎨</span> VideoGrader</Link>
+            <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'center', maxWidth: '40em', margin: 'auto' }}>
+              {apps.filter((app) => app.name !== 'LosslessCut').map((app) => (
+                <Link key={app.name} className={styles['app']!} to={app.url ?? app.repo}>
+                  <span className={styles['appIcon']}>{app.icon}</span> {app.name}
+                </Link>
+              ))}
             </div>
 
             <h1 className={styles['heading']}>Projects</h1>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', margin: '0 auto 100px auto', maxWidth: 1000 }}>
-              {githubProjects.map((project) => <Project key={project} name={project} type="github" />)}
+              {githubOnlyRepos.map((project) => <Project key={project} name={project} type="github" />)}
               {npmModules.map((project) => <Project key={project} name={project} type="npm" />)}
               {archivedNpmModules.map((project) => <Project key={project} name={project} type="npm-archived" />)}
             </div>
