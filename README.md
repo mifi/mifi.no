@@ -36,6 +36,8 @@ This command generates static content into the `build` directory and can be serv
 
 Push master branch.
 
+All branches are automatically deployed via [Cloudflare](https://dash.cloudflare.com/18e159c173866e22535de4ea38ad475c/workers/services/view/mifi-no/production) — non-`master` branches get their own preview URL, shown on each build in the Cloudflare dashboard.
+
 ### TODO
 
 BugSnag
