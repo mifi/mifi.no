@@ -123,6 +123,10 @@ const config: Config = {
           title: 'Follow',
           items: [
             {
+              label: 'Bluesky',
+              href: 'https://bsky.app/profile/mifino.bsky.social',
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/mifi_no',
             },
