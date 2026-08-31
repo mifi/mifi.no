@@ -54,6 +54,9 @@ const quoteCur = 'NOK';
 const timeZone = 'Europe/Oslo'; // make all accounting transactions relative to Norway TZ, so we don't get any discrepancies
 
 const formatNo = (val: number) => new Intl.NumberFormat('nb-NO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
+const formatNoInt = (val: number) => new Intl.NumberFormat('nb-NO').format(val);
+// Norges Bank publishes each rate with its own number of decimals (DECIMALS)
+const formatRate = (val: number, decimals: number) => new Intl.NumberFormat('nb-NO', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(val);
 
 const maxDays = 7;
 
@@ -84,7 +87,13 @@ export default function CurrencyCalc() {
   const [requestedAmount, setRequestedAmount] = React.useState<number | undefined>(100);
   const [requestedAmountStr, setRequestedAmountStr] = React.useState(requestedAmount ? String(requestedAmount) : undefined);
   const [requestedCurrency, setRequestedCurrency] = React.useState<Currency>('USD');
-  const [actualDate, setActualDate] = React.useState<DateTime<true>>();
+  const [rateInfo, setRateInfo] = React.useState<{
+    date: DateTime<true>,
+    rate: number,
+    unitMult: number,
+    decimals: number,
+    collectionTime: string,
+  }>();
   const [result, setResult] = React.useState<number | null>();
 
   const requestedAmountTrunc = useMemo(() => (requestedAmount != null ? parseFloat(requestedAmount.toFixed(2)) : undefined), [requestedAmount]);
@@ -136,7 +145,7 @@ export default function CurrencyCalc() {
   useEffect(() => {
     try {
       setResult(undefined);
-      setActualDate(undefined);
+      setRateInfo(undefined);
 
       // console.log({ currencies, requestedDate, requestedAmountTrunc });
       if (currencies == null || requestedDate == null || requestedAmountTrunc == null) return;
@@ -158,13 +167,21 @@ export default function CurrencyCalc() {
 
       const timePeriod = DateTime.fromISO(currency.TIME_PERIOD, { zone: timeZone }).setZone(timeZone);
       invariant(timePeriod.isValid);
-      setActualDate(timePeriod);
 
       const rate = parseLocaleNumber(currency.OBS_VALUE, 'nb-NO');
       const unitMult = parseInt(currency.UNIT_MULT, 10);
+      const decimals = parseInt(currency.DECIMALS, 10);
 
       invariant(!Number.isNaN(rate));
       invariant(!Number.isNaN(unitMult));
+
+      setRateInfo({
+        date: timePeriod,
+        rate,
+        unitMult,
+        decimals: Number.isNaN(decimals) ? 4 : decimals,
+        collectionTime: currency.Innsamlingstidspunkt,
+      });
 
       // console.log(1, requestedCurrency, '=', rate, 'NOK');
       // console.log();
@@ -234,7 +251,7 @@ export default function CurrencyCalc() {
           <input style={{ all: 'unset', display: 'block', width: '100%', fontSize: '1.3em', padding: '.3em' }} type="date" value={requestedDateStr} onChange={handleDateChange} />
         </div>
 
-        <div style={{ margin: '2em .5em', fontSize: '1.3em', display: 'flex', gap: '1em', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ margin: '2em .5em 1em', fontSize: '1.3em', display: 'flex', gap: '1em', flexWrap: 'wrap', justifyContent: 'center' }}>
           <div style={{ textAlign: 'center', width: '8em' }}>
             <CurrencyBox currency={requestedCurrency} result={requestedAmountTrunc != null ? formatNo(requestedAmountTrunc) : ''} />
           </div>
@@ -248,10 +265,23 @@ export default function CurrencyCalc() {
                   )
               )}
             />
-            <div style={{ textAlign: 'center', marginTop: '-.5em' }}>
-              {actualDate != null ? <span style={{ opacity: 0.5, fontSize: '.8em' }}>{actualDate.toLocaleString(DateTime.DATE_SHORT)}</span> : <>&nbsp;</>}
-            </div>
           </div>
+        </div>
+
+        <div style={{ minHeight: '4em', maxWidth: '30em', textAlign: 'center', margin: '0 .5em 2em' }}>
+          {rateInfo != null && (
+            <>
+              <div>
+                Kurs: {formatNoInt(10 ** rateInfo.unitMult)} {requestedCurrency} = {formatRate(rateInfo.rate, rateInfo.decimals)} NOK
+              </div>
+              <div style={{ opacity: 0.5, fontSize: '.8em', marginTop: '.4em' }}>
+                Kursdato: {rateInfo.date.toLocaleString(DateTime.DATE_FULL)}
+                {requestedDate?.isValid && !rateInfo.date.hasSame(requestedDate, 'day') && <> (siste tilgjengelige kurs før {requestedDate.toLocaleString(DateTime.DATE_FULL)})</>}
+                {rateInfo.collectionTime !== '' && <><br />Innsamlingstidspunkt: {rateInfo.collectionTime}</>}
+              </div>
+            </>
+          )}
+          {result === null && <div style={{ opacity: 0.5, fontSize: '.8em' }}>Fant ingen kurs for {requestedCurrency} i de siste {maxDays} dagene før valgt dato.</div>}
         </div>
       </main>
     </Layout>
