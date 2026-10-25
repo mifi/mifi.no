@@ -60,32 +60,32 @@ Hard to find these batteries, but a tip: [Search for "MRG210FM"](https://www.goo
 
 Battery packs were made in 2014 by a company that seems to no longer exist.
 
-![](https://static.mifi.no/dist/2025/IMG_1786.jpg)
+![](https://static.mifi.no/media/eIt3HrqcaYG3nMS3/300.jpg)
 
 After removing the shrinkwrap we see that they are regular Varta CR123A / CR17345 Lithium Manganese Dioxide (Li-MnO2) batteries:
 
 
-![](https://static.mifi.no/dist/2025/IMG_1791.jpg)
+![](https://static.mifi.no/media/uPUX1kAt3dUhPOD7/300.jpg)
 
 Batteries have welded tabs:
 
-![](https://static.mifi.no/dist/2025/IMG_1789.jpg)
-![](https://static.mifi.no/dist/2025/IMG_1790.jpg)
+![](https://static.mifi.no/media/_vhYhK8hPZD6BQzc/300.jpg)
+![](https://static.mifi.no/media/e9oK4tSE1MZCHqG_/300.jpg)
 
 Proprietary connector:
 
-![](https://static.mifi.no/dist/2025/IMG_1783.jpg)
-![](https://static.mifi.no/dist/2025/IMG_1784.jpg)
-![](https://static.mifi.no/dist/2025/IMG_1794.jpg)
-![](https://static.mifi.no/dist/2025/IMG_1795.jpg)
+![](https://static.mifi.no/media/uA-_N1OuASYSp9P7/300.jpg)
+![](https://static.mifi.no/media/U9RCyAPNb30S-vUj/300.jpg)
+![](https://static.mifi.no/media/uV0m9_7SV2_qMKQz/300.jpg)
+![](https://static.mifi.no/media/0PTu-muM0vJ828UA/300.jpg)
 
 I replaced the phillips screws with torx:
 
-![](https://static.mifi.no/dist/2025/IMG_1798.jpg)
+![](https://static.mifi.no/media/7Wh2et-yoqEhVxOT/300.jpg)
 
 And I'm bringing along a torx wrench:
 
-![](https://static.mifi.no/dist/2025/IMG_1799.jpg)
+![](https://static.mifi.no/media/ZYLn4QxLuZU66KL9/300.jpg)
 
 ### Other battery "hacks"
 

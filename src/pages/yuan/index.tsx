@@ -13,8 +13,16 @@ import { PiCoatHanger, PiHandTapThin } from 'react-icons/pi';
 import classes from './index.module.css';
 
 
-// const staticBaseUrl = 'http://127.0.0.1:8080/dist/2025/mifiyuan/';
-const staticBaseUrl = 'https://static.mifi.no/dist/2025/mifiyuan/';
+// The photos, published from the photo library (static.mifi.no/media/<public id>/<size>.jpg; sizes 300, 1000 and 2000 are about 0.3, 1 and
+// 2 megapixels)
+const media = (publicId: string, size: '300' | '1000' | '2000') => `https://static.mifi.no/media/${publicId}/${size}.jpg`;
+const photos = {
+  main: 'fDAEfi8FAkd2gqOz',
+  ppf: 'uMBDQhGKeEHRr5LR',
+  petitJardin: 'Da05V-j7_My8eNRD',
+  cm: 'eO9s8yEm6AXwVXV_',
+  love: 'xOQPkDLJki_4seM3',
+};
 
 const rsvpLink = 'https://forms.gle/wFF2FbJyusforbhn9';
 
@@ -143,7 +151,7 @@ END:VCALENDAR
 function Img({ src, style, colors, ...props }: { src: string, colors: string[] } & React.ImgHTMLAttributes<HTMLImageElement>) {
   return (
     // eslint-disable-next-line jsx-a11y/img-redundant-alt, react/jsx-props-no-spreading, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-to-interactive-role
-    <img src={`${staticBaseUrl}${src}`} alt="Image" style={{ width: '100%', cursor: 'pointer', ...style }} {...props} role="button" tabIndex={0} onClick={(e) => makeColorHearts(e, colors)} />
+    <img src={src} alt="Image" style={{ width: '100%', cursor: 'pointer', ...style }} {...props} role="button" tabIndex={0} onClick={(e) => makeColorHearts(e, colors)} />
   );
 }
 
@@ -193,7 +201,7 @@ export default function MifiYuan() {
     <>
       <Head>
         <title>Yuan + Mikael</title>
-        <meta property="og:image" content={`${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-1000.jpg`} />
+        <meta property="og:image" content={media(photos.main, '1000')} />
       </Head>
       <div className={classes['outerWrapper']}>
         <div className={classes['wrapper']}>
@@ -202,7 +210,7 @@ export default function MifiYuan() {
             <div id="home" style={{ position: 'relative', cursor: 'pointer', userSelect: 'none' }} role="button" onClick={(e) => makeHearts({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight })} tabIndex={0}>
               <div
                 className={classes['mainImg']}
-                style={{ backgroundImage: `url(${staticBaseUrl}26351e10-56b5-11f0-9f27-effbe8e7bb58-100-2000.jpg` }}
+                style={{ backgroundImage: `url(${media(photos.main, '2000')})` }}
               />
 
               <div style={{ position: 'absolute', bottom: 0, left: 0, color: 'white', padding: '0 3em' }}>
@@ -236,7 +244,7 @@ export default function MifiYuan() {
               </div>
             </div>
 
-            <Img src="a6fa92a0-56c9-11f0-97fb-595f0db69573-ppf-1000.jpg" colors={['#26e9f1', '#4ba8ac']} />
+            <Img src={media(photos.ppf, '1000')} colors={['#26e9f1', '#4ba8ac']} />
 
             <div className={classes['box']}>
               <h1 id="accomodation">Accomodation</h1>
@@ -244,7 +252,7 @@ export default function MifiYuan() {
               <p>We will be providing a complimentary one-night stay on 13-14th Dec at <a href="https://www.proudphufah.com/muang/" target="_blank" rel="noopener noreferrer">Proud Phu Fah Muang Chiang Mai</a>, along with shuttle service to the event venue. Check-in at the hotel is from 2pm. The shuttle bus will leave at 3:30pm from the hotel.</p>
             </div>
 
-            <Img src="petitjardin.jpg" colors={['#2c442c', '#39bf39']} />
+            <Img src={media(photos.petitJardin, '300')} colors={['#2c442c', '#39bf39']} />
 
             <div className={classes['box']}>
               <h1 id="schedule">Schedule</h1>
@@ -289,7 +297,7 @@ export default function MifiYuan() {
               </div>
             </div>
 
-            <Img src="13b68050-56cc-11f0-8c28-6bf975c32ddf-CM-1000.jpg" colors={['#ffd03e', '#e9b000']} />
+            <Img src={media(photos.cm, '1000')} colors={['#ffd03e', '#e9b000']} />
 
             <div className={classes['box']}>
               <h1 id="travel">Travel</h1>
@@ -427,7 +435,7 @@ export default function MifiYuan() {
             </div>
           </div>
 
-          <Img src="94bcd530-5732-11f0-8836-e57660e7e040-love-1000.jpg" className={classes['kenBurns1']} style={{ margin: '10vw 0' }} colors={['#ffd03e', '#ff603e']} />
+          <Img src={media(photos.love, '1000')} className={classes['kenBurns1']} style={{ margin: '10vw 0' }} colors={['#ffd03e', '#ff603e']} />
 
           <div className={classes['box']}>
             <h2 id="qa" className={classes['qa']}>Q & A</h2>
