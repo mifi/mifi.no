@@ -5,7 +5,7 @@ authors: mifi
 tag:
   - hardware
 ---
-![](https://static.mifi.no/dist/2016/01/laser.jpg)
+![](https://static.mifi.no/media/4uBdvMPHZkvvBpaQ/300.jpg)
 
 ## Items
 * M140 laser diode (&lt;$30 on ebay)

@@ -1,0 +1,16 @@
+.wallpapers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.image {
+  display: block;
+  max-width: 400px;
+  width: calc(100vw - 10px);
+  margin: 5px;
+}

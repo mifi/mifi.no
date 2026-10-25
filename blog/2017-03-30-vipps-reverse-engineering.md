@@ -11,7 +11,7 @@ The VIPPS app is using API SSL certificate pinning to prevent MITM attacks, and 
 
 <!--truncate-->
 
-![charles](https://static.mifi.no/dist/2017/03/Screen-Shot-2017-03-05-at-22.33.17.jpg)
+![charles](https://static.mifi.no/media/Hz5YydYWRGskm28P/300.jpg)
 
 # Instructions
 First download the APK from somewhere (google it)

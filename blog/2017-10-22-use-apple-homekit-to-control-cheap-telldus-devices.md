@@ -12,7 +12,7 @@ tags:
 
 <!--truncate-->
 
-![](https://static.mifi.no/dist/2017/IMG_2777.jpg)
+![](https://static.mifi.no/media/xqKxWJJP9vSp6Guh/300.jpg)
 
 See compatible hardware here:
 https://old.telldus.com/products/compability
