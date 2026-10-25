@@ -5,6 +5,10 @@ tags: [macos, tips, cleanup]
 
 As we all know, Mac's come with relatively small storage space, so we need to keep periodically cleaning up files periodically. Especially when doing software development which adds up a lot of cache files around the system.
 
+## 🥇 Run Mole
+
+Use the AI agent skill `/mole`
+
 # macOS misc
 
 ```bash
@@ -12,6 +16,7 @@ rm -rf ~/'Library/Caches/com.apple.nsurlsessiond'/*
 rm -rf ~/'Library/Containers/com.apple.Home/Data/Library/Caches'/*
 rm -rf ~/'Library/Containers/com.apple.iMovieApp/Data/Library/Caches'/*
 rm -rf ~/'Library/Containers/com.apple.mediaanalysisd/Data/Library/Caches'
+rm -rf ~/'Library/Containers/com.apple.geod/Data/tmp'
 
 # deletes /private/var/db/diagnostics
 sudo log erase --all
@@ -49,7 +54,7 @@ find ~/.yarn/berry/cache -mindepth 1 -maxdepth 1 -type f -exec du -sm {} + | awk
 
 ```bash
 # Chromium app cache
-rm -rf ~/Library/Application\ Support/{Claude,Code,'GitHub Desktop',Slack,LosslessCut,SwimClips,'SwimClips Coach Recorder','SwimClips Recorder','SwimClips Uploader',Local,Cypress,beekeeper-studio}/{Cache,'Code Cache',GPUCache}
+rm -rf ~/Library/Application\ Support/{Claude,Code,'GitHub Desktop',Slack,LosslessCut,Local,Cypress,beekeeper-studio}/{Cache,'Code Cache',GPUCache}
 
 # Claude Cowork VM, see also https://github.com/anthropics/claude-code/issues/57371#issuecomment-4633312480
 rm -rf ~/Library/Application\ Support/Claude/{vm_bundles,claude-code-vm}
@@ -102,8 +107,8 @@ open x-apple.systempreferences:com.apple.settings.Storage
 
 ## Chrome manual
 
-- chrome://settings/clearBrowserData -> Cached images and files
-- chrome://settings/content/all -> Sort by: Data stored
+- `chrome://settings/clearBrowserData` -> Cached images and files
+- `chrome://settings/content/all` -> Sort by: Data stored
 
 ## Manual file system check
 
