@@ -8,6 +8,7 @@ import codeFromFile from './src/remark/codeFromFile';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { dark: darkCodeTheme, light: lightCodeTheme } = require('prism-react-renderer');
 
+const remarkPlugins = [[codeFromFile, { staticDir: `${__dirname}/static` }]];
 
 const config: Config = {
   title: 'mifi.no',
@@ -53,13 +54,16 @@ const config: Config = {
       {
         docs: {
           editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
-          remarkPlugins: [codeFromFile],
+          remarkPlugins,
         },
         blog: {
-          remarkPlugins: [codeFromFile],
+          remarkPlugins,
           showReadingTime: true,
           editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
           blogSidebarCount: 50,
+        },
+        pages: {
+          remarkPlugins,
         },
         theme: {
           customCss: './src/css/custom.css',

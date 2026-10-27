@@ -35,7 +35,7 @@ Put the file in `static/` (so it's also downloadable), and reference it from an 
 ```
 ````
 
-The build fills in the file's contents and uses the file name as the title ([src/remark/codeFromFile.ts](src/remark/codeFromFile.ts)). The page stays plain `.md`, and the file stays the only original.
+The build fills in the file's contents and uses the file name as the title ([src/remark/codeFromFile.ts](src/remark/codeFromFile.ts)). The page stays plain `.md`, and the file stays the only original. Files outside `static/` are refused. In `yarn dev`, a change to only the included file doesn't refresh the page: run `yarn clear` and restart.
 
 ### Build
 
