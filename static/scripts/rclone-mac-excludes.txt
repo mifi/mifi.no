@@ -1,0 +1,98 @@
+# rclone exclude list for backing up a Mac's home folder: caches, logs and files that can be
+# regenerated or are synced elsewhere anyway. Use with: rclone sync --exclude-from rclone-mac-excludes.txt ~ remote:backup
+# Original: https://mifi.no/scripts/rclone-mac-excludes.txt
+# See https://mifi.no/docs/macos/backup-mac-rclone/
+# Paths starting with / are relative to the home folder; others match anywhere.
+
+# Caches and logs
+/Library/Caches/**
+/Library/Logs/**
+/Library/Containers/*/Data/Library/Caches/**
+/Library/Application Support/*/{Cache,Code Cache}/**
+/Library/Application Support/*/Service Worker/{Cache Storage,ScriptCache}/**
+/Library/Saved Application State/**
+/Library/Metadata/CoreSpotlight/**
+/Library/PubSub/Database/**
+/Library/PubSub/Downloads/**
+/Library/PubSub/Feeds/**
+/Library/Containers/com.apple.geod/Data/tmp/**
+/Library/Containers/com.apple.mediaanalysisd/**
+
+# Synced elsewhere (cloud storage, mail, chat)
+/Library/CloudStorage/**
+/Library/Group Containers/EQHXZ8M8AV.group.com.google.drivefs/**
+/Library/Application Support/Google/DriveFS/**
+/Library/Mail/**
+/Library/Group Containers/group.net.whatsapp.WhatsApp.shared/**
+/Library/Containers/com.tinyspeck.slackmacgap/**
+/Library/Application Support/Slack/**
+/Library/Application Support/Skype/**
+
+# Browsers and editors
+/Library/Application Support/Google/{Chrome,Chrome Canary}/Default/Service Worker/**
+/Library/Application Support/Google/{Chrome,Chrome Canary}/Default/Application Cache/**
+/Library/Application Support/Google/{Chrome,Chrome Canary}/Default/Extensions/**
+/Library/Application Support/Google/{Chrome,Chrome Canary}/GrShaderCache/**
+/Library/Application Support/Google/Chrome/Default/Local Storage/**
+/Library/Application Support/Google/Chrome/Default/IndexedDB/**
+/Library/Application Support/Google/Chrome/Default/Sessions/**
+/Library/Application Support/Google/Chrome/Default/Session Storage/**
+/Library/Application Support/Google/Chrome/Default/WebStorage/**
+/Library/Application Support/Google/Chrome/Default/History-journal
+/Library/Application Support/Google/Chrome/Default/Favicons-journal
+/Library/Application Support/Code/CachedData/**
+/Library/Application Support/Code/User/History/**
+/Library/Application Support/Code/logs/**
+/Library/Application Support/Spotify/PersistentCache/**
+/Library/Application Support/Claude/**
+/.vscode/extensions/**
+/.claude/**
+
+# Virtual machines, containers, games and SDKs (large, and can be reinstalled)
+/Library/Containers/com.docker.docker/**
+/Library/Containers/com.utmapp.UTM/Data/Documents/*.utm/**
+/VirtualBox VMs/**
+/.vagrant.d/**
+/Library/Application Support/Steam/**
+/Library/Application Support/minecraft/assets/**
+/Library/Developer/CoreSimulator/**
+/Library/Developer/Xcode/**
+/Library/Android/**
+/.android/**
+/Library/pnpm/**
+
+# Package manager and tool caches in the home folder
+/.npm/_cacache/**
+/.node-gyp/**
+/.yarn/**
+/.gradle/**
+/.pkg-cache/**
+/.rncache/**
+/.gem/**
+/.electron/**
+/.composer/**
+/.cocoapods/**
+/.bundle/**
+/.rbenv/**
+/.rubies/**
+/.cargo/registry/**
+/.bun/install/cache/**
+
+# Big folders that are usually re-downloadable
+/Downloads/**
+/Music/**
+
+# Anywhere: dependencies, build output and OS metadata
+node_modules/**
+.yarn/cache/**
+.cache/**
+ios/build/**
+ios/Pods/**
+android/build/**
+android/app/build/**
+.git/**
+.DS_Store
+.Trash/**
+.Trashes/**
+.DocumentRevisions-V100
+.TemporaryItems/**
