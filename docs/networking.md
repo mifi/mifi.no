@@ -16,10 +16,10 @@ ssh user@remote-host 'sudo tcpdump -U -n -w - -i eth0 -s 65535 not port 22' \
 
 ## Forward a port through two SSH hops
 
-Reach a service on a machine that's only reachable from a jump host (here NFS, port 2049, on `192.168.1.14` behind `jump-host`). Then connect to `localhost:2049`:
+Reach a service on a machine that's only reachable from a jump host (here NFS, port 2049, on `192.168.1.10` behind `jump-host`). Then connect to `localhost:2049`:
 
 ```bash
-ssh -t -L 2049:localhost:2049 user@jump-host ssh -N -L 2049:localhost:2049 root@192.168.1.14
+ssh -t -L 2049:localhost:2049 user@jump-host ssh -N -L 2049:localhost:2049 root@192.168.1.10
 ```
 
 ## Find live hosts on the network
@@ -40,7 +40,9 @@ nmap -p 22 --open -sV 192.168.1.0/24
 With the process that owns each port:
 
 ```bash
-# macOS (fast, unlike lsof, which can take minutes)
+# macOS (-n and -P skip slow name lookups)
+lsof -nP -iTCP -sTCP:LISTEN
+# or, also on macOS
 netstat -anv -p tcp | grep LISTEN
 # Linux
 sudo ss -ltnp
@@ -52,4 +54,4 @@ sudo ss -ltnp
 rsync -avP --append src/file user@host:dest/file
 ```
 
-`--append` continues where an interrupted transfer stopped, instead of starting over. Use `--append-verify` to also check the result.
+`--append` continues where an interrupted transfer stopped, instead of starting over. Use `--append-verify` to also check the result (on a Mac, that needs a newer rsync: `brew install rsync`, since the built-in one doesn't support it).

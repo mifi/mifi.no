@@ -33,6 +33,8 @@ Options:
 
 A segment without an end point lasts until the end of its video.
 
+FFmpeg opens all the segments at once, so hundreds of 4K clips can use a lot of memory. Use `--max` (or a smaller output size) if it runs out.
+
 ## The script
 
 ```js file=../static/scripts/losslesscut-highlight-reel.mjs

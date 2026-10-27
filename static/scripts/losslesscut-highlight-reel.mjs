@@ -56,7 +56,7 @@ const args = [
   '-map', '[out]', '-c:v', 'libx264', '-crf', '20', '-preset', 'veryfast', '-pix_fmt', 'yuv420p', '-y', outputPath,
 ];
 
-const ffmpeg = spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', ...args], { stdio: 'inherit' });
+const ffmpeg = spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-stats', ...args], { stdio: 'inherit' });
 const code = await new Promise((resolve) => ffmpeg.on('close', resolve));
 if (code !== 0) throw new Error(`ffmpeg failed with exit code ${code}`);
 console.log(`Done: ${outputPath}`);

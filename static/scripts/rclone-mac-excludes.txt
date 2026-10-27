@@ -25,6 +25,8 @@
 /Library/Mail/**
 /Library/Group Containers/group.net.whatsapp.WhatsApp.shared/**
 /Library/Containers/com.tinyspeck.slackmacgap/**
+# iCloud Drive: with "Optimize Mac Storage", reading files that are only in iCloud downloads them
+# /Library/Mobile Documents/**
 /Library/Application Support/Slack/**
 /Library/Application Support/Skype/**
 
@@ -44,8 +46,9 @@
 /Library/Application Support/Code/User/History/**
 /Library/Application Support/Code/logs/**
 /Library/Application Support/Spotify/PersistentCache/**
-/Library/Application Support/Claude/**
 /.vscode/extensions/**
+# These also hold settings (Claude Code's settings, skills and MCP config). Remove the lines to back them up.
+/Library/Application Support/Claude/**
 /.claude/**
 
 # Virtual machines, containers, games and SDKs (large, and can be reinstalled)
@@ -65,6 +68,7 @@
 /.npm/_cacache/**
 /.node-gyp/**
 /.yarn/**
+# ~/.gradle can also hold gradle.properties with signing passwords: back that up separately
 /.gradle/**
 /.pkg-cache/**
 /.rncache/**
@@ -93,6 +97,4 @@ android/app/build/**
 .git/**
 .DS_Store
 .Trash/**
-.Trashes/**
-.DocumentRevisions-V100
 .TemporaryItems/**

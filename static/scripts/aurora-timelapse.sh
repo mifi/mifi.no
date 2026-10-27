@@ -1,9 +1,16 @@
 #!/bin/bash
 # Turns a folder of photos (e.g. iPhone HEIC photos of the northern lights) into a smooth, stabilized timelapse video.
-# Run it in the folder with the photos. Needs ffmpeg (with vidstab) and ImageMagick: brew install ffmpeg imagemagick
+# Run it in the folder with the photos. Needs ImageMagick (brew install imagemagick) and an ffmpeg with vidstab
+# (Homebrew's ffmpeg doesn't have it, see the link below).
 # Original: https://mifi.no/scripts/aurora-timelapse.sh
 # See https://mifi.no/docs/media-cli/#aurora-timelapse-from-photos
 set -e
+
+# Stabilizing needs ffmpeg built with libvidstab
+if ! ffmpeg -hide_banner -filters 2>/dev/null | grep -q vidstabdetect; then
+  echo "This ffmpeg has no vidstab filters, see https://mifi.no/docs/media-cli/#stabilizing-needs-vidstab"
+  exit 1
+fi
 
 # Photos per second. Lower is slower; the smoothing step fills in frames in between.
 IMAGE_RATE=4/3
@@ -25,6 +32,6 @@ ffmpeg -i merged.mp4 -vf vidstabdetect=stepsize=32:shakiness=10:accuracy=10:resu
 ffmpeg -i merged.mp4 -vf vidstabtransform=input=transform_vectors.trf:zoom=0:smoothing=10 -c:v libx264 -crf 15 -preset slow -an -y stabilized.mp4
 
 echo "Smoothing (blending frames to 25 fps)"
-ffmpeg -i stabilized.mp4 -vf minterpolate=mi_mode=blend -r 25 -c:v libx264 -crf 17 -pix_fmt yuv420p -y output.mp4
+ffmpeg -i stabilized.mp4 -vf minterpolate=fps=25:mi_mode=blend -c:v libx264 -crf 17 -pix_fmt yuv420p -y output.mp4
 
 echo "Done: output.mp4"
