@@ -188,28 +188,19 @@ You don't need any simulator runtime to build and deploy to a physical device (t
 
 A small script run weekly by `launchd` that moves Xcode leftovers that regenerate without internet to the Trash (using the built-in `/usr/bin/trash`), so nothing is lost if it's wrong.
 
-`~/scripts/xcode-tidy.sh`:
+The script, [xcode-tidy.sh](pathname:///scripts/xcode-tidy.sh), moves to the Trash:
+- DerivedData of projects not built for 7+ days, and the shared caches (`ModuleCache` etc.) once no project is left
+- older iOS DeviceSupport versions, keeping the newest per device model
+- crash reports older than 30 days
+
+Install it (run again to update):
 
 ```bash
-#!/bin/bash
-XCODE=~/Library/Developer/Xcode
-
-# DerivedData of projects not built for 7+ days
-for d in "$XCODE"/DerivedData/*-*/; do
-  [ -n "$(find "$d/info.plist" -mtime +7 2>/dev/null)" ] && /usr/bin/trash "$d"
-done
-
-# Shared caches (ModuleCache etc.) too, once no project is left in DerivedData
-ls -d "$XCODE"/DerivedData/*-*/ >/dev/null 2>&1 ||
-  find "$XCODE/DerivedData" -mindepth 1 -maxdepth 1 -exec /usr/bin/trash {} + 2>/dev/null
-
-# iOS DeviceSupport: keep only the newest OS version per device model
-cd "$XCODE/iOS DeviceSupport" 2>/dev/null && ls -t | awk '{ if (seen[$1]++) print }' |
-  while IFS= read -r old; do /usr/bin/trash "$old"; done
-
-# Crash reports older than 30 days
-find ~/Library/Logs/DiagnosticReports -maxdepth 1 -type f ! -name '.*' -mtime +30 -exec /usr/bin/trash {} +
+mkdir -p ~/bin
+curl -fsSL https://mifi.no/scripts/xcode-tidy.sh -o ~/bin/xcode-tidy.sh
 ```
+
+⚠️ Don't keep it in `~/Desktop`, `~/Documents` or `~/Downloads`: macOS blocks scripts started by `launchd` from reading those folders.
 
 `~/Library/LaunchAgents/local.xcode-tidy.plist` (runs Sundays at 10:00, or at next wake). Replace `YOUR_USER`:
 
@@ -223,7 +214,7 @@ find ~/Library/Logs/DiagnosticReports -maxdepth 1 -type f ! -name '.*' -mtime +3
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/YOUR_USER/scripts/xcode-tidy.sh</string>
+    <string>/Users/YOUR_USER/bin/xcode-tidy.sh</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict>
