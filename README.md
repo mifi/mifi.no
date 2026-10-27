@@ -26,6 +26,17 @@ yarn make-blogpost 'My blogpost title'
 
 Prefer this over creating the files by hand.
 
+### Show a file in a code block
+
+Put the file in `static/` (so it's also downloadable), and reference it from an empty code block with a path relative to the markdown file:
+
+````md
+```bash file=../../static/scripts/example.sh
+```
+````
+
+The build fills in the file's contents and uses the file name as the title ([src/remark/codeFromFile.ts](src/remark/codeFromFile.ts)). The page stays plain `.md`, and the file stays the only original.
+
 ### Build
 
 ```bash

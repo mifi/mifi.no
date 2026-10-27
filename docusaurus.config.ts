@@ -2,6 +2,8 @@
 import { Config } from '@docusaurus/types';
 // eslint-disable-next-line import/no-import-module-exports
 import type * as Preset from '@docusaurus/preset-classic';
+// eslint-disable-next-line import/no-import-module-exports
+import codeFromFile from './src/remark/codeFromFile';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { dark: darkCodeTheme, light: lightCodeTheme } = require('prism-react-renderer');
@@ -51,8 +53,10 @@ const config: Config = {
       {
         docs: {
           editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
+          remarkPlugins: [codeFromFile],
         },
         blog: {
+          remarkPlugins: [codeFromFile],
           showReadingTime: true,
           editUrl: 'https://github.com/mifi/mifi.no/tree/master/',
           blogSidebarCount: 50,

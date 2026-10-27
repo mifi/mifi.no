@@ -193,6 +193,9 @@ The script, [xcode-tidy.sh](pathname:///scripts/xcode-tidy.sh), moves to the Tra
 - older iOS DeviceSupport versions, keeping the newest per device model
 - crash reports older than 30 days
 
+```bash file=../../static/scripts/xcode-tidy.sh
+```
+
 Install it (run again to update):
 
 ```bash
