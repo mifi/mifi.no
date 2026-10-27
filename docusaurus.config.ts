@@ -97,7 +97,7 @@ const config: Config = {
         },
         {
           to: '/thanks',
-          label: '🪙 Donate',
+          label: 'Thank you 🙏',
           position: 'left',
         },
         {
