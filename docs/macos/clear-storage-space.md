@@ -3,13 +3,13 @@ tags: [macos, tips, cleanup]
 ---
 # Clearing storage space on macOS
 
-As we all know, Mac's come with relatively small storage space, so we need to keep periodically cleaning up files periodically. Especially when doing software development which adds up a lot of cache files around the system.
+As we all know, Macs come with relatively small storage space, so we need to keep cleaning up files periodically. Especially when doing software development, which adds up a lot of cache files around the system.
 
 ## 🥇 Run Mole
 
-Use the AI agent skill `/mole`
+[Mole](https://github.com/tw93/Mole) (`brew install mole`) finds and cleans caches, logs and leftovers. Preview first with `mo clean --dry-run`, or let an AI agent drive it with the `/mole` skill.
 
-# macOS misc
+## macOS misc
 
 ```bash
 rm -rf ~/'Library/Caches/com.apple.nsurlsessiond'/*
@@ -114,6 +114,13 @@ Uninstalled apps (especially games) often leave GBs behind in `~/Library/Applica
 open x-apple.systempreferences:com.apple.settings.Storage
 ```
 
+System Settings -> Storage
+- Music Creation -> Remove Garageband Sound Library
+- Remove unneeded stock apps from `/Applications`
+- Developer tools
+
+Also:
+- `~/Library/Application Support/com.apple.wallpaper/aerials/videos` (downloaded screen saver videos)
 - Finder -> Settings -> Advanced -> **Remove items from the Trash after 30 days**
 - Reboot: frees swap (the `VM` volume), which can be several GBs.
 

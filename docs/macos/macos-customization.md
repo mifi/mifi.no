@@ -88,11 +88,7 @@ auth       sufficient     pam_tid.so
 
 ## Reduce space usage
 
-System Settings -> Storage
-- Music Creation -> Remove Garageband Sound Library
-- Remove unneeded stock apps from `/Applications`
-- Developer tools
-- `~/Library/Application Support/com.apple.wallpaper/aerials/videos`
+See [Clearing storage space on macOS](clear-storage-space.md).
 
 ## References
 
