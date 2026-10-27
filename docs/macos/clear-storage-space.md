@@ -44,9 +44,16 @@ rm -rf ~/Library/Caches/Yarn
 # For yarn berry, remove large deps:
 find ~/.yarn/berry/cache -mindepth 1 -maxdepth 1 -type f -exec du -sm {} + | awk '$1 > 5 {print $2}' | xargs -r rm -rf
 
+# Or clear the whole yarn berry global cache (run from inside a yarn berry project, so it's not yarn v1 running it)
+yarn cache clean --all
+# Cached npm registry metadata, safe to delete
+rm -rf ~/.yarn/berry/metadata
+
 # Don't delete! yarn/corepack cache is here
 # rm -rf ~/.cache/node
 ```
+
+⚠️ Projects using Plug'n'Play (they have a `.pnp.cjs` file) load packages directly from the global cache, so they need `yarn install` again after clearing it. Projects with `nodeLinker: node-modules` are not affected.
 
 ## Chromium / Chrome
 
@@ -99,11 +106,16 @@ rm -rf ~/Library/Caches/typescript
 rm -rf ~/Library/Caches/Firefox
 ```
 
+Uninstalled apps (especially games) often leave GBs behind in `~/Library/Application Support`, e.g. `Steam` and `minecraft`. Back up `minecraft/saves` first if you want to keep your worlds.
+
 ## macOS manual UI
 
 ```bash
 open x-apple.systempreferences:com.apple.settings.Storage
 ```
+
+- Finder -> Settings -> Advanced -> **Remove items from the Trash after 30 days**
+- Reboot: frees swap (the `VM` volume), which can be several GBs.
 
 ## Chrome manual
 
@@ -116,7 +128,15 @@ open x-apple.systempreferences:com.apple.settings.Storage
 sudo ncdu --exclude /System/Volumes/Data /
 # or
 ncdu ~/Library/Caches/
+
+# Space per APFS volume (System, Preboot, VM, Data, simulator disks).
+# Explains why folder sizes don't add up to the disk total.
+diskutil apfs list
 ```
+
+⚠️ Give your terminal Full Disk Access first (System Settings -> Privacy & Security -> Full Disk Access), or folders like Documents, Downloads, Mail, Photos and iCloud Drive will show up as empty.
+
+After a macOS upgrade, `Preboot` and `/System/Library/AssetsV2` grow. Those are managed by macOS and cannot be cleaned.
 
 ## Dev manual
 
@@ -140,4 +160,79 @@ rm -rf ~/Library/Containers/com.apple.CoreDevice.CoreDeviceService/Data/Library/
 rm -rf ~/Library/Developer/Xcode/DerivedData
 rm -rf ~/Library/Developer/Xcode/'iOS DeviceSupport'
 rm -rf ~/Library/Developer/Xcode/Archives/*
+```
+
+## Xcode simulator runtimes
+
+Usually the biggest win after an Xcode upgrade: each runtime is ~8 GB and old ones pile up.
+
+```bash
+xcrun simctl runtime list
+xcrun simctl runtime delete <id>
+# Remove simulator devices left behind by deleted runtimes
+xcrun simctl delete unavailable
+```
+
+Or Xcode -> Settings -> Components.
+
+You don't need any simulator runtime to build and deploy to a physical device (tested with Xcode 27 and `npx expo run:ios --device`). Simulators and SwiftUI previews won't work though. To get it back: `xcodebuild -downloadPlatform iOS`.
+
+## Automatic weekly cleanup
+
+A small script run weekly by `launchd` that moves Xcode leftovers that regenerate without internet to the Trash (using the built-in `/usr/bin/trash`), so nothing is lost if it's wrong.
+
+`~/scripts/xcode-tidy.sh`:
+
+```bash
+#!/bin/bash
+XCODE=~/Library/Developer/Xcode
+
+# DerivedData of projects not built for 7+ days
+for d in "$XCODE"/DerivedData/*-*/; do
+  [ -n "$(find "$d/info.plist" -mtime +7 2>/dev/null)" ] && /usr/bin/trash "$d"
+done
+
+# Shared caches (ModuleCache etc.) too, once no project is left in DerivedData
+ls -d "$XCODE"/DerivedData/*-*/ >/dev/null 2>&1 ||
+  find "$XCODE/DerivedData" -mindepth 1 -maxdepth 1 -exec /usr/bin/trash {} + 2>/dev/null
+
+# iOS DeviceSupport: keep only the newest OS version per device model
+cd "$XCODE/iOS DeviceSupport" 2>/dev/null && ls -t | awk '{ if (seen[$1]++) print }' |
+  while IFS= read -r old; do /usr/bin/trash "$old"; done
+
+# Crash reports older than 30 days
+find ~/Library/Logs/DiagnosticReports -maxdepth 1 -type f ! -name '.*' -mtime +30 -exec /usr/bin/trash {} +
+```
+
+`~/Library/LaunchAgents/local.xcode-tidy.plist` (runs Sundays at 10:00, or at next wake). Replace `YOUR_USER`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.xcode-tidy</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/YOUR_USER/scripts/xcode-tidy.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key>
+    <integer>0</integer>
+    <key>Hour</key>
+    <integer>10</integer>
+  </dict>
+</dict>
+</plist>
+```
+
+```bash
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/local.xcode-tidy.plist
+# Run once now to test
+launchctl kickstart gui/$(id -u)/local.xcode-tidy
+# Uninstall
+launchctl bootout gui/$(id -u)/local.xcode-tidy
 ```
